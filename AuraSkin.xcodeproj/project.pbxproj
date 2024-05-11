@@ -12,6 +12,9 @@
 		D952B3982BEF6C1B00C09E5F /* ScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3972BEF6C1B00C09E5F /* ScanViewModel.swift */; };
 		D952B39A2BEF9A7900C09E5F /* ImageCropper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3992BEF9A7900C09E5F /* ImageCropper.swift */; };
 		D952B39D2BEF9AC100C09E5F /* Mantis in Frameworks */ = {isa = PBXBuildFile; productRef = D952B39C2BEF9AC100C09E5F /* Mantis */; };
+		D952B3A32BEFC4A800C09E5F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3A22BEFC4A800C09E5F /* LoadingView.swift */; };
+		D952B3A52BEFC56800C09E5F /* ScanLoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3A42BEFC56800C09E5F /* ScanLoadingViewModel.swift */; };
+		D952B3A72BEFC59700C09E5F /* OpticalCharRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3A62BEFC59700C09E5F /* OpticalCharRecognition.swift */; };
 		D983CF612BEF070700588417 /* Ingredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = D983CF602BEF070700588417 /* Ingredients.swift */; };
 		D983CF642BEF085E00588417 /* TestButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D983CF632BEF085E00588417 /* TestButton.swift */; };
 		D983CF662BEF107D00588417 /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D983CF652BEF107D00588417 /* APIServices.swift */; };
@@ -30,6 +33,9 @@
 		D952B3952BEF66E000C09E5F /* TestFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFunction.swift; sourceTree = "<group>"; };
 		D952B3972BEF6C1B00C09E5F /* ScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewModel.swift; sourceTree = "<group>"; };
 		D952B3992BEF9A7900C09E5F /* ImageCropper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropper.swift; sourceTree = "<group>"; };
+		D952B3A22BEFC4A800C09E5F /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		D952B3A42BEFC56800C09E5F /* ScanLoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanLoadingViewModel.swift; sourceTree = "<group>"; };
+		D952B3A62BEFC59700C09E5F /* OpticalCharRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpticalCharRecognition.swift; sourceTree = "<group>"; };
 		D983CF602BEF070700588417 /* Ingredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredients.swift; sourceTree = "<group>"; };
 		D983CF632BEF085E00588417 /* TestButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestButton.swift; sourceTree = "<group>"; };
 		D983CF652BEF107D00588417 /* APIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
@@ -77,6 +83,8 @@
 			children = (
 				D9EC3FB62BE91D4600F4B9E7 /* ViewController.swift */,
 				D952B3972BEF6C1B00C09E5F /* ScanViewModel.swift */,
+				D952B3A42BEFC56800C09E5F /* ScanLoadingViewModel.swift */,
+				D952B3A62BEFC59700C09E5F /* OpticalCharRecognition.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -146,6 +154,7 @@
 				D9EC3FB82BE91E8D00F4B9E7 /* ScanView.swift */,
 				D9EC3FBB2BE91EAD00F4B9E7 /* JourneyView.swift */,
 				D9EC3FBD2BE91EBF00F4B9E7 /* ProfileView.swift */,
+				D952B3A22BEFC4A800C09E5F /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -228,15 +237,18 @@
 			files = (
 				D9EC3FB72BE91D4600F4B9E7 /* ViewController.swift in Sources */,
 				D9EC3FB92BE91E8D00F4B9E7 /* ScanView.swift in Sources */,
+				D952B3A72BEFC59700C09E5F /* OpticalCharRecognition.swift in Sources */,
 				D983CF662BEF107D00588417 /* APIServices.swift in Sources */,
 				D952B3912BEF5AF200C09E5F /* CameraView.swift in Sources */,
 				D9EC3FBC2BE91EAE00F4B9E7 /* JourneyView.swift in Sources */,
+				D952B3A32BEFC4A800C09E5F /* LoadingView.swift in Sources */,
 				D9EC3FBE2BE91EBF00F4B9E7 /* ProfileView.swift in Sources */,
 				D983CF682BEF109200588417 /* CameraServices.swift in Sources */,
 				D952B3982BEF6C1B00C09E5F /* ScanViewModel.swift in Sources */,
 				D952B39A2BEF9A7900C09E5F /* ImageCropper.swift in Sources */,
 				D983CF612BEF070700588417 /* Ingredients.swift in Sources */,
 				D983CF642BEF085E00588417 /* TestButton.swift in Sources */,
+				D952B3A52BEFC56800C09E5F /* ScanLoadingViewModel.swift in Sources */,
 				D9EC3FA62BE91C8500F4B9E7 /* AuraSkinApp.swift in Sources */,
 				D952B3962BEF66E000C09E5F /* TestFunction.swift in Sources */,
 			);
