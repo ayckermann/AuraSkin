@@ -22,10 +22,9 @@ struct ViewController : View {
             ScanView()
                 .tabItem {
                     Label("Scan", systemImage: "camera")
-//                        .foregroundStyle(.white)
                 }
                 .tag(2)
-                .background(Color(.black))
+//                .background(Color(.black))
 //                .foregroundStyle(.white)
 //
 

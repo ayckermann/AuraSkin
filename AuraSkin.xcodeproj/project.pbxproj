@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D983CF612BEF070700588417 /* Ingredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = D983CF602BEF070700588417 /* Ingredients.swift */; };
+		D983CF642BEF085E00588417 /* TestButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D983CF632BEF085E00588417 /* TestButton.swift */; };
+		D983CF662BEF107D00588417 /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D983CF652BEF107D00588417 /* APIServices.swift */; };
+		D983CF682BEF109200588417 /* CameraServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D983CF672BEF109200588417 /* CameraServices.swift */; };
 		D9EC3FA62BE91C8500F4B9E7 /* AuraSkinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EC3FA52BE91C8500F4B9E7 /* AuraSkinApp.swift */; };
 		D9EC3FAA2BE91C8700F4B9E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9EC3FA92BE91C8700F4B9E7 /* Assets.xcassets */; };
 		D9EC3FAD2BE91C8700F4B9E7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9EC3FAC2BE91C8700F4B9E7 /* Preview Assets.xcassets */; };
@@ -17,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D983CF602BEF070700588417 /* Ingredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredients.swift; sourceTree = "<group>"; };
+		D983CF632BEF085E00588417 /* TestButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestButton.swift; sourceTree = "<group>"; };
+		D983CF652BEF107D00588417 /* APIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
+		D983CF672BEF109200588417 /* CameraServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraServices.swift; sourceTree = "<group>"; };
 		D9EC3FA22BE91C8500F4B9E7 /* AuraSkin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuraSkin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9EC3FA52BE91C8500F4B9E7 /* AuraSkinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuraSkinApp.swift; sourceTree = "<group>"; };
 		D9EC3FA92BE91C8700F4B9E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +46,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D983CF5C2BEF068E00588417 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D983CF602BEF070700588417 /* Ingredients.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D983CF5D2BEF06B700588417 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D9EC3FB62BE91D4600F4B9E7 /* ViewController.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D983CF5E2BEF06CB00588417 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D983CF632BEF085E00588417 /* TestButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D983CF5F2BEF06D300588417 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D983CF652BEF107D00588417 /* APIServices.swift */,
+				D983CF672BEF109200588417 /* CameraServices.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		D9EC3F992BE91C8500F4B9E7 = {
 			isa = PBXGroup;
 			children = (
@@ -57,8 +98,10 @@
 		D9EC3FA42BE91C8500F4B9E7 /* AuraSkin */ = {
 			isa = PBXGroup;
 			children = (
-				D9EC3FB42BE91CCC00F4B9E7 /* Managers */,
-				D9EC3FB52BE91CD500F4B9E7 /* Utilities */,
+				D983CF5F2BEF06D300588417 /* Services */,
+				D983CF5E2BEF06CB00588417 /* Components */,
+				D983CF5D2BEF06B700588417 /* ViewModels */,
+				D983CF5C2BEF068E00588417 /* Models */,
 				D9EC3FB32BE91C8C00F4B9E7 /* Views */,
 				D9EC3FA52BE91C8500F4B9E7 /* AuraSkinApp.swift */,
 				D9EC3FA92BE91C8700F4B9E7 /* Assets.xcassets */,
@@ -83,21 +126,6 @@
 				D9EC3FBD2BE91EBF00F4B9E7 /* ProfileView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		D9EC3FB42BE91CCC00F4B9E7 /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Managers;
-			sourceTree = "<group>";
-		};
-		D9EC3FB52BE91CD500F4B9E7 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				D9EC3FB62BE91D4600F4B9E7 /* ViewController.swift */,
-			);
-			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,8 +200,12 @@
 			files = (
 				D9EC3FB72BE91D4600F4B9E7 /* ViewController.swift in Sources */,
 				D9EC3FB92BE91E8D00F4B9E7 /* ScanView.swift in Sources */,
+				D983CF662BEF107D00588417 /* APIServices.swift in Sources */,
 				D9EC3FBC2BE91EAE00F4B9E7 /* JourneyView.swift in Sources */,
 				D9EC3FBE2BE91EBF00F4B9E7 /* ProfileView.swift in Sources */,
+				D983CF682BEF109200588417 /* CameraServices.swift in Sources */,
+				D983CF612BEF070700588417 /* Ingredients.swift in Sources */,
+				D983CF642BEF085E00588417 /* TestButton.swift in Sources */,
 				D9EC3FA62BE91C8500F4B9E7 /* AuraSkinApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
