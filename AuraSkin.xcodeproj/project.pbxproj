@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D952B3912BEF5AF200C09E5F /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3902BEF5AF200C09E5F /* CameraView.swift */; };
+		D952B3962BEF66E000C09E5F /* TestFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3952BEF66E000C09E5F /* TestFunction.swift */; };
+		D952B3982BEF6C1B00C09E5F /* ScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3972BEF6C1B00C09E5F /* ScanViewModel.swift */; };
 		D983CF612BEF070700588417 /* Ingredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = D983CF602BEF070700588417 /* Ingredients.swift */; };
 		D983CF642BEF085E00588417 /* TestButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D983CF632BEF085E00588417 /* TestButton.swift */; };
 		D983CF662BEF107D00588417 /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D983CF652BEF107D00588417 /* APIServices.swift */; };
@@ -21,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D952B3902BEF5AF200C09E5F /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		D952B3952BEF66E000C09E5F /* TestFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFunction.swift; sourceTree = "<group>"; };
+		D952B3972BEF6C1B00C09E5F /* ScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewModel.swift; sourceTree = "<group>"; };
 		D983CF602BEF070700588417 /* Ingredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredients.swift; sourceTree = "<group>"; };
 		D983CF632BEF085E00588417 /* TestButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestButton.swift; sourceTree = "<group>"; };
 		D983CF652BEF107D00588417 /* APIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
@@ -46,6 +52,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D952B3942BEF66A000C09E5F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D952B3952BEF66E000C09E5F /* TestFunction.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		D983CF5C2BEF068E00588417 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				D9EC3FB62BE91D4600F4B9E7 /* ViewController.swift */,
+				D952B3972BEF6C1B00C09E5F /* ScanViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -66,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				D983CF632BEF085E00588417 /* TestButton.swift */,
+				D952B3902BEF5AF200C09E5F /* CameraView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -98,6 +114,7 @@
 		D9EC3FA42BE91C8500F4B9E7 /* AuraSkin */ = {
 			isa = PBXGroup;
 			children = (
+				D952B3942BEF66A000C09E5F /* Utilities */,
 				D983CF5F2BEF06D300588417 /* Services */,
 				D983CF5E2BEF06CB00588417 /* Components */,
 				D983CF5D2BEF06B700588417 /* ViewModels */,
@@ -201,12 +218,15 @@
 				D9EC3FB72BE91D4600F4B9E7 /* ViewController.swift in Sources */,
 				D9EC3FB92BE91E8D00F4B9E7 /* ScanView.swift in Sources */,
 				D983CF662BEF107D00588417 /* APIServices.swift in Sources */,
+				D952B3912BEF5AF200C09E5F /* CameraView.swift in Sources */,
 				D9EC3FBC2BE91EAE00F4B9E7 /* JourneyView.swift in Sources */,
 				D9EC3FBE2BE91EBF00F4B9E7 /* ProfileView.swift in Sources */,
 				D983CF682BEF109200588417 /* CameraServices.swift in Sources */,
+				D952B3982BEF6C1B00C09E5F /* ScanViewModel.swift in Sources */,
 				D983CF612BEF070700588417 /* Ingredients.swift in Sources */,
 				D983CF642BEF085E00588417 /* TestButton.swift in Sources */,
 				D9EC3FA62BE91C8500F4B9E7 /* AuraSkinApp.swift in Sources */,
+				D952B3962BEF66E000C09E5F /* TestFunction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +363,7 @@
 				DEVELOPMENT_TEAM = 7R7X9XJ9WV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AuraSkin/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -372,6 +393,7 @@
 				DEVELOPMENT_TEAM = 7R7X9XJ9WV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AuraSkin/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

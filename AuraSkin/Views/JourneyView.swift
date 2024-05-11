@@ -10,7 +10,7 @@ import SwiftUI
 struct JourneyView: View {
     var body: some View {
         Text("Journey page!")
-    }
+     }
 }
 
 #Preview {
