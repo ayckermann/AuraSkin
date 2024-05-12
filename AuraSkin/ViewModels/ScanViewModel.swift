@@ -23,7 +23,8 @@ struct ScanViewModel: View {
         NavigationStack{
             ZStack{
                 if(isCropped){
-                    Image(uiImage: capturedImage!)
+//                    Image(uiImage: capturedImage!)
+                    ScanLoadingViewModel(image: capturedImage!)
                 }
                 else{
                     CameraView(cameraServices: cameraService){ result in
