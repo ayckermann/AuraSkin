@@ -15,7 +15,6 @@ struct ScanViewModel: View {
     @State var isCaptured = false
     @State var isCropped = false
     
-    
     @State private var presetFixedRatioType: Mantis.PresetFixedRatioType = .canUseMultiplePresetFixedRatio()
     
     
@@ -49,7 +48,8 @@ struct ScanViewModel: View {
                     
                     ScanView(captureFunction: {
                         cameraService.capturePhoto()
-                    }, navGalleryFunction: testButton, navManualInputFunction: testButton)
+                    }, navManualInputFunction: testButton, selectedImage: $capturedImage, isSelected: $isCaptured)
+                    
                 }
                 
                 
