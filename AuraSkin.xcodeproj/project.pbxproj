@@ -18,6 +18,14 @@
 		B28252102BEF994000ADABF2 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282520F2BEF994000ADABF2 /* DummyData.swift */; };
 		B28252122BF0DCE000ADABF2 /* AnalysisResultModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28252112BF0DCE000ADABF2 /* AnalysisResultModalView.swift */; };
 		B28252142BF1027800ADABF2 /* TagModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28252132BF1027800ADABF2 /* TagModel.swift */; };
+		D952B3912BEF5AF200C09E5F /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3902BEF5AF200C09E5F /* CameraView.swift */; };
+		D952B3962BEF66E000C09E5F /* TestFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3952BEF66E000C09E5F /* TestFunction.swift */; };
+		D952B3982BEF6C1B00C09E5F /* ScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3972BEF6C1B00C09E5F /* ScanViewModel.swift */; };
+		D952B39A2BEF9A7900C09E5F /* ImageCropper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3992BEF9A7900C09E5F /* ImageCropper.swift */; };
+		D952B39D2BEF9AC100C09E5F /* Mantis in Frameworks */ = {isa = PBXBuildFile; productRef = D952B39C2BEF9AC100C09E5F /* Mantis */; };
+		D952B3A32BEFC4A800C09E5F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3A22BEFC4A800C09E5F /* LoadingView.swift */; };
+		D952B3A52BEFC56800C09E5F /* ScanLoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3A42BEFC56800C09E5F /* ScanLoadingViewModel.swift */; };
+		D952B3A72BEFC59700C09E5F /* OpticalCharRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3A62BEFC59700C09E5F /* OpticalCharRecognition.swift */; };
 		D983CF612BEF070700588417 /* Ingredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = D983CF602BEF070700588417 /* Ingredients.swift */; };
 		D983CF642BEF085E00588417 /* TestButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D983CF632BEF085E00588417 /* TestButton.swift */; };
 		D983CF662BEF107D00588417 /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D983CF652BEF107D00588417 /* APIServices.swift */; };
@@ -43,6 +51,13 @@
 		B282520F2BEF994000ADABF2 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		B28252112BF0DCE000ADABF2 /* AnalysisResultModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisResultModalView.swift; sourceTree = "<group>"; };
 		B28252132BF1027800ADABF2 /* TagModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagModel.swift; sourceTree = "<group>"; };
+		D952B3902BEF5AF200C09E5F /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		D952B3952BEF66E000C09E5F /* TestFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFunction.swift; sourceTree = "<group>"; };
+		D952B3972BEF6C1B00C09E5F /* ScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewModel.swift; sourceTree = "<group>"; };
+		D952B3992BEF9A7900C09E5F /* ImageCropper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropper.swift; sourceTree = "<group>"; };
+		D952B3A22BEFC4A800C09E5F /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		D952B3A42BEFC56800C09E5F /* ScanLoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanLoadingViewModel.swift; sourceTree = "<group>"; };
+		D952B3A62BEFC59700C09E5F /* OpticalCharRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpticalCharRecognition.swift; sourceTree = "<group>"; };
 		D983CF602BEF070700588417 /* Ingredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredients.swift; sourceTree = "<group>"; };
 		D983CF632BEF085E00588417 /* TestButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestButton.swift; sourceTree = "<group>"; };
 		D983CF652BEF107D00588417 /* APIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
@@ -62,16 +77,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D952B39D2BEF9AC100C09E5F /* Mantis in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B282520A2BEF86CE00ADABF2 /* Utilities */ = {
+		D952B3942BEF66A000C09E5F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				B282520B2BEF86F200ADABF2 /* IngredientsEffectEnum.swift */,
+				D952B3952BEF66E000C09E5F /* TestFunction.swift */,
+        B282520B2BEF86F200ADABF2 /* IngredientsEffectEnum.swift */,
 				B282520D2BEF989500ADABF2 /* Colors.swift */,
 				B282520F2BEF994000ADABF2 /* DummyData.swift */,
 			);
@@ -92,6 +109,9 @@
 			children = (
 				D9EC3FB62BE91D4600F4B9E7 /* ViewController.swift */,
 				B28252062BEF821400ADABF2 /* AnalysisResultViewModel.swift */,
+				D952B3972BEF6C1B00C09E5F /* ScanViewModel.swift */,
+				D952B3A42BEFC56800C09E5F /* ScanLoadingViewModel.swift */,
+				D952B3A62BEFC59700C09E5F /* OpticalCharRecognition.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -103,6 +123,8 @@
 				B28251FC2BEF5DED00ADABF2 /* TextComponents.swift */,
 				B28251FE2BEF661500ADABF2 /* ContainerComponents.swift */,
 				B28252082BEF84AB00ADABF2 /* IngredientsEffectListComponent.swift */,
+				D952B3902BEF5AF200C09E5F /* CameraView.swift */,
+				D952B3992BEF9A7900C09E5F /* ImageCropper.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -135,7 +157,7 @@
 		D9EC3FA42BE91C8500F4B9E7 /* AuraSkin */ = {
 			isa = PBXGroup;
 			children = (
-				B282520A2BEF86CE00ADABF2 /* Utilities */,
+				D952B3942BEF66A000C09E5F /* Utilities */,
 				D983CF5F2BEF06D300588417 /* Services */,
 				D983CF5E2BEF06CB00588417 /* Components */,
 				D983CF5D2BEF06B700588417 /* ViewModels */,
@@ -165,6 +187,7 @@
 				B28251FA2BEF569300ADABF2 /* AnalysisResultView.swift */,
 				B28252042BEF7B7E00ADABF2 /* SwiftUIView.swift */,
 				B28252112BF0DCE000ADABF2 /* AnalysisResultModalView.swift */,
+				D952B3A22BEFC4A800C09E5F /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -185,6 +208,9 @@
 			dependencies = (
 			);
 			name = AuraSkin;
+			packageProductDependencies = (
+				D952B39C2BEF9AC100C09E5F /* Mantis */,
+			);
 			productName = AuraSkin;
 			productReference = D9EC3FA22BE91C8500F4B9E7 /* AuraSkin.app */;
 			productType = "com.apple.product-type.application";
@@ -213,6 +239,9 @@
 				Base,
 			);
 			mainGroup = D9EC3F992BE91C8500F4B9E7;
+			packageReferences = (
+				D952B39B2BEF9AC100C09E5F /* XCRemoteSwiftPackageReference "Mantis" */,
+			);
 			productRefGroup = D9EC3FA32BE91C8500F4B9E7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -254,11 +283,22 @@
 				D9EC3FBE2BE91EBF00F4B9E7 /* ProfileView.swift in Sources */,
 				D983CF682BEF109200588417 /* CameraServices.swift in Sources */,
 				B28252102BEF994000ADABF2 /* DummyData.swift in Sources */,
+				D952B3A72BEFC59700C09E5F /* OpticalCharRecognition.swift in Sources */,
+				D983CF662BEF107D00588417 /* APIServices.swift in Sources */,
+				D952B3912BEF5AF200C09E5F /* CameraView.swift in Sources */,
+				D9EC3FBC2BE91EAE00F4B9E7 /* JourneyView.swift in Sources */,
+				D952B3A32BEFC4A800C09E5F /* LoadingView.swift in Sources */,
+				D9EC3FBE2BE91EBF00F4B9E7 /* ProfileView.swift in Sources */,
+				D983CF682BEF109200588417 /* CameraServices.swift in Sources */,
+				D952B3982BEF6C1B00C09E5F /* ScanViewModel.swift in Sources */,
+				D952B39A2BEF9A7900C09E5F /* ImageCropper.swift in Sources */,
 				D983CF612BEF070700588417 /* Ingredients.swift in Sources */,
 				D983CF642BEF085E00588417 /* TestButton.swift in Sources */,
+				D952B3A52BEFC56800C09E5F /* ScanLoadingViewModel.swift in Sources */,
 				D9EC3FA62BE91C8500F4B9E7 /* AuraSkinApp.swift in Sources */,
 				B28252072BEF821400ADABF2 /* AnalysisResultViewModel.swift in Sources */,
 				B28251FB2BEF569300ADABF2 /* AnalysisResultView.swift in Sources */,
+				D952B3962BEF66E000C09E5F /* TestFunction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +435,7 @@
 				DEVELOPMENT_TEAM = 7R7X9XJ9WV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AuraSkin/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -424,6 +465,7 @@
 				DEVELOPMENT_TEAM = 7R7X9XJ9WV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AuraSkin/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -464,6 +506,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D952B39B2BEF9AC100C09E5F /* XCRemoteSwiftPackageReference "Mantis" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/guoyingtao/Mantis";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.7.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D952B39C2BEF9AC100C09E5F /* Mantis */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D952B39B2BEF9AC100C09E5F /* XCRemoteSwiftPackageReference "Mantis" */;
+			productName = Mantis;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D9EC3F9A2BE91C8500F4B9E7 /* Project object */;
 }
