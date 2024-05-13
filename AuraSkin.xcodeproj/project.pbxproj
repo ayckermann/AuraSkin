@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B28251FB2BEF569300ADABF2 /* AnalysisResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28251FA2BEF569300ADABF2 /* AnalysisResultView.swift */; };
+		B28251FD2BEF5DED00ADABF2 /* TextComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28251FC2BEF5DED00ADABF2 /* TextComponents.swift */; };
+		B28251FF2BEF661500ADABF2 /* ContainerComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28251FE2BEF661500ADABF2 /* ContainerComponents.swift */; };
+		B28252052BEF7B7E00ADABF2 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28252042BEF7B7E00ADABF2 /* SwiftUIView.swift */; };
+		B28252072BEF821400ADABF2 /* AnalysisResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28252062BEF821400ADABF2 /* AnalysisResultViewModel.swift */; };
+		B28252092BEF84AB00ADABF2 /* IngredientsEffectListComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28252082BEF84AB00ADABF2 /* IngredientsEffectListComponent.swift */; };
+		B282520C2BEF86F200ADABF2 /* IngredientsEffectEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282520B2BEF86F200ADABF2 /* IngredientsEffectEnum.swift */; };
+		B282520E2BEF989500ADABF2 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282520D2BEF989500ADABF2 /* Colors.swift */; };
+		B28252102BEF994000ADABF2 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282520F2BEF994000ADABF2 /* DummyData.swift */; };
+		B28252122BF0DCE000ADABF2 /* AnalysisResultModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28252112BF0DCE000ADABF2 /* AnalysisResultModalView.swift */; };
+		B28252142BF1027800ADABF2 /* TagModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28252132BF1027800ADABF2 /* TagModel.swift */; };
 		D952B3912BEF5AF200C09E5F /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3902BEF5AF200C09E5F /* CameraView.swift */; };
 		D952B3962BEF66E000C09E5F /* TestFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3952BEF66E000C09E5F /* TestFunction.swift */; };
 		D952B3982BEF6C1B00C09E5F /* ScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3972BEF6C1B00C09E5F /* ScanViewModel.swift */; };
@@ -29,6 +40,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B28251FA2BEF569300ADABF2 /* AnalysisResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisResultView.swift; sourceTree = "<group>"; };
+		B28251FC2BEF5DED00ADABF2 /* TextComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextComponents.swift; sourceTree = "<group>"; };
+		B28251FE2BEF661500ADABF2 /* ContainerComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerComponents.swift; sourceTree = "<group>"; };
+		B28252042BEF7B7E00ADABF2 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		B28252062BEF821400ADABF2 /* AnalysisResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisResultViewModel.swift; sourceTree = "<group>"; };
+		B28252082BEF84AB00ADABF2 /* IngredientsEffectListComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsEffectListComponent.swift; sourceTree = "<group>"; };
+		B282520B2BEF86F200ADABF2 /* IngredientsEffectEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsEffectEnum.swift; sourceTree = "<group>"; };
+		B282520D2BEF989500ADABF2 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		B282520F2BEF994000ADABF2 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
+		B28252112BF0DCE000ADABF2 /* AnalysisResultModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisResultModalView.swift; sourceTree = "<group>"; };
+		B28252132BF1027800ADABF2 /* TagModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagModel.swift; sourceTree = "<group>"; };
 		D952B3902BEF5AF200C09E5F /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		D952B3952BEF66E000C09E5F /* TestFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFunction.swift; sourceTree = "<group>"; };
 		D952B3972BEF6C1B00C09E5F /* ScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewModel.swift; sourceTree = "<group>"; };
@@ -66,6 +88,9 @@
 			isa = PBXGroup;
 			children = (
 				D952B3952BEF66E000C09E5F /* TestFunction.swift */,
+        B282520B2BEF86F200ADABF2 /* IngredientsEffectEnum.swift */,
+				B282520D2BEF989500ADABF2 /* Colors.swift */,
+				B282520F2BEF994000ADABF2 /* DummyData.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -74,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				D983CF602BEF070700588417 /* Ingredients.swift */,
+				B28252132BF1027800ADABF2 /* TagModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -82,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				D9EC3FB62BE91D4600F4B9E7 /* ViewController.swift */,
+				B28252062BEF821400ADABF2 /* AnalysisResultViewModel.swift */,
 				D952B3972BEF6C1B00C09E5F /* ScanViewModel.swift */,
 				D952B3A42BEFC56800C09E5F /* ScanLoadingViewModel.swift */,
 				D952B3A62BEFC59700C09E5F /* OpticalCharRecognition.swift */,
@@ -93,6 +120,9 @@
 			isa = PBXGroup;
 			children = (
 				D983CF632BEF085E00588417 /* TestButton.swift */,
+				B28251FC2BEF5DED00ADABF2 /* TextComponents.swift */,
+				B28251FE2BEF661500ADABF2 /* ContainerComponents.swift */,
+				B28252082BEF84AB00ADABF2 /* IngredientsEffectListComponent.swift */,
 				D952B3902BEF5AF200C09E5F /* CameraView.swift */,
 				D952B3992BEF9A7900C09E5F /* ImageCropper.swift */,
 			);
@@ -154,6 +184,9 @@
 				D9EC3FB82BE91E8D00F4B9E7 /* ScanView.swift */,
 				D9EC3FBB2BE91EAD00F4B9E7 /* JourneyView.swift */,
 				D9EC3FBD2BE91EBF00F4B9E7 /* ProfileView.swift */,
+				B28251FA2BEF569300ADABF2 /* AnalysisResultView.swift */,
+				B28252042BEF7B7E00ADABF2 /* SwiftUIView.swift */,
+				B28252112BF0DCE000ADABF2 /* AnalysisResultModalView.swift */,
 				D952B3A22BEFC4A800C09E5F /* LoadingView.swift */,
 			);
 			path = Views;
@@ -235,8 +268,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B28252052BEF7B7E00ADABF2 /* SwiftUIView.swift in Sources */,
+				B28252092BEF84AB00ADABF2 /* IngredientsEffectListComponent.swift in Sources */,
+				B28252142BF1027800ADABF2 /* TagModel.swift in Sources */,
 				D9EC3FB72BE91D4600F4B9E7 /* ViewController.swift in Sources */,
+				B28252122BF0DCE000ADABF2 /* AnalysisResultModalView.swift in Sources */,
+				B282520E2BEF989500ADABF2 /* Colors.swift in Sources */,
 				D9EC3FB92BE91E8D00F4B9E7 /* ScanView.swift in Sources */,
+				B282520C2BEF86F200ADABF2 /* IngredientsEffectEnum.swift in Sources */,
+				D983CF662BEF107D00588417 /* APIServices.swift in Sources */,
+				B28251FD2BEF5DED00ADABF2 /* TextComponents.swift in Sources */,
+				D9EC3FBC2BE91EAE00F4B9E7 /* JourneyView.swift in Sources */,
+				B28251FF2BEF661500ADABF2 /* ContainerComponents.swift in Sources */,
+				D9EC3FBE2BE91EBF00F4B9E7 /* ProfileView.swift in Sources */,
+				D983CF682BEF109200588417 /* CameraServices.swift in Sources */,
+				B28252102BEF994000ADABF2 /* DummyData.swift in Sources */,
 				D952B3A72BEFC59700C09E5F /* OpticalCharRecognition.swift in Sources */,
 				D983CF662BEF107D00588417 /* APIServices.swift in Sources */,
 				D952B3912BEF5AF200C09E5F /* CameraView.swift in Sources */,
@@ -250,6 +296,8 @@
 				D983CF642BEF085E00588417 /* TestButton.swift in Sources */,
 				D952B3A52BEFC56800C09E5F /* ScanLoadingViewModel.swift in Sources */,
 				D9EC3FA62BE91C8500F4B9E7 /* AuraSkinApp.swift in Sources */,
+				B28252072BEF821400ADABF2 /* AnalysisResultViewModel.swift in Sources */,
+				B28251FB2BEF569300ADABF2 /* AnalysisResultView.swift in Sources */,
 				D952B3962BEF66E000C09E5F /* TestFunction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

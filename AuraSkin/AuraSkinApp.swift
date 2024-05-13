@@ -11,7 +11,7 @@ import SwiftUI
 struct AuraSkinApp: App {
     var body: some Scene {
         WindowGroup {
-            ViewController()
+            AnalysisResultView()
         }
     }
 }
