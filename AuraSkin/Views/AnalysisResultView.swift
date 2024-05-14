@@ -8,20 +8,30 @@
 import SwiftUI
 
 struct AnalysisResultView: View {
+    
+    
     @State private var prosConsSegment: IngredientsEffectType = IngredientsEffectType.pros
     @State var data: IngredientsAnalysisResponse?
     @StateObject var model = AnalysisResultViewModel()
     
-    init() {
+    var ingredients: String
+    
+    init(ingredients: String) {
 //        UISegmentedControl.appearance().layer.cornerRadius = 20
 //        UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(color(prosConsSegment))
 //        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
 //        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.gray], for: .normal)
         UISegmentedControl.appearance().setTitleTextAttributes([.font: UIFont.boldSystemFont(ofSize: 18)], for: .normal)
         UISegmentedControl.appearance().backgroundColor = .systemBackground.withAlphaComponent(0.10)
+        
+        self.ingredients = ingredients
+//        model.getTags(ingredients: ingredients)
+        
     }
     
     var body: some View {
+        
+        
         ScrollView {
             VStack {
                 HStack {
@@ -81,7 +91,10 @@ struct AnalysisResultView: View {
 //        .onAppear{
 //            apiCall()
 //        }
-            
+        .onAppear(){
+            model.getTags(ingredients: ingredients)
+        }
+
         
     }
     
@@ -146,5 +159,5 @@ struct AnalysisResultView: View {
 }
 
 #Preview {
-    AnalysisResultView()
+    AnalysisResultView(ingredients: ingredientsDummy)
 }

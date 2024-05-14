@@ -9,34 +9,35 @@ import SwiftUI
 
 struct ScanLoadingViewModel: View {
     var image: UIImage?
-    @State var resultWord: [String] = []
+    var ocr = OpticalCharRecognition()
+    
+    @State var combinedText: String = "" // untuk parameter get ke api
+    @State var separatedText: [String] = [] // untuk textfield result ingredient (tag ingredient)
+
     
     var body: some View {
         
         
-        if (!resultWord.isEmpty){
-            ScrollView{
-                VStack {
-                    ForEach(resultWord, id: \.self){ result in
-                        Text(result)
-                    }
-                }
-            }
-            .padding(35)
+        if (!combinedText.isEmpty){
+            AnalysisResultView(ingredients: combinedText)
         }
         
         else{
             LoadingView()
                 .onAppear(perform: {
-                    OpticalCharRecognition().performOCR(on: image!) { result in
+                    ocr.performOCR(on: image!) { result in
                         switch result {
-                        case .success(let words):
-                            resultWord = words
+                        case .success(let text):
+                            combinedText = text
+                            print(combinedText)
                         case .failure(let error):
                             print("OCR Error: \(error.localizedDescription)")
                             // Handle error here
                         }
                     }
+                    
+                    self.separatedText = ocr.separatedText
+                    
                 })
         }
         

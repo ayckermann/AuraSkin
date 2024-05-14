@@ -22,14 +22,17 @@ extension String {
 }
 
 class AnalysisResultViewModel: ObservableObject {
+    
+    
     @Published var tagRows: [[Tag]] = []
     var tags: [Tag] = []
     
-    init(){
-        getTags()
-    }
+//    init(){
+//        getTags()
+//        
+//    }
     
-    func getTags(){
+    func getTags(ingredients:String){
         var rows: [[Tag]] = []
         var currentRow: [Tag] = []
         
@@ -38,7 +41,10 @@ class AnalysisResultViewModel: ObservableObject {
         let screenWidth = UIScreen.screenWidth - 10
         let tagSpaceing: CGFloat = 14 /*Leading Padding*/ + 30 /*Trailing Padding*/ + 6 + 6 /*Leading & Trailing 6, 6 Spacing*/
         
-        for ingredient in ingredients.split(separator: ", ") {
+        
+        let modifiedStringCaseInsensitive = ingredients.replacingOccurrences(of: "ingredients:", with: "", options: .caseInsensitive)
+
+        for ingredient in modifiedStringCaseInsensitive.split(separator: ", ") {
             tags.append(Tag(name: String(ingredient)))
         }
         

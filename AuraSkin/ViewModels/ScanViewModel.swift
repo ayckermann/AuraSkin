@@ -11,21 +11,29 @@ import Mantis
 struct ScanViewModel: View {
     
     let cameraService = CameraServices()
+    
     @State var capturedImage: UIImage?
     @State var isCaptured = false
     @State var isCropped = false
+    @State var isFlash = false 
+    
     
     @State private var presetFixedRatioType: Mantis.PresetFixedRatioType = .canUseMultiplePresetFixedRatio()
     
+    func toggleFlash() {
+        
+        isFlash = self.cameraService.toggleFlash()
+    }
     
     var body: some View {
         NavigationStack{
             ZStack{
                 if(isCropped){
-//                    Image(uiImage: capturedImage!)
+                    //                    Image(uiImage: capturedImage!)
                     ScanLoadingViewModel(image: capturedImage!)
                 }
                 else{
+                    
                     CameraView(cameraServices: cameraService){ result in
                         switch result {
                             
@@ -48,14 +56,16 @@ struct ScanViewModel: View {
                     
                     ScanView(captureFunction: {
                         cameraService.capturePhoto()
-                    }, navManualInputFunction: testButton, selectedImage: $capturedImage, isSelected: $isCaptured)
+                    }, navManualInputFunction: testButton, flashFunction: {
+                        toggleFlash()
+                    }, selectedImage: $capturedImage, isSelected: $isCaptured, isFlash: $isFlash)
                     
                 }
                 
                 
                 
             }
-            .fullScreenCover(isPresented: $isCaptured, content: {
+            .sheet(isPresented: $isCaptured, content: {
                 ImageCropper(image: $capturedImage,
                              presetFixedRatioType: $presetFixedRatioType) { croppedImage in
                     // Handle the cropped image
@@ -69,7 +79,7 @@ struct ScanViewModel: View {
             })
             
         }
-        
+            
         
     }
 }

@@ -72,7 +72,7 @@ class APIServices {
 
         // body
         let body = try? JSONSerialization.data(
-            withJSONObject: ["ingredients": ingredients],
+            withJSONObject: ["ingredients": ingredientsDummy],
             options: []
         )
 

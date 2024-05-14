@@ -59,7 +59,7 @@ class CameraServices{
                     output = AVCapturePhotoOutput()
                 }
                 
-                previewLayer.videoGravity = .resizeAspect
+                previewLayer.videoGravity = .resizeAspectFill
                 
                 previewLayer.session = session
                 
@@ -80,6 +80,26 @@ class CameraServices{
     func capturePhoto(with settings: AVCapturePhotoSettings = AVCapturePhotoSettings()){
         output.capturePhoto(with: settings, delegate: self.delegate!)
     }
+    
+    func toggleFlash() -> Bool {
+            guard let device = AVCaptureDevice.default(for: .video) else { return false }
+            
+            do {
+                try device.lockForConfiguration()
+                defer { device.unlockForConfiguration() }
+                
+                if device.hasTorch {
+                    device.torchMode = device.isTorchActive ? .off : .on
+                    return device.isTorchActive
+                } else {
+                    return false
+                }
+            } catch {
+                return false
+            }
+        }
+    
+    
     
     
 }
