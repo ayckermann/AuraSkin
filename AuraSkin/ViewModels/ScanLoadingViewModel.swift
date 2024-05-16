@@ -20,9 +20,7 @@ struct ScanLoadingViewModel: View {
         
         if (!combinedText.isEmpty){
             AnalysisResultView(ingredients: combinedText)
-        }
-        
-        else{
+        } else {
             LoadingView()
                 .onAppear(perform: {
                     ocr.performOCR(on: image!) { result in

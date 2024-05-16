@@ -94,5 +94,5 @@ struct IngredientEffectList: View {
 
 
 #Preview {
-    IngredientEffectList(IngredientsEffectType.pros, prosIngredients)
+    IngredientEffectList(IngredientsEffectType.pros, prosIngredientsDummy)
 }
