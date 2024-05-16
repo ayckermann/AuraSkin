@@ -5,14 +5,14 @@
 //  Created by M. Ilham Syaputra on 11/05/24.
 //
 
-var prosIngredients: [IngredientsEffect] = [
+var prosIngredientsDummy: [IngredientsEffect] = [
     IngredientsEffect(effect: "Mouisturising", description: "Hydrates the skin", count: 5),
     IngredientsEffect(effect: "Softening", description: "Improve texture", count: 4),
     IngredientsEffect(effect: "Acne fighting", description: "Treats and prevents acne", count: 7),
     IngredientsEffect(effect: "Anti aging", description: "Prevents aging", count: 3)
 ]
 
-var consIngredients: [IngredientsEffect] = [
+var consIngredientsDummy: [IngredientsEffect] = [
     IngredientsEffect(effect: "Comedogenic", description: "Subject to clog pores", count: 4),
     IngredientsEffect(effect: "Parabens", description: "Potentially toxic", count: 4),
 ]
