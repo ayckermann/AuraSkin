@@ -107,10 +107,7 @@
 		D983CF5D2BEF06B700588417 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				D9EC3FB62BE91D4600F4B9E7 /* ViewController.swift */,
 				B28252062BEF821400ADABF2 /* AnalysisResultViewModel.swift */,
-				D952B3972BEF6C1B00C09E5F /* ScanViewModel.swift */,
-				D952B3A42BEFC56800C09E5F /* ScanLoadingViewModel.swift */,
 				D952B3A62BEFC59700C09E5F /* OpticalCharRecognition.swift */,
 			);
 			path = ViewModels;
@@ -138,6 +135,16 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		D9E4374D2BF73AAC006B9A59 /* Routes */ = {
+			isa = PBXGroup;
+			children = (
+				D952B3972BEF6C1B00C09E5F /* ScanViewModel.swift */,
+				D9EC3FB62BE91D4600F4B9E7 /* ViewController.swift */,
+				D952B3A42BEFC56800C09E5F /* ScanLoadingViewModel.swift */,
+			);
+			path = Routes;
+			sourceTree = "<group>";
+		};
 		D9EC3F992BE91C8500F4B9E7 = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +164,7 @@
 		D9EC3FA42BE91C8500F4B9E7 /* AuraSkin */ = {
 			isa = PBXGroup;
 			children = (
+				D9E4374D2BF73AAC006B9A59 /* Routes */,
 				D952B3942BEF66A000C09E5F /* Utilities */,
 				D983CF5F2BEF06D300588417 /* Services */,
 				D983CF5E2BEF06CB00588417 /* Components */,
@@ -436,6 +444,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AuraSkin/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Take photos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -467,6 +476,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AuraSkin/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Take photos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
