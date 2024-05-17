@@ -105,9 +105,6 @@ struct AnalysisResultView: View {
 
                 self.prosIngredients = model.getProsIngredients(data: apiResponse)
                 self.consIngredients = model.getConsIngredients(data: apiResponse)
-                
-                print(ingredients)
-                print("_________")
 
                 model.getTags(ingredients: ingredients)
                 self.showLoading = false

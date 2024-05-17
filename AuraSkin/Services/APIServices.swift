@@ -40,15 +40,12 @@ class APIServices {
                 return apiResponse
             }
 
-//            print(String(data: data, encoding: .utf8) ?? "No response data")
-
             // decode the json data
             do {
                 apiResponse = try JSONDecoder().decode(IngredientsAnalysisResponse.self, from: data)
-                
-                print(apiResponse.analysis?.positive)
             } catch {
                 print(error.localizedDescription)
+                print("ERROR DETAIL: ", error)
             }
         } catch {
             print("Request failed with error: \(error.localizedDescription)")
