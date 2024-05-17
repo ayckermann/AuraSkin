@@ -8,22 +8,17 @@
 import SwiftUI
 
 struct AnalysisResultView: View {
-    var apiServices: APIServices = APIServices()
     @State var apiResponse: IngredientsAnalysisResponse = IngredientsAnalysisResponse()
-    
-    var ingredients: String
-
-
-    @State private var prosConsSegment: IngredientsEffectType = IngredientsEffectType.pros
+    @State var prosConsSegment: IngredientsEffectType = IngredientsEffectType.pros
     @State var data: IngredientsAnalysisResponse?
-    
-    @StateObject var model = AnalysisResultViewModel()
-    
-    
-    @State var showLoading = false
-
+    @State var tags: [[Tag]] = [[]]
     @State var prosIngredients: [IngredientsEffect] = []
     @State var consIngredients: [IngredientsEffect] = []
+    @State var showLoading = false
+
+    var model = AnalysisResultViewModel()
+    var apiServices: APIServices = APIServices()
+    var ingredients: String
 
     init(ingredients: String) {
         //        UISegmentedControl.appearance().layer.cornerRadius = 20
@@ -34,8 +29,6 @@ struct AnalysisResultView: View {
         UISegmentedControl.appearance().backgroundColor = .systemBackground.withAlphaComponent(0.10)
 
         self.ingredients = ingredients
-        //        model.getTags(ingredients: ingredients)
-
     }
 
     var body: some View {
@@ -52,7 +45,7 @@ struct AnalysisResultView: View {
 
                         ScrollView {
                             VStack(alignment: .leading, spacing: 4) {
-                                ForEach(model.tagRows, id:\.self){ rows in
+                                ForEach(tags, id:\.self){ rows in
                                     HStack(spacing: 6){
                                         ForEach(rows){ tag in
                                             IngredientTag(tag.name)
@@ -64,11 +57,11 @@ struct AnalysisResultView: View {
                                 }
                             }.padding()
                         }
-                        .frame(height: 215)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 10).stroke(.gray, lineWidth: 1)
-                        )
-                        .padding(.bottom)
+                            .frame(height: 215)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10).stroke(.gray, lineWidth: 1)
+                            )
+                            .padding(.bottom)
 
                         Picker("ProsConsSegment", selection: $prosConsSegment) {
                             Text("Pros")
@@ -76,9 +69,9 @@ struct AnalysisResultView: View {
                             Text("Cons")
                                 .tag(IngredientsEffectType.cons)
                         }
-                        .colorMultiply(color(prosConsSegment))
-                        .cornerRadius(20)
-                        .pickerStyle(.segmented)
+                            .colorMultiply(color(prosConsSegment))
+                            .cornerRadius(20)
+                            .pickerStyle(.segmented)
 
                         switch prosConsSegment {
                             case .cons:
@@ -106,7 +99,7 @@ struct AnalysisResultView: View {
                 self.prosIngredients = model.getProsIngredients(data: apiResponse)
                 self.consIngredients = model.getConsIngredients(data: apiResponse)
 
-                model.getTags(ingredients: ingredients)
+                self.tags = model.getTags(ingredients: ingredients)
                 self.showLoading = false
             }
         }

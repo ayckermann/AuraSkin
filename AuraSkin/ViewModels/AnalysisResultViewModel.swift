@@ -21,18 +21,17 @@ extension String {
     }
 }
 
-class AnalysisResultViewModel: ObservableObject {
-    
-    
-    @Published var tagRows: [[Tag]] = []
-    var tags: [Tag] = []
+class AnalysisResultViewModel {
     
 //    init(){
 //        getTags()
 //        
 //    }
     
-    func getTags(ingredients: String) {
+    func getTags(ingredients: String) -> [[Tag]] {
+        var tagRows: [[Tag]] = []
+        var tags: [Tag] = []
+
         var rows: [[Tag]] = []
         var currentRow: [Tag] = []
         
@@ -51,7 +50,7 @@ class AnalysisResultViewModel: ObservableObject {
         if !tags.isEmpty{
             
             for index in 0..<tags.count{
-                self.tags[index].size = tags[index].name.getSize()
+                tags[index].size = tags[index].name.getSize()
             }
             
             tags.forEach{ tag in
@@ -73,10 +72,12 @@ class AnalysisResultViewModel: ObservableObject {
                 currentRow.removeAll()
             }
             
-            self.tagRows = rows
+            tagRows = rows
         } else {
-            self.tagRows = []
+            tagRows = []
         }
+
+        return tagRows
     }
 
     func getProsIngredients(data: IngredientsAnalysisResponse) -> [IngredientsEffect] {
