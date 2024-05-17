@@ -12,13 +12,15 @@ struct ScanView: View {
     
     var captureFunction : () -> Void
     var navManualInputFunction : () -> Void?
-    
+    var flashFunction: () -> Void?
+
     @State var photosPickerItem: PhotosPickerItem?
     @Binding var selectedImage: UIImage?
-    @Binding var isSelected: Bool
     
-    @State var isClickCapture: Bool = false
-    @State var isFlash: Bool = false
+    @Binding var isSelected: Bool
+//    @State var isClickCapture: Bool = false
+    @Binding var isFlash: Bool
+
     
     
     var body: some View {
@@ -28,9 +30,11 @@ struct ScanView: View {
             HStack(){
                 Spacer()
                 Button(action: {
+                    flashFunction()
                     isFlash.toggle()
+
                 }, label: {
-                    Image(systemName: isFlash ? "bolt.slash.fill" : "bolt.fill")
+                    Image(systemName: isFlash ? "bolt.fill" : "bolt.slash.fill")
                         .font(.system(size: 26))
                     
                 })
@@ -54,7 +58,7 @@ struct ScanView: View {
                         {
                             if let image = UIImage(data: data){
                                 selectedImage = image
-                                isSelected = true
+                                isSelected = true                              
                             }
                         }
                     }
@@ -63,11 +67,14 @@ struct ScanView: View {
                 
                 Spacer()
                 Button(action: {
-                    isClickCapture.toggle()
                     captureFunction()
+                    if(isFlash){
+                        flashFunction()
+                        isFlash.toggle()
+                    }
                     
                 }, label: {
-                    Image(systemName: isClickCapture ? "circle.fill" : "circle")
+                    Image(systemName: "circle")
                         .font(.system(size: 75))
                 })
                 
