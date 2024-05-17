@@ -10,12 +10,16 @@ import SwiftUI
 struct AnalysisResultView: View {
     var apiServices: APIServices = APIServices()
     @State var apiResponse: IngredientsAnalysisResponse = IngredientsAnalysisResponse()
+    
     var ingredients: String
 
 
     @State private var prosConsSegment: IngredientsEffectType = IngredientsEffectType.pros
     @State var data: IngredientsAnalysisResponse?
+    
     @StateObject var model = AnalysisResultViewModel()
+    
+    
     @State var showLoading = false
 
     @State var prosIngredients: [IngredientsEffect] = []
@@ -101,6 +105,9 @@ struct AnalysisResultView: View {
 
                 self.prosIngredients = model.getProsIngredients(data: apiResponse)
                 self.consIngredients = model.getConsIngredients(data: apiResponse)
+                
+                print(ingredients)
+                print("_________")
 
                 model.getTags(ingredients: ingredients)
                 self.showLoading = false

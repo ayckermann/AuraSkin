@@ -11,32 +11,35 @@ struct ScanLoadingViewModel: View {
     var image: UIImage?
     var ocr = OpticalCharRecognition()
     
-    @State var combinedText: String = "" // untuk parameter get ke api
-    @State var separatedText: [String] = [] // untuk textfield result ingredient (tag ingredient)
-
+    @State var ocrOutput: String = "" // untuk parameter get ke api
     
     var body: some View {
         
-        
-        if (!combinedText.isEmpty){
-            AnalysisResultView(ingredients: combinedText)
-        } else {
+        if (!ocrOutput.isEmpty){
+            AnalysisResultView(ingredients: ocrOutput)
+                .onAppear(){
+                    print("test")
+
+                }
+        }
+        else{
             LoadingView()
                 .onAppear(perform: {
                     ocr.performOCR(on: image!) { result in
                         switch result {
                         case .success(let text):
-                            combinedText = text
-                            print(combinedText)
+                            ocrOutput = text
+                            print(ocrOutput)
                         case .failure(let error):
                             print("OCR Error: \(error.localizedDescription)")
                             // Handle error here
                         }
+                        
                     }
                     
-                    self.separatedText = ocr.separatedText
                     
                 })
+                .navigationBarBackButtonHidden(true)
         }
         
     }
@@ -46,4 +49,4 @@ struct ScanLoadingViewModel: View {
 //#Preview {
 //    ScanLoadingViewModel()
 //}
-
+//

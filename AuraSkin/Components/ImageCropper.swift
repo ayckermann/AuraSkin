@@ -12,7 +12,6 @@ struct ImageCropper: UIViewControllerRepresentable {
     @Binding var image: UIImage?
     @Binding var presetFixedRatioType: Mantis.PresetFixedRatioType
     
-    
     @Environment(\.dismiss) var dismiss
     
     var onImageCropped: ((UIImage) -> Void)?

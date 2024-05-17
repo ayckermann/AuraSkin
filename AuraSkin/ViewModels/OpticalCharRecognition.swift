@@ -8,9 +8,7 @@
 import Vision
 import SwiftUI
 
-struct OpticalCharRecognition{
-    @State var separatedText : [String] = []
-
+class OpticalCharRecognition{
     
      func performOCR(on image: UIImage, completion: @escaping (Result<String, Error>) -> Void) {
         
@@ -43,14 +41,7 @@ struct OpticalCharRecognition{
             // Replace all newline characters ("\n") with spaces
             combinedText = combinedText.replacingOccurrences(of: "\n", with: " ")
                         
-            // Split combined text into an array of words
-            separatedText = combinedText.components(separatedBy: ",")
-                                            .map { $0.trimmingCharacters(in: .whitespaces) } // Trim whitespace
-                               
-            // Filter out empty strings and remove "ingredients:"
-            separatedText = separatedText.filter { !$0.isEmpty && !$0.lowercased().contains("ingredients:") }
-            
-//            completion(.success(words))
+
             completion(.success(combinedText))
             
         }
