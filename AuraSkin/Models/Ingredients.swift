@@ -37,60 +37,46 @@ struct IngredientsAnalysis: Decodable {
     
     enum CodingKeys: String, CodingKey {
         case totalIngredients = "total_ingredients"
-        case harmful
-        case positive
+        case harmful, positive
     }
 }
 
 struct PositiveEffectIngredients: Decodable {
-    var moisturising: PositiveEffect
-    var softening: PositiveEffect
-    var soothing: PositiveEffect
-    var acneFighting: PositiveEffect
-    var antiAging: PositiveEffect
-    var antioxidant: PositiveEffect
-    var healing: PositiveEffect
-    var antiseptic: PositiveEffect
-    var whitening: PositiveEffect
-    var uvProtecting: PositiveEffect
-    
+    var moisturising: PositiveEffect?
+    var softening: PositiveEffect?
+    var soothing: PositiveEffect?
+    var acneFighting: PositiveEffect?
+    var antiAging: PositiveEffect?
+    var antioxidant: PositiveEffect?
+    var healing: PositiveEffect?
+    var antiseptic: PositiveEffect?
+    var whitening: PositiveEffect?
+    var uvProtecting: PositiveEffect?
+
     enum CodingKeys: String, CodingKey {
-        case moisturising
-        case softening
-        case soothing
+        case moisturising, softening, soothing, antioxidant, healing, antiseptic, whitening
         case acneFighting = "acne_fighting"
         case antiAging = "anti_aging"
-        case antioxidant
-        case healing
-        case antiseptic
-        case whitening
         case uvProtecting = "uv_protecting"
     }
 }
 
 struct HarmfulEffectIngredients: Decodable {
-    var allergen: HarmfulEffect
-    var alcohol: HarmfulEffect
-    var comedogenicRating: HarmfulEffect
-    var gluten: HarmfulEffect
-    var silicone: HarmfulEffect
-    var sulfate: HarmfulEffect
-    var paraben: HarmfulEffect
-    var peg: HarmfulEffect
-    var fungalAcneFeeding: HarmfulEffect
-    var fragrance: HarmfulEffect
+    var allergen: HarmfulEffect?
+    var alcohol: HarmfulEffect?
+    var comedogenicRating: HarmfulEffect?
+    var gluten: HarmfulEffect?
+    var silicone: HarmfulEffect?
+    var sulfate: HarmfulEffect?
+    var paraben: HarmfulEffect?
+    var peg: HarmfulEffect?
+    var fungalAcneFeeding: HarmfulEffect?
+    var fragrance: HarmfulEffect?
     
     enum CodingKeys: String, CodingKey {
-        case allergen
-        case alcohol
+        case allergen, alcohol, gluten, silicone, sulfate, paraben, peg, fragrance
         case comedogenicRating = "comedogenic_rating"
-        case gluten
-        case silicone
-        case sulfate
-        case paraben
-        case peg
         case fungalAcneFeeding = "fungal_acne_feeding"
-        case fragrance
     }
 }
 
@@ -102,11 +88,8 @@ struct PositiveEffect: Decodable {
     var count: Int
     
     enum CodingKeys: String, CodingKey {
-        case title
-        case description
+        case title, description, list, count
         case imageUrl = "image_url"
-        case list
-        case count
     }
 }
 
@@ -119,12 +102,8 @@ struct HarmfulEffect: Decodable {
     var slug: String
     
     enum CodingKeys: String, CodingKey {
-        case title
-        case description
+        case title, description, list, count, slug
         case imageUrl = "image_url"
-        case list
-        case count
-        case slug
     }
 }
 
