@@ -10,8 +10,10 @@ import SwiftUI
 
 //component example
 struct TestButton: View{
+    var text: String = ""
+    
     var body: some View{
-        Text("TEST")
+        Text(text)
             .font(.headline)
             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
             .frame(width: 250)

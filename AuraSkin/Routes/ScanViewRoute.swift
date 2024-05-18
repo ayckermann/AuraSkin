@@ -8,7 +8,7 @@
 import SwiftUI
 import Mantis
 
-struct ScanViewModel: View {
+struct ScanViewRoute: View {
     
     let cameraService = CameraServices()
     
@@ -56,30 +56,60 @@ struct ScanViewModel: View {
                 
             }
             
-            .navigationDestination(isPresented: $isCropped) {
-                if isCropped{
-                    ScanLoadingViewModel(image: capturedImage)
+            .navigationDestination(isPresented: $isCaptured) {
+                if isCaptured{
+                    
+                    ZStack{
+                        
+                        ImageCropper(image: $capturedImage) { croppedImage in
+                            // Handle the cropped image
+                            isCropped = true
+                            
+                        } onImageCropCancelled: {
+                            // Handle cancellation
+                            isCropped = false
+                            isCaptured = false
+                            capturedImage = nil
+                        }
+                        .ignoresSafeArea(.all)
+                        .navigationBarBackButtonHidden(true)
+                        .toolbar(.hidden, for: .tabBar)
+                    }
+                    
+                   
 
                 }
+                
+                
+                
             }
-
+            
+            .navigationDestination(isPresented: $isCropped) {
+                if isCropped{
+                    TypoCheckRoute(image: capturedImage)
+                    
+                }
+            }
+            
+            
+            
             
         }
-        
-        .sheet(isPresented: $isCaptured, content: {
-            ImageCropper(image: $capturedImage,
-                         presetFixedRatioType: $presetFixedRatioType) { croppedImage in
-                // Handle the cropped image
-                isCropped = true                               // You can use the croppedImage as needed
-            } onImageCropCancelled: {
-                // Handle cancellation
-                isCropped = false
-            }
-            
-            .ignoresSafeArea()
-            .interactiveDismissDisabled()
-            
-        })
+        //
+        //        .sheet(isPresented: $isCaptured, content: {
+        //            ImageCropper(image: $capturedImage,
+        //                         presetFixedRatioType: $presetFixedRatioType) { croppedImage in
+        //                // Handle the cropped image
+        //                isCropped = true                               // You can use the croppedImage as needed
+        //            } onImageCropCancelled: {
+        //                // Handle cancellation
+        //                isCropped = false
+        //            }
+        //
+        //            .ignoresSafeArea()
+        //            .interactiveDismissDisabled()
+        //
+        //        })
         
         
     }

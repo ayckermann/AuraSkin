@@ -19,7 +19,7 @@ struct ViewController : View {
 
                 }
                 .tag(1)
-            ScanViewModel()
+            ScanViewRoute()
                 .tabItem {
                     Label("Scan", systemImage: "camera")
                 }
