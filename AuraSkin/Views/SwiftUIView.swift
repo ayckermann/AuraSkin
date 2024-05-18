@@ -9,10 +9,13 @@ import SwiftUI
 
 struct SwiftUIView: View {
     
+    var text: String = ""
     
     var body: some View {
         VStack {
-            Text("test")
+            Text(text)
+            
+            
         }
     }
     

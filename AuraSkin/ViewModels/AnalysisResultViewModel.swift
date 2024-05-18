@@ -41,7 +41,9 @@ class AnalysisResultViewModel {
         let tagSpaceing: CGFloat = 14 /*Leading Padding*/ + 30 /*Trailing Padding*/ + 6 + 6 /*Leading & Trailing 6, 6 Spacing*/
         
         
-        let modifiedStringCaseInsensitive = ingredients.replacingOccurrences(of: "ingredients:", with: "", options: .caseInsensitive)
+        var modifiedStringCaseInsensitive = ingredients.replacingOccurrences(of: "ingredients:", with: "", options: .caseInsensitive)
+        
+        modifiedStringCaseInsensitive = modifiedStringCaseInsensitive.replacingOccurrences(of: ".", with: ", ", options: .caseInsensitive)
 
         for ingredient in modifiedStringCaseInsensitive.split(separator: ", ") {
             tags.append(Tag(name: String(ingredient)))

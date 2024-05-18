@@ -20,11 +20,11 @@
 		B28252142BF1027800ADABF2 /* TagModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28252132BF1027800ADABF2 /* TagModel.swift */; };
 		D952B3912BEF5AF200C09E5F /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3902BEF5AF200C09E5F /* CameraView.swift */; };
 		D952B3962BEF66E000C09E5F /* TestFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3952BEF66E000C09E5F /* TestFunction.swift */; };
-		D952B3982BEF6C1B00C09E5F /* ScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3972BEF6C1B00C09E5F /* ScanViewModel.swift */; };
+		D952B3982BEF6C1B00C09E5F /* ScanViewRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3972BEF6C1B00C09E5F /* ScanViewRoute.swift */; };
 		D952B39A2BEF9A7900C09E5F /* ImageCropper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3992BEF9A7900C09E5F /* ImageCropper.swift */; };
 		D952B39D2BEF9AC100C09E5F /* Mantis in Frameworks */ = {isa = PBXBuildFile; productRef = D952B39C2BEF9AC100C09E5F /* Mantis */; };
 		D952B3A32BEFC4A800C09E5F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3A22BEFC4A800C09E5F /* LoadingView.swift */; };
-		D952B3A52BEFC56800C09E5F /* ScanLoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3A42BEFC56800C09E5F /* ScanLoadingViewModel.swift */; };
+		D952B3A52BEFC56800C09E5F /* TypoCheckRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3A42BEFC56800C09E5F /* TypoCheckRoute.swift */; };
 		D952B3A72BEFC59700C09E5F /* OpticalCharRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3A62BEFC59700C09E5F /* OpticalCharRecognition.swift */; };
 		D983CF612BEF070700588417 /* Ingredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = D983CF602BEF070700588417 /* Ingredients.swift */; };
 		D983CF642BEF085E00588417 /* TestButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D983CF632BEF085E00588417 /* TestButton.swift */; };
@@ -53,10 +53,10 @@
 		B28252132BF1027800ADABF2 /* TagModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagModel.swift; sourceTree = "<group>"; };
 		D952B3902BEF5AF200C09E5F /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		D952B3952BEF66E000C09E5F /* TestFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFunction.swift; sourceTree = "<group>"; };
-		D952B3972BEF6C1B00C09E5F /* ScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewModel.swift; sourceTree = "<group>"; };
+		D952B3972BEF6C1B00C09E5F /* ScanViewRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewRoute.swift; sourceTree = "<group>"; };
 		D952B3992BEF9A7900C09E5F /* ImageCropper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropper.swift; sourceTree = "<group>"; };
 		D952B3A22BEFC4A800C09E5F /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		D952B3A42BEFC56800C09E5F /* ScanLoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanLoadingViewModel.swift; sourceTree = "<group>"; };
+		D952B3A42BEFC56800C09E5F /* TypoCheckRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypoCheckRoute.swift; sourceTree = "<group>"; };
 		D952B3A62BEFC59700C09E5F /* OpticalCharRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpticalCharRecognition.swift; sourceTree = "<group>"; };
 		D983CF602BEF070700588417 /* Ingredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredients.swift; sourceTree = "<group>"; };
 		D983CF632BEF085E00588417 /* TestButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestButton.swift; sourceTree = "<group>"; };
@@ -107,6 +107,7 @@
 		D983CF5D2BEF06B700588417 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				D952B3992BEF9A7900C09E5F /* ImageCropper.swift */,
 				B28252062BEF821400ADABF2 /* AnalysisResultViewModel.swift */,
 				D952B3A62BEFC59700C09E5F /* OpticalCharRecognition.swift */,
 			);
@@ -121,7 +122,6 @@
 				B28251FE2BEF661500ADABF2 /* ContainerComponents.swift */,
 				B28252082BEF84AB00ADABF2 /* IngredientsEffectListComponent.swift */,
 				D952B3902BEF5AF200C09E5F /* CameraView.swift */,
-				D952B3992BEF9A7900C09E5F /* ImageCropper.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -138,9 +138,9 @@
 		D9E4374D2BF73AAC006B9A59 /* Routes */ = {
 			isa = PBXGroup;
 			children = (
-				D952B3972BEF6C1B00C09E5F /* ScanViewModel.swift */,
+				D952B3972BEF6C1B00C09E5F /* ScanViewRoute.swift */,
 				D9EC3FB62BE91D4600F4B9E7 /* ViewController.swift */,
-				D952B3A42BEFC56800C09E5F /* ScanLoadingViewModel.swift */,
+				D952B3A42BEFC56800C09E5F /* TypoCheckRoute.swift */,
 			);
 			path = Routes;
 			sourceTree = "<group>";
@@ -298,11 +298,11 @@
 				D952B3A32BEFC4A800C09E5F /* LoadingView.swift in Sources */,
 				D9EC3FBE2BE91EBF00F4B9E7 /* ProfileView.swift in Sources */,
 				D983CF682BEF109200588417 /* CameraServices.swift in Sources */,
-				D952B3982BEF6C1B00C09E5F /* ScanViewModel.swift in Sources */,
+				D952B3982BEF6C1B00C09E5F /* ScanViewRoute.swift in Sources */,
 				D952B39A2BEF9A7900C09E5F /* ImageCropper.swift in Sources */,
 				D983CF612BEF070700588417 /* Ingredients.swift in Sources */,
 				D983CF642BEF085E00588417 /* TestButton.swift in Sources */,
-				D952B3A52BEFC56800C09E5F /* ScanLoadingViewModel.swift in Sources */,
+				D952B3A52BEFC56800C09E5F /* TypoCheckRoute.swift in Sources */,
 				D9EC3FA62BE91C8500F4B9E7 /* AuraSkinApp.swift in Sources */,
 				B28252072BEF821400ADABF2 /* AnalysisResultViewModel.swift in Sources */,
 				B28251FB2BEF569300ADABF2 /* AnalysisResultView.swift in Sources */,

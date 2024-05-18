@@ -61,6 +61,9 @@ struct ScanView: View {
                                 isSelected = true                              
                             }
                         }
+                        
+                        photosPickerItem = nil
+                        
                     }
                 }
                 
@@ -75,7 +78,7 @@ struct ScanView: View {
                     
                 }, label: {
                     Image(systemName: "circle")
-                        .font(.system(size: 75))
+                        .font(.system(size: 96))
                 })
                 
                 Spacer()
@@ -91,7 +94,7 @@ struct ScanView: View {
             }
             
             Spacer()
-                .frame(height: 30)
+                .frame(height: 50)
             
         }
         .foregroundStyle(.white)
@@ -102,5 +105,5 @@ struct ScanView: View {
 }
 
 //#Preview {
-//    ScanView(captureFunction: testButton, navGalleryFunction: testButton, navManualInputFunction: testButton)
+//        ScanView(captureFunction: testButton, navManualInputFunction: testButton, flashFunction: testButton)
 //}
