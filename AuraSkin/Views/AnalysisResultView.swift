@@ -15,7 +15,8 @@ struct AnalysisResultView: View {
     @State var prosIngredients: [IngredientsEffect] = []
     @State var consIngredients: [IngredientsEffect] = []
     @State var showLoading = false
-    
+    @State var showSaveProduct = false
+
     var model = AnalysisResultViewModel()
     var apiServices: APIServices = APIServices()
     var ingredients: String
@@ -108,13 +109,16 @@ struct AnalysisResultView: View {
         .navigationTitle("Analysis Result")
         .toolbar {
             Button {
-                print("About tapped!")
+                showSaveProduct.toggle()
             } label: {
                 Image(systemName: "bookmark")
             }
         }
-        
-        
+        .sheet(isPresented: $showSaveProduct) {
+            NavigationStack {
+                SaveProductView()
+            }
+        }
     }
     
     func color(_ selected: IngredientsEffectType) -> Color {
