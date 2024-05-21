@@ -16,6 +16,10 @@ struct AnalysisResultView: View {
     @State var consIngredients: [IngredientsEffect] = []
     @State var showLoading = false
     @State var showSaveProduct = false
+    @State var skinRelatedIngredients: [GoodOrBadForSkinType] = [
+        .init(category: "good", count: 0),
+        .init(category: "bad", count: 0)
+    ]
 
     var model = AnalysisResultViewModel()
     var apiServices: APIServices = APIServices()
@@ -41,30 +45,24 @@ struct AnalysisResultView: View {
                     ScrollView {
                         VStack {
                             HStack {
-                                SectionTextLeading("Ingredients")
-                                    .foregroundColor(Color.auraSkinPrimaryColor)
+                                Text("Skin Type Related Ingredients")
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                    .foregroundStyle(Color.auraSkinPrimaryColor)
+                                    .opacity(0.5)
                             }
-                            
-                            ScrollView {
-                                VStack(alignment: .leading, spacing: 4) {
-                                    ForEach(tags, id:\.self){ rows in
-                                        HStack(spacing: 6){
-                                            ForEach(rows){ tag in
-                                                IngredientTag(tag.name)
-                                            }
-                                        }
-                                        .frame(height: 28)
-                                        .padding(.bottom, 10)
-                                        
-                                    }
-                                }.padding()
+
+                            DonutChartComponent(ingredients: skinRelatedIngredients, skinType: .dry)
+                                .aspectRatio(1.5, contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+                                .padding(.bottom)
+
+                            HStack {
+                                Text("Other Non-Skin Type Related Ingredients")
+                                    .font(.subheadline)
+                                    .foregroundStyle(.gray)
                             }
-                            .frame(height: 215)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 10).stroke(.gray, lineWidth: 1)
-                            )
-                            .padding(.bottom)
-                            
+                            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+
                             Picker("ProsConsSegment", selection: $prosConsSegment) {
                                 Text("Pros")
                                     .tag(IngredientsEffectType.pros)
@@ -98,9 +96,10 @@ struct AnalysisResultView: View {
                         print(error.localizedDescription)
                     }
                     
+                    self.skinRelatedIngredients = model.getSkinRelatedIngredients(item: apiResponse, type: .dry)
                     self.prosIngredients = model.getProsIngredients(data: apiResponse)
                     self.consIngredients = model.getConsIngredients(data: apiResponse)
-                    
+
                     self.tags = model.getTags(ingredients: ingredients)
                     self.showLoading = false
                 }
