@@ -10,6 +10,10 @@
 		9434ED3C2BFC5F110074744F /* ActionChooseSkin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434ED392BFC5F110074744F /* ActionChooseSkin.swift */; };
 		9434ED3D2BFC5F110074744F /* MedicalDisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434ED3A2BFC5F110074744F /* MedicalDisclaimerView.swift */; };
 		9434ED3E2BFC5F110074744F /* TermsConditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434ED3B2BFC5F110074744F /* TermsConditionView.swift */; };
+		9434ED442BFC61CB0074744F /* DropdownComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434ED412BFC61CA0074744F /* DropdownComponent.swift */; };
+		9434ED452BFC61CB0074744F /* DatePickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434ED422BFC61CA0074744F /* DatePickerComponent.swift */; };
+		9434ED462BFC61CB0074744F /* TextFieldComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434ED432BFC61CA0074744F /* TextFieldComponents.swift */; };
+		9434ED482BFC62AE0074744F /* SaveProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434ED472BFC62AE0074744F /* SaveProductView.swift */; };
 		B28251FB2BEF569300ADABF2 /* AnalysisResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28251FA2BEF569300ADABF2 /* AnalysisResultView.swift */; };
 		B28251FD2BEF5DED00ADABF2 /* TextComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28251FC2BEF5DED00ADABF2 /* TextComponents.swift */; };
 		B28251FF2BEF661500ADABF2 /* ContainerComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28251FE2BEF661500ADABF2 /* ContainerComponents.swift */; };
@@ -46,6 +50,10 @@
 		9434ED392BFC5F110074744F /* ActionChooseSkin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionChooseSkin.swift; sourceTree = "<group>"; };
 		9434ED3A2BFC5F110074744F /* MedicalDisclaimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicalDisclaimerView.swift; sourceTree = "<group>"; };
 		9434ED3B2BFC5F110074744F /* TermsConditionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsConditionView.swift; sourceTree = "<group>"; };
+		9434ED412BFC61CA0074744F /* DropdownComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownComponent.swift; sourceTree = "<group>"; };
+		9434ED422BFC61CA0074744F /* DatePickerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerComponent.swift; sourceTree = "<group>"; };
+		9434ED432BFC61CA0074744F /* TextFieldComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldComponents.swift; sourceTree = "<group>"; };
+		9434ED472BFC62AE0074744F /* SaveProductView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveProductView.swift; sourceTree = "<group>"; };
 		B28251FA2BEF569300ADABF2 /* AnalysisResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisResultView.swift; sourceTree = "<group>"; };
 		B28251FC2BEF5DED00ADABF2 /* TextComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextComponents.swift; sourceTree = "<group>"; };
 		B28251FE2BEF661500ADABF2 /* ContainerComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerComponents.swift; sourceTree = "<group>"; };
@@ -123,6 +131,9 @@
 		D983CF5E2BEF06CB00588417 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				9434ED422BFC61CA0074744F /* DatePickerComponent.swift */,
+				9434ED412BFC61CA0074744F /* DropdownComponent.swift */,
+				9434ED432BFC61CA0074744F /* TextFieldComponents.swift */,
 				D983CF632BEF085E00588417 /* TestButton.swift */,
 				B28251FC2BEF5DED00ADABF2 /* TextComponents.swift */,
 				B28251FE2BEF661500ADABF2 /* ContainerComponents.swift */,
@@ -195,6 +206,7 @@
 		D9EC3FB32BE91C8C00F4B9E7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9434ED472BFC62AE0074744F /* SaveProductView.swift */,
 				9434ED392BFC5F110074744F /* ActionChooseSkin.swift */,
 				9434ED3A2BFC5F110074744F /* MedicalDisclaimerView.swift */,
 				9434ED3B2BFC5F110074744F /* TermsConditionView.swift */,
@@ -288,6 +300,7 @@
 				9434ED3E2BFC5F110074744F /* TermsConditionView.swift in Sources */,
 				B28252052BEF7B7E00ADABF2 /* SwiftUIView.swift in Sources */,
 				B28252092BEF84AB00ADABF2 /* IngredientsEffectListComponent.swift in Sources */,
+				9434ED482BFC62AE0074744F /* SaveProductView.swift in Sources */,
 				B28252142BF1027800ADABF2 /* TagModel.swift in Sources */,
 				D9EC3FB72BE91D4600F4B9E7 /* ViewController.swift in Sources */,
 				B28252122BF0DCE000ADABF2 /* AnalysisResultModalView.swift in Sources */,
@@ -297,6 +310,7 @@
 				B282520C2BEF86F200ADABF2 /* IngredientsEffectEnum.swift in Sources */,
 				D983CF662BEF107D00588417 /* APIServices.swift in Sources */,
 				B28251FD2BEF5DED00ADABF2 /* TextComponents.swift in Sources */,
+				9434ED452BFC61CB0074744F /* DatePickerComponent.swift in Sources */,
 				D9EC3FBC2BE91EAE00F4B9E7 /* JourneyView.swift in Sources */,
 				B28251FF2BEF661500ADABF2 /* ContainerComponents.swift in Sources */,
 				D9EC3FBE2BE91EBF00F4B9E7 /* ProfileView.swift in Sources */,
@@ -310,6 +324,7 @@
 				D9EC3FBE2BE91EBF00F4B9E7 /* ProfileView.swift in Sources */,
 				9434ED3D2BFC5F110074744F /* MedicalDisclaimerView.swift in Sources */,
 				D983CF682BEF109200588417 /* CameraServices.swift in Sources */,
+				9434ED462BFC61CB0074744F /* TextFieldComponents.swift in Sources */,
 				D952B3982BEF6C1B00C09E5F /* ScanViewRoute.swift in Sources */,
 				D952B39A2BEF9A7900C09E5F /* ImageCropper.swift in Sources */,
 				D983CF612BEF070700588417 /* Ingredients.swift in Sources */,
@@ -318,6 +333,7 @@
 				D9EC3FA62BE91C8500F4B9E7 /* AuraSkinApp.swift in Sources */,
 				B28252072BEF821400ADABF2 /* AnalysisResultViewModel.swift in Sources */,
 				B28251FB2BEF569300ADABF2 /* AnalysisResultView.swift in Sources */,
+				9434ED442BFC61CB0074744F /* DropdownComponent.swift in Sources */,
 				D952B3962BEF66E000C09E5F /* TestFunction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
