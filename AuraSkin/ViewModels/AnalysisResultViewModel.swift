@@ -171,8 +171,46 @@ class AnalysisResultViewModel {
             ingredientsEffect.append(IngredientsEffect(effect: fragrance.title, description: fragrance.description, count: fragrance.count))
         }
 
-
-
         return ingredientsEffect
+    }
+
+    func getSkinRelatedIngredients(item: IngredientsAnalysisResponse, type: SkinType) -> [GoodOrBadForSkinType] {
+        var skinRelatedIngredients: [GoodOrBadForSkinType] = [
+            .init(category: "good", count: 0),
+            .init(category: "bad", count: 0),
+        ]
+
+        if let ingredientsTable = item.analysis?.ingredientsTable {
+            switch type {
+                case .dry:
+                    for ingredient in ingredientsTable {
+                        if let goodForDrySkin = ingredient.booleanProperties?.goodForDrySkin, goodForDrySkin {
+                            skinRelatedIngredients[0].count += 1
+                        }
+
+                        if let badForDrySkin = ingredient.booleanProperties?.badForDrySkin, badForDrySkin {
+                            skinRelatedIngredients[1].count += 1
+                        }
+                    }
+                case .normal:
+                    print("NORMAL")
+                case .oily:
+                    for ingredient in ingredientsTable {
+                        if let goodForOilySkin = ingredient.booleanProperties?.goodForOilySkin, goodForOilySkin {
+                            skinRelatedIngredients[0].count += 1
+                        }
+
+                        if let badForOilySkin = ingredient.booleanProperties?.badForOilySkin, badForOilySkin {
+                            skinRelatedIngredients[1].count += 1
+                        }
+                    }
+                case .combination:
+                    print("COMBINATION")
+                case .sensitive:
+                    print("SENSITIVE")
+            }
+        }
+
+        return skinRelatedIngredients
     }
 }

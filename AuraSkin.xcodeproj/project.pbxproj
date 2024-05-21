@@ -25,6 +25,8 @@
 		B28252102BEF994000ADABF2 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282520F2BEF994000ADABF2 /* DummyData.swift */; };
 		B28252122BF0DCE000ADABF2 /* AnalysisResultModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28252112BF0DCE000ADABF2 /* AnalysisResultModalView.swift */; };
 		B28252142BF1027800ADABF2 /* TagModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28252132BF1027800ADABF2 /* TagModel.swift */; };
+		B283B34B2BFCBBA8000D37E0 /* DonutChartComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283B34A2BFCBBA8000D37E0 /* DonutChartComponent.swift */; };
+		B283B34D2BFCEBB7000D37E0 /* SkinTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283B34C2BFCEBB7000D37E0 /* SkinTypeEnum.swift */; };
 		D952B3912BEF5AF200C09E5F /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3902BEF5AF200C09E5F /* CameraView.swift */; };
 		D952B3962BEF66E000C09E5F /* TestFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3952BEF66E000C09E5F /* TestFunction.swift */; };
 		D952B3982BEF6C1B00C09E5F /* ScanViewRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3972BEF6C1B00C09E5F /* ScanViewRoute.swift */; };
@@ -68,6 +70,8 @@
 		B282520F2BEF994000ADABF2 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		B28252112BF0DCE000ADABF2 /* AnalysisResultModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisResultModalView.swift; sourceTree = "<group>"; };
 		B28252132BF1027800ADABF2 /* TagModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagModel.swift; sourceTree = "<group>"; };
+		B283B34A2BFCBBA8000D37E0 /* DonutChartComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonutChartComponent.swift; sourceTree = "<group>"; };
+		B283B34C2BFCEBB7000D37E0 /* SkinTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinTypeEnum.swift; sourceTree = "<group>"; };
 		D952B3902BEF5AF200C09E5F /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		D952B3952BEF66E000C09E5F /* TestFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFunction.swift; sourceTree = "<group>"; };
 		D952B3972BEF6C1B00C09E5F /* ScanViewRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewRoute.swift; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 				B282520D2BEF989500ADABF2 /* Colors.swift */,
 				B282520F2BEF994000ADABF2 /* DummyData.swift */,
 				F4DC4B512BFCF68B008EF955 /* DataQuiz.swift */,
+				B283B34C2BFCEBB7000D37E0 /* SkinTypeEnum.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -139,6 +144,7 @@
 		D983CF5E2BEF06CB00588417 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B283B34A2BFCBBA8000D37E0 /* DonutChartComponent.swift */,
 				9434ED422BFC61CA0074744F /* DatePickerComponent.swift */,
 				9434ED412BFC61CA0074744F /* DropdownComponent.swift */,
 				9434ED432BFC61CA0074744F /* TextFieldComponents.swift */,
@@ -324,6 +330,7 @@
 				D9EC3FBC2BE91EAE00F4B9E7 /* JourneyView.swift in Sources */,
 				B28251FF2BEF661500ADABF2 /* ContainerComponents.swift in Sources */,
 				D9EC3FBE2BE91EBF00F4B9E7 /* ProfileView.swift in Sources */,
+				B283B34D2BFCEBB7000D37E0 /* SkinTypeEnum.swift in Sources */,
 				D983CF682BEF109200588417 /* CameraServices.swift in Sources */,
 				B28252102BEF994000ADABF2 /* DummyData.swift in Sources */,
 				D952B3A72BEFC59700C09E5F /* OpticalCharRecognition.swift in Sources */,
@@ -346,6 +353,7 @@
 				B28252072BEF821400ADABF2 /* AnalysisResultViewModel.swift in Sources */,
 				B28251FB2BEF569300ADABF2 /* AnalysisResultView.swift in Sources */,
 				9434ED442BFC61CB0074744F /* DropdownComponent.swift in Sources */,
+				B283B34B2BFCBBA8000D37E0 /* DonutChartComponent.swift in Sources */,
 				D952B3962BEF66E000C09E5F /* TestFunction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
