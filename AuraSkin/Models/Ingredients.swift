@@ -12,17 +12,24 @@ struct Ingredients{
     
 }
 
+struct ingredientsTable: Hashable {
+    var title: String
+    var introtext: String
+}
+
 struct IngredientsEffect: Hashable {
     var effect: String
     var description: String
     var symbol: String
     var count: Int
-    
-    init(effect: String, description: String, count: Int, symbol: String = "photo") {
+    var ingredientsTable: [ingredientsTable]
+
+    init(effect: String, description: String, count: Int, symbol: String = "photo", ingredients: [ingredientsTable] = []) {
         self.effect = effect
         self.description = description
         self.symbol = symbol
         self.count = count
+        self.ingredientsTable = ingredients
     }
 }
 

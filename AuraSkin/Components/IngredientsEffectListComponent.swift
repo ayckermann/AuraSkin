@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct IngredientEffectList: View {
-    @State var ingredients: [IngredientsEffect]
-    @State var effectType: IngredientsEffectType
-    @State private var isShowingSheet: Bool = false
+    var ingredients: [IngredientsEffect]
+    var effectType: IngredientsEffectType
     
     init( _ effectType: IngredientsEffectType, _ ingredients: [IngredientsEffect]) {
         self.ingredients = ingredients
@@ -20,42 +19,44 @@ struct IngredientEffectList: View {
     var body: some View {
         VStack {
             ForEach(ingredients, id: \.effect) { item in
-                @State var data: IngredientsEffect = item
-                
-                HStack {
-                    Image(systemName: item.symbol)
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                    
-                    VStack {
-                        Text(item.effect)
-                            .font(.title3)
-                            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
-                        Text(item.description)
-                            .font(.subheadline)
-                            .italic()
+                var data: IngredientsEffect = item
+
+                NavigationLink {
+                    IngredientsEffectDetailView(data: data)
+                        .toolbar(.visible, for: .tabBar)
+                } label: {
+                    HStack {
+                        Image(systemName: item.symbol)
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .foregroundStyle(.black)
+
+                        VStack {
+                            Text(item.effect)
+                                .font(.title3)
+                                .foregroundStyle(.black)
+                                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+                            Text(item.description)
+                                .font(.subheadline)
+                                .italic()
+                                .foregroundStyle(.gray)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        }
+                        .padding(.leading)
+
+                        Text("\(item.count)")
+                            .frame(alignment: .trailing)
                             .foregroundStyle(.gray)
-                            .frame(maxWidth: .infinity, alignment: .leading)
+
+                        Image(systemName: "chevron.right")
+                            .foregroundStyle(.gray)
                     }
-                    .padding(.leading)
-
-                    Text("\(item.count)")
-                        .frame(alignment: .trailing)
-                        .foregroundStyle(.gray)
-
-                    Image(systemName: "chevron.right")
-                        .foregroundStyle(.gray)
+                    .padding(.bottom)
                 }
-                .onTapGesture {
-                    isShowingSheet.toggle()
-                }
-                .sheet(isPresented: $isShowingSheet, content: {
-                    AnalysisResultModalView(isShowingSheet: $isShowingSheet, data: $data)
-                })
-                .padding(.bottom)
             }
             
-        }.padding(.top)
+        }
+        .padding(.top)
     }
 }
 
