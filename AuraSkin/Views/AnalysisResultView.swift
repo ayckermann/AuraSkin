@@ -30,7 +30,7 @@ struct AnalysisResultView: View {
         //        UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(color(prosConsSegment))
         //        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
         //        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.gray], for: .normal)
-        UISegmentedControl.appearance().setTitleTextAttributes([.font: UIFont.boldSystemFont(ofSize: 18)], for: .normal)
+        UISegmentedControl.appearance().setTitleTextAttributes([.font: UIFont.boldSystemFont(ofSize: 14)], for: .normal)
         UISegmentedControl.appearance().backgroundColor = .systemBackground.withAlphaComponent(0.10)
         
         self.ingredients = ingredients
@@ -56,17 +56,16 @@ struct AnalysisResultView: View {
                                 .aspectRatio(1.5, contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
                                 .padding(.bottom)
 
-                            HStack {
-                                Text("Other Non-Skin Type Related Ingredients")
-                                    .font(.subheadline)
-                                    .foregroundStyle(.gray)
-                            }
-                            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+                            Text("Other Non-Skin Type Related Ingredients")
+                                .font(.subheadline)
+                                .fontWeight(.semibold)
+                                .foregroundStyle(.gray)
+                                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
 
                             Picker("ProsConsSegment", selection: $prosConsSegment) {
-                                Text("Pros")
+                                Text("Positive Effect \(getTotalIngredients(prosIngredients))")
                                     .tag(IngredientsEffectType.pros)
-                                Text("Cons")
+                                Text("Hazard \(getTotalIngredients(consIngredients))")
                                     .tag(IngredientsEffectType.cons)
                             }
                             .colorMultiply(color(prosConsSegment))
@@ -76,10 +75,11 @@ struct AnalysisResultView: View {
                             switch prosConsSegment {
                             case .cons:
                                 IngredientEffectList(.cons, consIngredients)
+                                    .padding(.horizontal)
                             default:
                                 IngredientEffectList(.pros, prosIngredients)
+                                    .padding(.horizontal)
                             }
-                            
                         }
                         .padding(.horizontal)
                     }
@@ -120,13 +120,23 @@ struct AnalysisResultView: View {
         }
     }
     
-    func color(_ selected: IngredientsEffectType) -> Color {
+    private func color(_ selected: IngredientsEffectType) -> Color {
         switch selected {
         case .pros:
             return Color.auraSkinPrimaryColor
         case .cons:
             return Color.auraSkinConsColor
         }
+    }
+
+    private func getTotalIngredients(_ ingredients: [IngredientsEffect]) -> Int {
+        var total: Int = 0
+
+        for ingredient in ingredients {
+            total += ingredient.count
+        }
+
+        return total
     }
 }
 
