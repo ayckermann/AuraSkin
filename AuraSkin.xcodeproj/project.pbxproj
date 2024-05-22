@@ -44,6 +44,9 @@
 		D9EC3FB92BE91E8D00F4B9E7 /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EC3FB82BE91E8D00F4B9E7 /* ScanView.swift */; };
 		D9EC3FBC2BE91EAE00F4B9E7 /* JourneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EC3FBB2BE91EAD00F4B9E7 /* JourneyView.swift */; };
 		D9EC3FBE2BE91EBF00F4B9E7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EC3FBD2BE91EBF00F4B9E7 /* ProfileView.swift */; };
+		F4DC4B502BFCF51D008EF955 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC4B4F2BFCF51D008EF955 /* Question.swift */; };
+		F4DC4B522BFCF68B008EF955 /* DataQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC4B512BFCF68B008EF955 /* DataQuiz.swift */; };
+		F4DC4B542BFCF703008EF955 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC4B532BFCF703008EF955 /* QuizView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +87,9 @@
 		D9EC3FB82BE91E8D00F4B9E7 /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
 		D9EC3FBB2BE91EAD00F4B9E7 /* JourneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyView.swift; sourceTree = "<group>"; };
 		D9EC3FBD2BE91EBF00F4B9E7 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		F4DC4B4F2BFCF51D008EF955 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		F4DC4B512BFCF68B008EF955 /* DataQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataQuiz.swift; sourceTree = "<group>"; };
+		F4DC4B532BFCF703008EF955 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,7 @@
 				B282520B2BEF86F200ADABF2 /* IngredientsEffectEnum.swift */,
 				B282520D2BEF989500ADABF2 /* Colors.swift */,
 				B282520F2BEF994000ADABF2 /* DummyData.swift */,
+				F4DC4B512BFCF68B008EF955 /* DataQuiz.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -114,6 +121,7 @@
 			children = (
 				D983CF602BEF070700588417 /* Ingredients.swift */,
 				B28252132BF1027800ADABF2 /* TagModel.swift */,
+				F4DC4B4F2BFCF51D008EF955 /* Question.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -217,6 +225,7 @@
 				B28252042BEF7B7E00ADABF2 /* SwiftUIView.swift */,
 				B28252112BF0DCE000ADABF2 /* AnalysisResultModalView.swift */,
 				D952B3A22BEFC4A800C09E5F /* LoadingView.swift */,
+				F4DC4B532BFCF703008EF955 /* QuizView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -310,6 +319,7 @@
 				B282520C2BEF86F200ADABF2 /* IngredientsEffectEnum.swift in Sources */,
 				D983CF662BEF107D00588417 /* APIServices.swift in Sources */,
 				B28251FD2BEF5DED00ADABF2 /* TextComponents.swift in Sources */,
+				F4DC4B542BFCF703008EF955 /* QuizView.swift in Sources */,
 				9434ED452BFC61CB0074744F /* DatePickerComponent.swift in Sources */,
 				D9EC3FBC2BE91EAE00F4B9E7 /* JourneyView.swift in Sources */,
 				B28251FF2BEF661500ADABF2 /* ContainerComponents.swift in Sources */,
@@ -318,12 +328,14 @@
 				B28252102BEF994000ADABF2 /* DummyData.swift in Sources */,
 				D952B3A72BEFC59700C09E5F /* OpticalCharRecognition.swift in Sources */,
 				D983CF662BEF107D00588417 /* APIServices.swift in Sources */,
+				F4DC4B502BFCF51D008EF955 /* Question.swift in Sources */,
 				D952B3912BEF5AF200C09E5F /* CameraView.swift in Sources */,
 				D9EC3FBC2BE91EAE00F4B9E7 /* JourneyView.swift in Sources */,
 				D952B3A32BEFC4A800C09E5F /* LoadingView.swift in Sources */,
 				D9EC3FBE2BE91EBF00F4B9E7 /* ProfileView.swift in Sources */,
 				9434ED3D2BFC5F110074744F /* MedicalDisclaimerView.swift in Sources */,
 				D983CF682BEF109200588417 /* CameraServices.swift in Sources */,
+				F4DC4B522BFCF68B008EF955 /* DataQuiz.swift in Sources */,
 				9434ED462BFC61CB0074744F /* TextFieldComponents.swift in Sources */,
 				D952B3982BEF6C1B00C09E5F /* ScanViewRoute.swift in Sources */,
 				D952B39A2BEF9A7900C09E5F /* ImageCropper.swift in Sources */,
