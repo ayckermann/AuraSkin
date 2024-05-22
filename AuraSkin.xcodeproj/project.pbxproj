@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9434ED3C2BFC5F110074744F /* ActionChooseSkin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434ED392BFC5F110074744F /* ActionChooseSkin.swift */; };
+		9434ED3D2BFC5F110074744F /* MedicalDisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434ED3A2BFC5F110074744F /* MedicalDisclaimerView.swift */; };
+		9434ED3E2BFC5F110074744F /* TermsConditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434ED3B2BFC5F110074744F /* TermsConditionView.swift */; };
+		9434ED442BFC61CB0074744F /* DropdownComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434ED412BFC61CA0074744F /* DropdownComponent.swift */; };
+		9434ED452BFC61CB0074744F /* DatePickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434ED422BFC61CA0074744F /* DatePickerComponent.swift */; };
+		9434ED462BFC61CB0074744F /* TextFieldComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434ED432BFC61CA0074744F /* TextFieldComponents.swift */; };
+		9434ED482BFC62AE0074744F /* SaveProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434ED472BFC62AE0074744F /* SaveProductView.swift */; };
 		B28251FB2BEF569300ADABF2 /* AnalysisResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28251FA2BEF569300ADABF2 /* AnalysisResultView.swift */; };
 		B28251FD2BEF5DED00ADABF2 /* TextComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28251FC2BEF5DED00ADABF2 /* TextComponents.swift */; };
 		B28251FF2BEF661500ADABF2 /* ContainerComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28251FE2BEF661500ADABF2 /* ContainerComponents.swift */; };
@@ -18,6 +25,8 @@
 		B28252102BEF994000ADABF2 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282520F2BEF994000ADABF2 /* DummyData.swift */; };
 		B28252122BF0DCE000ADABF2 /* AnalysisResultModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28252112BF0DCE000ADABF2 /* AnalysisResultModalView.swift */; };
 		B28252142BF1027800ADABF2 /* TagModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28252132BF1027800ADABF2 /* TagModel.swift */; };
+		B283B34B2BFCBBA8000D37E0 /* DonutChartComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283B34A2BFCBBA8000D37E0 /* DonutChartComponent.swift */; };
+		B283B34D2BFCEBB7000D37E0 /* SkinTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283B34C2BFCEBB7000D37E0 /* SkinTypeEnum.swift */; };
 		D952B3912BEF5AF200C09E5F /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3902BEF5AF200C09E5F /* CameraView.swift */; };
 		D952B3962BEF66E000C09E5F /* TestFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3952BEF66E000C09E5F /* TestFunction.swift */; };
 		D952B3982BEF6C1B00C09E5F /* ScanViewRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3972BEF6C1B00C09E5F /* ScanViewRoute.swift */; };
@@ -39,9 +48,20 @@
 		D9EC3FB92BE91E8D00F4B9E7 /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EC3FB82BE91E8D00F4B9E7 /* ScanView.swift */; };
 		D9EC3FBC2BE91EAE00F4B9E7 /* JourneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EC3FBB2BE91EAD00F4B9E7 /* JourneyView.swift */; };
 		D9EC3FBE2BE91EBF00F4B9E7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EC3FBD2BE91EBF00F4B9E7 /* ProfileView.swift */; };
+		DA6B7CFA2BFB53F700174C13 /* InputIngredientsManualView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6B7CF92BFB53F700174C13 /* InputIngredientsManualView.swift */; };
+		F4DC4B502BFCF51D008EF955 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC4B4F2BFCF51D008EF955 /* Question.swift */; };
+		F4DC4B522BFCF68B008EF955 /* DataQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC4B512BFCF68B008EF955 /* DataQuiz.swift */; };
+		F4DC4B542BFCF703008EF955 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC4B532BFCF703008EF955 /* QuizView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9434ED392BFC5F110074744F /* ActionChooseSkin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionChooseSkin.swift; sourceTree = "<group>"; };
+		9434ED3A2BFC5F110074744F /* MedicalDisclaimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicalDisclaimerView.swift; sourceTree = "<group>"; };
+		9434ED3B2BFC5F110074744F /* TermsConditionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsConditionView.swift; sourceTree = "<group>"; };
+		9434ED412BFC61CA0074744F /* DropdownComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownComponent.swift; sourceTree = "<group>"; };
+		9434ED422BFC61CA0074744F /* DatePickerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerComponent.swift; sourceTree = "<group>"; };
+		9434ED432BFC61CA0074744F /* TextFieldComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldComponents.swift; sourceTree = "<group>"; };
+		9434ED472BFC62AE0074744F /* SaveProductView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveProductView.swift; sourceTree = "<group>"; };
 		B28251FA2BEF569300ADABF2 /* AnalysisResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisResultView.swift; sourceTree = "<group>"; };
 		B28251FC2BEF5DED00ADABF2 /* TextComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextComponents.swift; sourceTree = "<group>"; };
 		B28251FE2BEF661500ADABF2 /* ContainerComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerComponents.swift; sourceTree = "<group>"; };
@@ -53,6 +73,8 @@
 		B282520F2BEF994000ADABF2 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		B28252112BF0DCE000ADABF2 /* AnalysisResultModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisResultModalView.swift; sourceTree = "<group>"; };
 		B28252132BF1027800ADABF2 /* TagModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagModel.swift; sourceTree = "<group>"; };
+		B283B34A2BFCBBA8000D37E0 /* DonutChartComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonutChartComponent.swift; sourceTree = "<group>"; };
+		B283B34C2BFCEBB7000D37E0 /* SkinTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinTypeEnum.swift; sourceTree = "<group>"; };
 		D952B3902BEF5AF200C09E5F /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		D952B3952BEF66E000C09E5F /* TestFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFunction.swift; sourceTree = "<group>"; };
 		D952B3972BEF6C1B00C09E5F /* ScanViewRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewRoute.swift; sourceTree = "<group>"; };
@@ -74,6 +96,10 @@
 		D9EC3FB82BE91E8D00F4B9E7 /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
 		D9EC3FBB2BE91EAD00F4B9E7 /* JourneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyView.swift; sourceTree = "<group>"; };
 		D9EC3FBD2BE91EBF00F4B9E7 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		DA6B7CF92BFB53F700174C13 /* InputIngredientsManualView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputIngredientsManualView.swift; sourceTree = "<group>"; };
+		F4DC4B4F2BFCF51D008EF955 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		F4DC4B512BFCF68B008EF955 /* DataQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataQuiz.swift; sourceTree = "<group>"; };
+		F4DC4B532BFCF703008EF955 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +121,8 @@
 				B282520B2BEF86F200ADABF2 /* IngredientsEffectEnum.swift */,
 				B282520D2BEF989500ADABF2 /* Colors.swift */,
 				B282520F2BEF994000ADABF2 /* DummyData.swift */,
+				B283B34C2BFCEBB7000D37E0 /* SkinTypeEnum.swift */,
+				F4DC4B512BFCF68B008EF955 /* DataQuiz.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -104,6 +132,7 @@
 			children = (
 				D983CF602BEF070700588417 /* Ingredients.swift */,
 				B28252132BF1027800ADABF2 /* TagModel.swift */,
+				F4DC4B4F2BFCF51D008EF955 /* Question.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -121,6 +150,10 @@
 		D983CF5E2BEF06CB00588417 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B283B34A2BFCBBA8000D37E0 /* DonutChartComponent.swift */,
+				9434ED422BFC61CA0074744F /* DatePickerComponent.swift */,
+				9434ED412BFC61CA0074744F /* DropdownComponent.swift */,
+				9434ED432BFC61CA0074744F /* TextFieldComponents.swift */,
 				D983CF632BEF085E00588417 /* TestButton.swift */,
 				B28251FC2BEF5DED00ADABF2 /* TextComponents.swift */,
 				B28251FE2BEF661500ADABF2 /* ContainerComponents.swift */,
@@ -194,6 +227,11 @@
 		D9EC3FB32BE91C8C00F4B9E7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DA6B7CF92BFB53F700174C13 /* InputIngredientsManualView.swift */,
+				9434ED472BFC62AE0074744F /* SaveProductView.swift */,
+				9434ED392BFC5F110074744F /* ActionChooseSkin.swift */,
+				9434ED3A2BFC5F110074744F /* MedicalDisclaimerView.swift */,
+				9434ED3B2BFC5F110074744F /* TermsConditionView.swift */,
 				D9EC3FB82BE91E8D00F4B9E7 /* ScanView.swift */,
 				D9EC3FBB2BE91EAD00F4B9E7 /* JourneyView.swift */,
 				D9EC3FBD2BE91EBF00F4B9E7 /* ProfileView.swift */,
@@ -202,6 +240,7 @@
 				B28252112BF0DCE000ADABF2 /* AnalysisResultModalView.swift */,
 				D952B3A22BEFC4A800C09E5F /* LoadingView.swift */,
 				D9D6ED012BFB34F8000ECD1F /* ScanInstructionView.swift */,
+				F4DC4B532BFCF703008EF955 /* QuizView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -282,30 +321,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA6B7CFA2BFB53F700174C13 /* InputIngredientsManualView.swift in Sources */,
+				9434ED3E2BFC5F110074744F /* TermsConditionView.swift in Sources */,
 				B28252052BEF7B7E00ADABF2 /* SwiftUIView.swift in Sources */,
 				B28252092BEF84AB00ADABF2 /* IngredientsEffectListComponent.swift in Sources */,
+				9434ED482BFC62AE0074744F /* SaveProductView.swift in Sources */,
 				B28252142BF1027800ADABF2 /* TagModel.swift in Sources */,
 				D9EC3FB72BE91D4600F4B9E7 /* ViewController.swift in Sources */,
 				B28252122BF0DCE000ADABF2 /* AnalysisResultModalView.swift in Sources */,
+				9434ED3C2BFC5F110074744F /* ActionChooseSkin.swift in Sources */,
 				B282520E2BEF989500ADABF2 /* Colors.swift in Sources */,
 				D9EC3FB92BE91E8D00F4B9E7 /* ScanView.swift in Sources */,
 				D9D6ED042BFB5A7E000ECD1F /* ScanInstructionComponent.swift in Sources */,
 				B282520C2BEF86F200ADABF2 /* IngredientsEffectEnum.swift in Sources */,
 				D983CF662BEF107D00588417 /* APIServices.swift in Sources */,
 				B28251FD2BEF5DED00ADABF2 /* TextComponents.swift in Sources */,
+				F4DC4B542BFCF703008EF955 /* QuizView.swift in Sources */,
+				9434ED452BFC61CB0074744F /* DatePickerComponent.swift in Sources */,
 				D9EC3FBC2BE91EAE00F4B9E7 /* JourneyView.swift in Sources */,
 				B28251FF2BEF661500ADABF2 /* ContainerComponents.swift in Sources */,
 				D9EC3FBE2BE91EBF00F4B9E7 /* ProfileView.swift in Sources */,
+				B283B34D2BFCEBB7000D37E0 /* SkinTypeEnum.swift in Sources */,
 				D983CF682BEF109200588417 /* CameraServices.swift in Sources */,
 				B28252102BEF994000ADABF2 /* DummyData.swift in Sources */,
 				D952B3A72BEFC59700C09E5F /* OpticalCharRecognition.swift in Sources */,
 				D983CF662BEF107D00588417 /* APIServices.swift in Sources */,
+				F4DC4B502BFCF51D008EF955 /* Question.swift in Sources */,
 				D952B3912BEF5AF200C09E5F /* CameraView.swift in Sources */,
 				D9EC3FBC2BE91EAE00F4B9E7 /* JourneyView.swift in Sources */,
 				D952B3A32BEFC4A800C09E5F /* LoadingView.swift in Sources */,
 				D9EC3FBE2BE91EBF00F4B9E7 /* ProfileView.swift in Sources */,
+				9434ED3D2BFC5F110074744F /* MedicalDisclaimerView.swift in Sources */,
 				D983CF682BEF109200588417 /* CameraServices.swift in Sources */,
 				D9D6ED022BFB34F8000ECD1F /* ScanInstructionView.swift in Sources */,
+				F4DC4B522BFCF68B008EF955 /* DataQuiz.swift in Sources */,
+				9434ED462BFC61CB0074744F /* TextFieldComponents.swift in Sources */,
 				D952B3982BEF6C1B00C09E5F /* ScanViewRoute.swift in Sources */,
 				D952B39A2BEF9A7900C09E5F /* ImageCropper.swift in Sources */,
 				D983CF612BEF070700588417 /* Ingredients.swift in Sources */,
@@ -314,6 +364,8 @@
 				D9EC3FA62BE91C8500F4B9E7 /* AuraSkinApp.swift in Sources */,
 				B28252072BEF821400ADABF2 /* AnalysisResultViewModel.swift in Sources */,
 				B28251FB2BEF569300ADABF2 /* AnalysisResultView.swift in Sources */,
+				9434ED442BFC61CB0074744F /* DropdownComponent.swift in Sources */,
+				B283B34B2BFCBBA8000D37E0 /* DonutChartComponent.swift in Sources */,
 				D952B3962BEF66E000C09E5F /* TestFunction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -453,7 +505,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AuraSkin/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Take photos";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
@@ -485,7 +536,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AuraSkin/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Take photos";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";

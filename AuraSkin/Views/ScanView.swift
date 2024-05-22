@@ -11,7 +11,6 @@ import PhotosUI
 struct ScanView: View {
     
     var captureFunction : () -> Void
-    var navManualInputFunction : () -> Void?
     var flashFunction: () -> Void?
     
     @State var photosPickerItem: PhotosPickerItem?
@@ -115,14 +114,12 @@ struct ScanView: View {
                     
                     Spacer()
                     
-                    Button(action: {
-                        navManualInputFunction()
-                    }, label: {
+                    NavigationLink {
+                        InputIngredientsManualView()
+                    } label: {
                         Image(systemName: "keyboard")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 33)
-                    })
+                            .font(.system(size: 33))
+                    }
                     .coordinateSpace(name: "manualbutton")
 
                     Spacer()
@@ -149,5 +146,5 @@ struct ScanView: View {
 
 
 #Preview {
-    ScanView(captureFunction: testButton, navManualInputFunction: testButton, flashFunction: testButton, selectedImage: .constant(UIImage(systemName: "xmark")), isSelected: .constant(false), isFlash: .constant(false)  )
+    ScanView(captureFunction: testButton, flashFunction: testButton, selectedImage: .constant(UIImage(systemName: "xmark")), isSelected: .constant(false), isFlash: .constant(false)  )
 }
