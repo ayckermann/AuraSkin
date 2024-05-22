@@ -77,7 +77,9 @@ class CameraServices{
         checkPermission(completion: completion)
     }
     
-    func capturePhoto(with settings: AVCapturePhotoSettings = AVCapturePhotoSettings()){
+    func capturePhoto(){
+        let settings = AVCapturePhotoSettings()
+        
         output.capturePhoto(with: settings, delegate: self.delegate!)
     }
     

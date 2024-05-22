@@ -10,13 +10,16 @@ import Mantis
 
 struct ScanViewRoute: View {
     
+    @AppStorage("isFirstTimeUser") var isFirstTimeUser = true
+
+    
     let cameraService = CameraServices()
     
     @State var capturedImage: UIImage?
     @State var isCaptured = false
     @State var isCropped = false
     @State var isFlash = false
-    
+    @State var isHideInstruction = true
     
     @State private var presetFixedRatioType: Mantis.PresetFixedRatioType = .canUseMultiplePresetFixedRatio()
     
@@ -28,6 +31,7 @@ struct ScanViewRoute: View {
     var body: some View {
         NavigationStack{
             ZStack{
+                
                 CameraView(cameraServices: cameraService){ result in
                     switch result {
                         
@@ -46,14 +50,42 @@ struct ScanViewRoute: View {
                     }
                 }
                 .padding(EdgeInsets( top: 0, leading: 0, bottom:    400, trailing: 0))
-                .edgesIgnoringSafeArea(.all)
+                .ignoresSafeArea(.all)
+                
+                ZStack{
+                    Rectangle()
+                        .padding(.bottom, 5)
+                        .padding(.top, 5)
+                        .foregroundStyle(.grayOverlay)
+                    RoundedRectangle(cornerRadius: 20)
+                        .padding(.top, 10)
+                        .frame(height: 430)
+                        .foregroundStyle(.opacity(1))
+                        .blendMode(.destinationOut)
+                }
+                .compositingGroup()
+                .coordinateSpace(name: "camerabox")
+                
                 
                 ScanView(captureFunction: {
                     cameraService.capturePhoto()
-                }, navManualInputFunction: testButton, flashFunction: {
+                }, flashFunction: {
                     toggleFlash()
                 }, selectedImage: $capturedImage, isSelected: $isCaptured, isFlash: $isFlash)
                 
+                
+                if !isHideInstruction {
+                    ScanInstructionView()
+                }
+                
+            }
+            .onAppear {
+                if(isFirstTimeUser){
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        self.isHideInstruction = false
+                    }
+
+                }
             }
             
             .navigationDestination(isPresented: $isCaptured) {
@@ -76,8 +108,8 @@ struct ScanViewRoute: View {
                         .toolbar(.hidden, for: .tabBar)
                     }
                     
-                   
-
+                    
+                    
                 }
                 
                 
@@ -95,21 +127,6 @@ struct ScanViewRoute: View {
             
             
         }
-        //
-        //        .sheet(isPresented: $isCaptured, content: {
-        //            ImageCropper(image: $capturedImage,
-        //                         presetFixedRatioType: $presetFixedRatioType) { croppedImage in
-        //                // Handle the cropped image
-        //                isCropped = true                               // You can use the croppedImage as needed
-        //            } onImageCropCancelled: {
-        //                // Handle cancellation
-        //                isCropped = false
-        //            }
-        //
-        //            .ignoresSafeArea()
-        //            .interactiveDismissDisabled()
-        //
-        //        })
         
         
     }

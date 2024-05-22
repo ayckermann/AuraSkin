@@ -86,7 +86,7 @@ struct InputIngredientsManualView: View {
             Spacer()
             
             // here is the view load the data ingredients based on recomendation
-             d
+             
 //            if !dummyNames.isEmpty {
 //                ScrollView(.horizontal) {
 //                    HStack {

@@ -9,31 +9,35 @@ import SwiftUI
 
 struct ViewController : View {
     @State private var selection = 2
-
+    
     var body: some View {
         TabView(selection : $selection){
-            JourneyView()
+            SaveProductView()
                 .tabItem {
-                    Label("Journey", systemImage: "book")
-                                            .foregroundStyle(.white)
-
+                    Label("Products", systemImage: selection == 1 ? "bookmark.fill" : "bookmark")
+                        .environment(\.symbolVariants, .none)
+                    
+                    
                 }
                 .tag(1)
             ScanViewRoute()
                 .tabItem {
-                    Label("Scan", systemImage: "camera")
+                    
+                    Label("Scan", systemImage: selection == 2 ? "camera.fill" : "camera")
+                        .environment(\.symbolVariants, .none)
+                    
                 }
                 .tag(2)
-//                .background(Color(.black))
-//                .foregroundStyle(.white)
-//
-
+            
             ProfileView()
                 .tabItem {
-                    Label("Profile", systemImage: "person")
+                    Label("Profile", systemImage: selection == 3 ? "person.fill" : "person")
+                        .environment(\.symbolVariants, .none)
+                    
                 }
                 .tag(3)
         }
+        .clipShape(UnevenRoundedRectangle(cornerRadii: RectangleCornerRadii(topLeading: 10, topTrailing: 10)))
     }
 }
 
