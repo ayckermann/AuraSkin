@@ -7,11 +7,17 @@
 
 import SwiftUI
 
+extension UISegmentedControl {
+    override open func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        self.setContentHuggingPriority(.defaultLow, for: .vertical)
+    }
+}
+
 struct AnalysisResultView: View {
     @State var apiResponse: IngredientsAnalysisResponse = IngredientsAnalysisResponse()
     @State var prosConsSegment: IngredientsEffectType = IngredientsEffectType.pros
     @State var data: IngredientsAnalysisResponse?
-    @State var tags: [[Tag]] = [[]]
     @State var prosIngredients: [IngredientsEffect] = []
     @State var consIngredients: [IngredientsEffect] = []
     @State var showLoading = false
@@ -20,26 +26,24 @@ struct AnalysisResultView: View {
         .init(category: "good", count: 0),
         .init(category: "bad", count: 0)
     ]
+    @State var isHitApi: Bool = false
 
     var model = AnalysisResultViewModel()
     var apiServices: APIServices = APIServices()
     var ingredients: String
-    
+    var skinType: SkinType = .oily
+
     init(ingredients: String) {
-        //        UISegmentedControl.appearance().layer.cornerRadius = 20
-        //        UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(color(prosConsSegment))
-        //        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
-        //        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.gray], for: .normal)
-        UISegmentedControl.appearance().setTitleTextAttributes([.font: UIFont.boldSystemFont(ofSize: 18)], for: .normal)
+        UISegmentedControl.appearance().setTitleTextAttributes([.font: UIFont.boldSystemFont(ofSize: 14)], for: .normal)
         UISegmentedControl.appearance().backgroundColor = .systemBackground.withAlphaComponent(0.10)
-        
+
         self.ingredients = ingredients
     }
     
     var body: some View {
         NavigationStack {
             VStack {
-                if showLoading {
+                if showLoading && !isHitApi {
                     LoadingView()
                 } else {
                     ScrollView {
@@ -52,34 +56,35 @@ struct AnalysisResultView: View {
                                     .opacity(0.5)
                             }
 
-                            DonutChartComponent(ingredients: skinRelatedIngredients, skinType: .dry)
+                            DonutChartComponent(ingredients: skinRelatedIngredients, skinType: skinType)
                                 .aspectRatio(1.5, contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
                                 .padding(.bottom)
 
-                            HStack {
-                                Text("Other Non-Skin Type Related Ingredients")
-                                    .font(.subheadline)
-                                    .foregroundStyle(.gray)
-                            }
-                            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+                            Text("Other Non-Skin Type Related Ingredients")
+                                .font(.subheadline)
+                                .fontWeight(.semibold)
+                                .foregroundStyle(.gray)
+                                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
 
                             Picker("ProsConsSegment", selection: $prosConsSegment) {
-                                Text("Pros")
+                                Text("Positive Effect \(getTotalIngredients(prosIngredients))")
                                     .tag(IngredientsEffectType.pros)
-                                Text("Cons")
+                                Text("Hazard \(getTotalIngredients(consIngredients))")
                                     .tag(IngredientsEffectType.cons)
                             }
+                            .frame(height: 40)
                             .colorMultiply(color(prosConsSegment))
-                            .cornerRadius(20)
+                            .cornerRadius(14)
                             .pickerStyle(.segmented)
                             
                             switch prosConsSegment {
                             case .cons:
                                 IngredientEffectList(.cons, consIngredients)
+                                    .padding(.horizontal)
                             default:
                                 IngredientEffectList(.pros, prosIngredients)
+                                    .padding(.horizontal)
                             }
-                            
                         }
                         .padding(.horizontal)
                     }
@@ -95,12 +100,12 @@ struct AnalysisResultView: View {
                     } catch {
                         print(error.localizedDescription)
                     }
-                    
-                    self.skinRelatedIngredients = model.getSkinRelatedIngredients(item: apiResponse, type: .dry)
+
+                    self.skinRelatedIngredients = model.getSkinRelatedIngredients(item: apiResponse, type: skinType)
                     self.prosIngredients = model.getProsIngredients(data: apiResponse)
                     self.consIngredients = model.getConsIngredients(data: apiResponse)
 
-                    self.tags = model.getTags(ingredients: ingredients)
+                    self.isHitApi = true
                     self.showLoading = false
                 }
             }
@@ -120,13 +125,23 @@ struct AnalysisResultView: View {
         }
     }
     
-    func color(_ selected: IngredientsEffectType) -> Color {
+    private func color(_ selected: IngredientsEffectType) -> Color {
         switch selected {
         case .pros:
             return Color.auraSkinPrimaryColor
         case .cons:
             return Color.auraSkinConsColor
         }
+    }
+
+    private func getTotalIngredients(_ ingredients: [IngredientsEffect]) -> Int {
+        var total: Int = 0
+
+        for ingredient in ingredients {
+            total += ingredient.count
+        }
+
+        return total
     }
 }
 

@@ -23,7 +23,7 @@
 		B282520C2BEF86F200ADABF2 /* IngredientsEffectEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282520B2BEF86F200ADABF2 /* IngredientsEffectEnum.swift */; };
 		B282520E2BEF989500ADABF2 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282520D2BEF989500ADABF2 /* Colors.swift */; };
 		B28252102BEF994000ADABF2 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282520F2BEF994000ADABF2 /* DummyData.swift */; };
-		B28252122BF0DCE000ADABF2 /* AnalysisResultModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28252112BF0DCE000ADABF2 /* AnalysisResultModalView.swift */; };
+		B28252122BF0DCE000ADABF2 /* IngredientsEffectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28252112BF0DCE000ADABF2 /* IngredientsEffectDetailView.swift */; };
 		B28252142BF1027800ADABF2 /* TagModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28252132BF1027800ADABF2 /* TagModel.swift */; };
 		B283B34B2BFCBBA8000D37E0 /* DonutChartComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283B34A2BFCBBA8000D37E0 /* DonutChartComponent.swift */; };
 		B283B34D2BFCEBB7000D37E0 /* SkinTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283B34C2BFCEBB7000D37E0 /* SkinTypeEnum.swift */; };
@@ -69,7 +69,7 @@
 		B282520B2BEF86F200ADABF2 /* IngredientsEffectEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsEffectEnum.swift; sourceTree = "<group>"; };
 		B282520D2BEF989500ADABF2 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		B282520F2BEF994000ADABF2 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
-		B28252112BF0DCE000ADABF2 /* AnalysisResultModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisResultModalView.swift; sourceTree = "<group>"; };
+		B28252112BF0DCE000ADABF2 /* IngredientsEffectDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsEffectDetailView.swift; sourceTree = "<group>"; };
 		B28252132BF1027800ADABF2 /* TagModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagModel.swift; sourceTree = "<group>"; };
 		B283B34A2BFCBBA8000D37E0 /* DonutChartComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonutChartComponent.swift; sourceTree = "<group>"; };
 		B283B34C2BFCEBB7000D37E0 /* SkinTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinTypeEnum.swift; sourceTree = "<group>"; };
@@ -110,6 +110,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B25B49142BFE4C8B00181EFE /* analysis-result */ = {
+			isa = PBXGroup;
+			children = (
+				B28251FA2BEF569300ADABF2 /* AnalysisResultView.swift */,
+				B28252112BF0DCE000ADABF2 /* IngredientsEffectDetailView.swift */,
+			);
+			path = "analysis-result";
+			sourceTree = "<group>";
+		};
 		D952B3942BEF66A000C09E5F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +232,7 @@
 		D9EC3FB32BE91C8C00F4B9E7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B25B49142BFE4C8B00181EFE /* analysis-result */,
 				DA6B7CF92BFB53F700174C13 /* InputIngredientsManualView.swift */,
 				9434ED472BFC62AE0074744F /* SaveProductView.swift */,
 				9434ED392BFC5F110074744F /* ActionChooseSkin.swift */,
@@ -231,9 +241,7 @@
 				D9EC3FB82BE91E8D00F4B9E7 /* ScanView.swift */,
 				D9EC3FBB2BE91EAD00F4B9E7 /* JourneyView.swift */,
 				D9EC3FBD2BE91EBF00F4B9E7 /* ProfileView.swift */,
-				B28251FA2BEF569300ADABF2 /* AnalysisResultView.swift */,
 				B28252042BEF7B7E00ADABF2 /* SwiftUIView.swift */,
-				B28252112BF0DCE000ADABF2 /* AnalysisResultModalView.swift */,
 				D952B3A22BEFC4A800C09E5F /* LoadingView.swift */,
 				F4DC4B532BFCF703008EF955 /* QuizView.swift */,
 			);
@@ -323,7 +331,7 @@
 				9434ED482BFC62AE0074744F /* SaveProductView.swift in Sources */,
 				B28252142BF1027800ADABF2 /* TagModel.swift in Sources */,
 				D9EC3FB72BE91D4600F4B9E7 /* ViewController.swift in Sources */,
-				B28252122BF0DCE000ADABF2 /* AnalysisResultModalView.swift in Sources */,
+				B28252122BF0DCE000ADABF2 /* IngredientsEffectDetailView.swift in Sources */,
 				9434ED3C2BFC5F110074744F /* ActionChooseSkin.swift in Sources */,
 				B282520E2BEF989500ADABF2 /* Colors.swift in Sources */,
 				D9EC3FB92BE91E8D00F4B9E7 /* ScanView.swift in Sources */,
