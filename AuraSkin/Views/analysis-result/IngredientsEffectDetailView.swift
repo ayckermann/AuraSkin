@@ -18,7 +18,7 @@ struct IngredientsEffectDetailView: View {
                         Text(data.title)
                             .font(.body)
                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                        Text(removeHtmlTag(text: data.introtext))
+                        Text(data.introtext == "" ? "-" : removeHtmlTag(text: data.introtext))
                             .font(.subheadline)
                             .foregroundStyle(.gray)
                             .padding(.bottom)
