@@ -98,7 +98,7 @@ struct DonutChartComponent: View {
 
 #Preview {
     @State var ingredients: [GoodOrBadForSkinType] = [
-        AuraSkin.GoodOrBadForSkinType(category: "good", count: 3),
-        AuraSkin.GoodOrBadForSkinType(category: "bad", count: 1)]
+        AuraSkin.GoodOrBadForSkinType(category: "good", count: 13),
+        AuraSkin.GoodOrBadForSkinType(category: "bad", count: 2)]
     return DonutChartComponent(ingredients: ingredients, skinType: .dry)
 }

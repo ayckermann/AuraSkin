@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct IngredientEffectList: View {
-    @State var ingredients: [IngredientsEffect]
-    @State var effectType: IngredientsEffectType
-    @State private var isShowingSheet: Bool = false
+    var ingredients: [IngredientsEffect]
+    var effectType: IngredientsEffectType
     
     init( _ effectType: IngredientsEffectType, _ ingredients: [IngredientsEffect]) {
         self.ingredients = ingredients
@@ -19,76 +18,45 @@ struct IngredientEffectList: View {
     
     var body: some View {
         VStack {
-            HStack {
-                SectionTextLeading(getSectionTitle(effectType))
-                SectionTextTrailing("(\(getTotalIngredients(ingredients)))")
-            }.foregroundStyle(getSectionTitleColor(effectType))
-            
-            Divider()
-                .frame(minHeight: 2)
-                .background(.black)
-            
-            
             ForEach(ingredients, id: \.effect) { item in
-                @State var data: IngredientsEffect = item
-                
-                HStack {
-                    Image(systemName: item.symbol)
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                    
-                    VStack {
-                        Text(item.effect)
-                            .font(.headline)
-                            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
-                        Text(item.description)
-                            .font(.caption)
-                            .frame(maxWidth: .infinity, alignment: .leading)
+                var data: IngredientsEffect = item
+
+                NavigationLink {
+                    IngredientsEffectDetailView(data: data)
+                        .toolbar(.visible, for: .tabBar)
+                } label: {
+                    HStack {
+                        Image(systemName: item.symbol)
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .foregroundStyle(.black)
+
+                        VStack {
+                            Text(item.effect)
+                                .font(.title3)
+                                .foregroundStyle(.black)
+                                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+                            Text(item.description)
+                                .font(.subheadline)
+                                .italic()
+                                .foregroundStyle(.gray)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        }
+                        .padding(.leading)
+
+                        Text("\(item.count)")
+                            .frame(alignment: .trailing)
+                            .foregroundStyle(.gray)
+
+                        Image(systemName: "chevron.right")
+                            .foregroundStyle(.gray)
                     }
-                    
-                    Text(String(item.count))
-                        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .trailing)
+                    .padding(.bottom)
                 }
-                .onTapGesture {
-                    isShowingSheet.toggle()
-                }
-                .sheet(isPresented: $isShowingSheet, content: {
-                    AnalysisResultModalView(isShowingSheet: $isShowingSheet, data: $data)
-                })
-                
-                Divider()
-                .padding(.bottom)
             }
             
-        }.padding(.top)
-    }
-    
-    func getTotalIngredients(_ ingredients: [IngredientsEffect]) -> Int {
-        var total: Int = 0
-        
-        for ingredient in ingredients {
-            total += ingredient.count
         }
-        
-        return total
-    }
-    
-    func getSectionTitle(_ effectType: IngredientsEffectType) -> String {
-        switch effectType {
-        case .pros:
-            return "Pros"
-        case .cons:
-            return "Cons"
-        }
-    }
-    
-    func getSectionTitleColor(_ effectType: IngredientsEffectType) -> Color {
-        switch effectType {
-        case .pros:
-            return Color.auraSkinPrimaryColor
-        case .cons:
-            return Color.auraSkinConsColor
-        }
+        .padding(.top)
     }
 }
 
