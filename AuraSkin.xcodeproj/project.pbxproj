@@ -49,6 +49,7 @@
 		F4DC4B502BFCF51D008EF955 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC4B4F2BFCF51D008EF955 /* Question.swift */; };
 		F4DC4B522BFCF68B008EF955 /* DataQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC4B512BFCF68B008EF955 /* DataQuiz.swift */; };
 		F4DC4B542BFCF703008EF955 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC4B532BFCF703008EF955 /* QuizView.swift */; };
+		DA6B7CFA2BFB53F700174C13 /* InputIngredientsManualView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6B7CF92BFB53F700174C13 /* InputIngredientsManualView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +95,7 @@
 		F4DC4B4F2BFCF51D008EF955 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		F4DC4B512BFCF68B008EF955 /* DataQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataQuiz.swift; sourceTree = "<group>"; };
 		F4DC4B532BFCF703008EF955 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
+		DA6B7CF92BFB53F700174C13 /* InputIngredientsManualView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputIngredientsManualView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +223,7 @@
 		D9EC3FB32BE91C8C00F4B9E7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DA6B7CF92BFB53F700174C13 /* InputIngredientsManualView.swift */,
 				9434ED472BFC62AE0074744F /* SaveProductView.swift */,
 				9434ED392BFC5F110074744F /* ActionChooseSkin.swift */,
 				9434ED3A2BFC5F110074744F /* MedicalDisclaimerView.swift */,
@@ -313,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA6B7CFA2BFB53F700174C13 /* InputIngredientsManualView.swift in Sources */,
 				9434ED3E2BFC5F110074744F /* TermsConditionView.swift in Sources */,
 				B28252052BEF7B7E00ADABF2 /* SwiftUIView.swift in Sources */,
 				B28252092BEF84AB00ADABF2 /* IngredientsEffectListComponent.swift in Sources */,
@@ -489,12 +493,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AuraSkin/Preview Content\"";
-				DEVELOPMENT_TEAM = 7R7X9XJ9WV;
+				DEVELOPMENT_TEAM = HNLBPGWVZW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AuraSkin/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Take photos";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
@@ -505,7 +508,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.aurora.AuraSkin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aurora.AuraSkin4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -521,12 +524,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AuraSkin/Preview Content\"";
-				DEVELOPMENT_TEAM = 7R7X9XJ9WV;
+				DEVELOPMENT_TEAM = HNLBPGWVZW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AuraSkin/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Take photos";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
@@ -537,7 +539,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.aurora.AuraSkin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aurora.AuraSkin4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

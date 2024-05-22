@@ -20,6 +20,10 @@ struct ScanView: View {
     @Binding var isSelected: Bool
 //    @State var isClickCapture: Bool = false
     @Binding var isFlash: Bool
+    
+    // for show modal input manual
+    
+    @State private var show_modal_input_manual: Bool = false
 
     
     
@@ -82,12 +86,14 @@ struct ScanView: View {
                 })
                 
                 Spacer()
-                Button(action: {
-                    navManualInputFunction()
-                }, label: {
+                
+                NavigationLink {
+                    InputIngredientsManualView()
+                } label: {
                     Image(systemName: "keyboard")
                         .font(.system(size: 33))
-                })
+                }
+                
                 Spacer()
                 
                 
