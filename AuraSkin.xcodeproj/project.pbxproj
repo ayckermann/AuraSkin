@@ -117,6 +117,7 @@
 				B282520F2BEF994000ADABF2 /* DummyData.swift */,
 				F4DC4B512BFCF68B008EF955 /* DataQuiz.swift */,
 				B283B34C2BFCEBB7000D37E0 /* SkinTypeEnum.swift */,
+				F4DC4B512BFCF68B008EF955 /* DataQuiz.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
