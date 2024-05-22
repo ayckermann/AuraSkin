@@ -34,7 +34,7 @@ struct ProfileView: View {
                 List {
                     Section {
                         ActionChooseSkin()
-                        navProfileList(img: "person.fill", title: "Check Your Skin", detail: "Quiz for determine your skin type", view: MedicalDisclaimerView())
+                        navProfileList(img: "person.fill", title: "Check Your Skin", detail: "Quiz for determine your skin type", view: QuizView())
                     }
                     
                     Section {
