@@ -69,7 +69,7 @@ struct ScanViewRoute: View {
                 
                 ScanView(captureFunction: {
                     cameraService.capturePhoto()
-                }, navManualInputFunction: testButton, flashFunction: {
+                }, flashFunction: {
                     toggleFlash()
                 }, selectedImage: $capturedImage, isSelected: $isCaptured, isFlash: $isFlash)
                 
