@@ -7,6 +7,13 @@
 
 import SwiftUI
 
+extension UISegmentedControl {
+    override open func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        self.setContentHuggingPriority(.defaultLow, for: .vertical)
+    }
+}
+
 struct AnalysisResultView: View {
     @State var apiResponse: IngredientsAnalysisResponse = IngredientsAnalysisResponse()
     @State var prosConsSegment: IngredientsEffectType = IngredientsEffectType.pros
@@ -24,15 +31,12 @@ struct AnalysisResultView: View {
     var model = AnalysisResultViewModel()
     var apiServices: APIServices = APIServices()
     var ingredients: String
-    
+    var skinType: SkinType = .oily
+
     init(ingredients: String) {
-        //        UISegmentedControl.appearance().layer.cornerRadius = 20
-        //        UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(color(prosConsSegment))
-        //        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
-        //        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.gray], for: .normal)
         UISegmentedControl.appearance().setTitleTextAttributes([.font: UIFont.boldSystemFont(ofSize: 14)], for: .normal)
         UISegmentedControl.appearance().backgroundColor = .systemBackground.withAlphaComponent(0.10)
-        
+
         self.ingredients = ingredients
     }
     
@@ -52,7 +56,7 @@ struct AnalysisResultView: View {
                                     .opacity(0.5)
                             }
 
-                            DonutChartComponent(ingredients: skinRelatedIngredients, skinType: .dry)
+                            DonutChartComponent(ingredients: skinRelatedIngredients, skinType: skinType)
                                 .aspectRatio(1.5, contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
                                 .padding(.bottom)
 
@@ -68,8 +72,9 @@ struct AnalysisResultView: View {
                                 Text("Hazard \(getTotalIngredients(consIngredients))")
                                     .tag(IngredientsEffectType.cons)
                             }
+                            .frame(height: 40)
                             .colorMultiply(color(prosConsSegment))
-                            .cornerRadius(20)
+                            .cornerRadius(14)
                             .pickerStyle(.segmented)
                             
                             switch prosConsSegment {
@@ -95,8 +100,8 @@ struct AnalysisResultView: View {
                     } catch {
                         print(error.localizedDescription)
                     }
-                    
-                    self.skinRelatedIngredients = model.getSkinRelatedIngredients(item: apiResponse, type: .dry)
+
+                    self.skinRelatedIngredients = model.getSkinRelatedIngredients(item: apiResponse, type: skinType)
                     self.prosIngredients = model.getProsIngredients(data: apiResponse)
                     self.consIngredients = model.getConsIngredients(data: apiResponse)
 
