@@ -11,140 +11,105 @@ import PhotosUI
 struct ScanView: View {
     
     var captureFunction : () -> Void
+    var navManualInputFunction : () -> Void?
     var flashFunction: () -> Void?
-    
+
     @State var photosPickerItem: PhotosPickerItem?
     @Binding var selectedImage: UIImage?
     
     @Binding var isSelected: Bool
-    //    @State var isClickCapture: Bool = false
+//    @State var isClickCapture: Bool = false
     @Binding var isFlash: Bool
     
+    // for show modal input manual
+    
+    @State private var show_modal_input_manual: Bool = false
+
     
     
     var body: some View {
         
-        
-
-                
-            VStack{
-                VStack {
-                    HStack(){
-                        Spacer()
-                        Button(action: {
-                            flashFunction()
-                            isFlash.toggle()
-                            
-                        }, label: {
-                            Image(systemName: isFlash ? "bolt.fill" : "bolt.slash.fill")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 26)
-                            
-                        })
-                        Spacer()
-                            .frame(width: 35)
-                    }
-                    .padding(.top, 15)
-                    
-                    Text("Scan Ingredients")
-                        .font(.system(size: 24))
-                        .fontWeight(.bold)
-                    
-                    Spacer()
-                        .frame(height: 16)
-                    Text("Place text inside the frame and keep\nyour device steady")
-                        .multilineTextAlignment(.center)
-                        .font(.system(size: 15))
-                        .fontWeight(.regular)
-                    
-                    Spacer()
-                        .frame(height: 16)
-                    
-                }
-                //                .background(.grayOverlay)
-                
-      
+        VStack{
+            
+            HStack(){
                 Spacer()
-//                    .frame(height: 476)
-                
-                HStack(){
-                    Spacer()
-                    PhotosPicker(selection: $photosPickerItem, matching: .images)
-                    {
-                        Image(systemName: "photo.stack")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 33)
-                        
-                    }.onChange(of: photosPickerItem) { _, _ in
-                        Task{
-                            if let photosPickerItem,
-                               let data = try? await photosPickerItem.loadTransferable(type: Data.self)
-                            {
-                                if let image = UIImage(data: data){
-                                    selectedImage = image
-                                    isSelected = true
-                                }
+                Button(action: {
+                    flashFunction()
+                    isFlash.toggle()
+
+                }, label: {
+                    Image(systemName: isFlash ? "bolt.fill" : "bolt.slash.fill")
+                        .font(.system(size: 26))
+                    
+                })
+                Spacer()
+                    .frame(width: 35)
+            }
+            
+            Spacer()
+            
+            HStack(){
+                Spacer()
+                PhotosPicker(selection: $photosPickerItem, matching: .images)
+                {
+                    Image(systemName: "photo.stack")
+                        .font(.system(size: 33))
+                    
+                }.onChange(of: photosPickerItem) { _, _ in
+                    Task{
+                        if let photosPickerItem,
+                           let data = try? await photosPickerItem.loadTransferable(type: Data.self)
+                        {
+                            if let image = UIImage(data: data){
+                                selectedImage = image
+                                isSelected = true                              
                             }
-                            
-                            photosPickerItem = nil
-                            
-                        }
-                    }
-                    .coordinateSpace(name: "photospicker")
-
-                    Spacer()
-                    
-                    
-                    
-                    Button(action: {
-                        captureFunction()
-                        if(isFlash){
-                            flashFunction()
-                            isFlash.toggle()
                         }
                         
-                    }, label: {
-                        Image(systemName: "circle")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 75)
-                    })
-                    
-                    Spacer()
-                    
-                    NavigationLink {
-                        InputIngredientsManualView()
-                    } label: {
-                        Image(systemName: "keyboard")
-                            .font(.system(size: 33))
+                        photosPickerItem = nil
+                        
                     }
-                    .coordinateSpace(name: "manualbutton")
-
-                    Spacer()
-                    
-                    
                 }
-                .padding(.vertical, 26)
-                //                .background(.grayOverlay, ignoresSafeAreaEdges: .all)
+                
+                
+                Spacer()
+                Button(action: {
+                    captureFunction()
+                    if(isFlash){
+                        flashFunction()
+                        isFlash.toggle()
+                    }
+                    
+                }, label: {
+                    Image(systemName: "circle")
+                        .font(.system(size: 96))
+                })
+                
+                Spacer()
+                
+                NavigationLink {
+                    InputIngredientsManualView()
+                } label: {
+                    Image(systemName: "keyboard")
+                        .font(.system(size: 33))
+                }
+                
+                Spacer()
+                
                 
             }
-            .foregroundStyle(.white)
             
-    
-
+            Spacer()
+                .frame(height: 50)
+            
+        }
+        .foregroundStyle(.white)
         
         
-       
     }
     
-    
 }
 
-
-
-
-#Preview {
-    ScanView(captureFunction: testButton, flashFunction: testButton, selectedImage: .constant(UIImage(systemName: "xmark")), isSelected: .constant(false), isFlash: .constant(false)  )
-}
+//#Preview {
+//        ScanView(captureFunction: testButton, navManualInputFunction: testButton, flashFunction: testButton)
+//}
