@@ -19,7 +19,7 @@ struct IngredientEffectList: View {
     var body: some View {
         VStack {
             ForEach(ingredients, id: \.effect) { item in
-                var data: IngredientsEffect = item
+                let data: IngredientsEffect = item
 
                 NavigationLink {
                     IngredientsEffectDetailView(data: data)

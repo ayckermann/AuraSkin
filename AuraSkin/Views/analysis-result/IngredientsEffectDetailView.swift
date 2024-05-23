@@ -46,6 +46,6 @@ struct IngredientsEffectDetailView: View {
 
 
 #Preview {
-    var data: IngredientsEffect = prosIngredientsDummy[0]
+    let data: IngredientsEffect = prosIngredientsDummy[0]
     return IngredientsEffectDetailView(data: data)
 }
