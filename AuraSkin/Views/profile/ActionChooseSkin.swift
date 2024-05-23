@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ActionChooseSkin: View {
     @State private var showingOptions = false
-    @State private var selection = "None"
+//    @State private var selection: SkinType = .none
+    @AppStorage("skinTypePersistance") var skinTypePersistance: SkinType = .none
     
     var body: some View {
         Button(action: {
@@ -25,7 +26,7 @@ struct ActionChooseSkin: View {
                         Text("Skin Profile")
                         Spacer()
                             .frame(height: 3)
-                        Text(selection)
+                        Text(skinTypePersistance.description)
                             .fontWeight(.light)
                             .font(.system(size: 12))
                             .foregroundStyle(.gray)
@@ -35,19 +36,19 @@ struct ActionChooseSkin: View {
         })
         .confirmationDialog("Select Your Skin!", isPresented: $showingOptions, titleVisibility: .visible) {
             Button("Oily") {
-                selection = "Oily"
+                skinTypePersistance = .oily
             }
 
             Button("Dry") {
-                selection = "Dry"
+                skinTypePersistance = .dry
             }
 
             Button("Combination") {
-                selection = "Combination"
+                skinTypePersistance = .combination
             }
             
             Button("Normal") {
-                selection = "Normal"
+                skinTypePersistance = .normal
             }
         }
     }

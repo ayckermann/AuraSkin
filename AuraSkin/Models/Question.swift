@@ -9,6 +9,17 @@ import Foundation
 
 struct Questions {
     let query: String
-    let answerText: [String]
+    let questionAnswer: [QuestionAnswer]
+    let point: Int
     let progres: Double
+}
+
+struct QuestionAnswer{
+    let forSkinType: SkinType
+    let answerText: String
+}
+
+struct UserAnswer{
+    let forSkinType: SkinType
+    let point: Int
 }
