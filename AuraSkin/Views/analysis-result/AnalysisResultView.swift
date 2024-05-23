@@ -15,6 +15,7 @@ extension UISegmentedControl {
 }
 
 struct AnalysisResultView: View {
+    @State private var networkMonitor: NetworkMonitor = NetworkMonitor()
     @State var apiResponse: IngredientsAnalysisResponse = IngredientsAnalysisResponse()
     @State var prosConsSegment: IngredientsEffectType = IngredientsEffectType.pros
     @State var data: IngredientsAnalysisResponse?
@@ -23,6 +24,14 @@ struct AnalysisResultView: View {
     @State var showLoading = false
     @State var showSaveProduct = false
     @State var skinRelatedIngredients: [GoodOrBadForSkinType] = [
+        .init(category: "good", count: 0),
+        .init(category: "bad", count: 0)
+    ]
+    @State var skinRelatedIngredientsCombOily: [GoodOrBadForSkinType] = [
+        .init(category: "good", count: 0),
+        .init(category: "bad", count: 0)
+    ]
+    @State var skinRelatedIngredientsCombDry: [GoodOrBadForSkinType] = [
         .init(category: "good", count: 0),
         .init(category: "bad", count: 0)
     ]
@@ -45,53 +54,71 @@ struct AnalysisResultView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                if showLoading && !isHitApi {
-                    LoadingView()
+                if !networkMonitor.isConnected {
+                    NetworkUnavailableView()
                 } else {
-                    ScrollView {
-                        VStack {
-                            HStack {
-                                Text("Skin Type Related Ingredients")
-                                    .font(.title2)
-                                    .fontWeight(.bold)
-                                    .foregroundStyle(Color.auraSkinPrimaryColor)
-                                    .opacity(0.5)
-                            }
+                    if showLoading && !isHitApi {
+                        LoadingView()
+                    } else {
+                        ScrollView {
+                            VStack {
+                                HStack {
+                                    Text("Skin Type Related Ingredients")
+                                        .font(.title2)
+                                        .fontWeight(.bold)
+                                        .foregroundStyle(Color.auraSkinPrimaryColor)
+                                        .opacity(0.5)
+                                }
 
-                            DonutChartComponent(ingredients: skinRelatedIngredients, skinType: skinType)
-                                .aspectRatio(1.5, contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-                                .padding(.bottom)
+                                switch skinType {
+                                    case .combination:
+                                        HStack {
+                                            DonutChartComponent(ingredients: skinRelatedIngredientsCombDry, skinType: .combinationDry)
+                                                .aspectRatio(1, contentMode: .fit)
+                                                .padding(.bottom)
 
-                            Text("Other Non-Skin Type Related Ingredients")
-                                .font(.subheadline)
-                                .fontWeight(.semibold)
-                                .foregroundStyle(.gray)
-                                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+                                            DonutChartComponent(ingredients: skinRelatedIngredientsCombOily, skinType: .combinationOily)
+                                                .aspectRatio(1, contentMode: .fit)
+                                                .padding(.bottom)
+                                        }
+                                    default:
+                                        DonutChartComponent(ingredients: skinRelatedIngredients, skinType: skinType)
+                                            .aspectRatio(1.1, contentMode: .fit)
+                                            .padding(.bottom)
+                                }
 
-                            Picker("ProsConsSegment", selection: $prosConsSegment) {
-                                Text("Positive Effect \(getTotalIngredients(prosIngredients))")
-                                    .tag(IngredientsEffectType.pros)
-                                Text("Hazard \(getTotalIngredients(consIngredients))")
-                                    .tag(IngredientsEffectType.cons)
+                                Text("Other Non-Skin Type Related Ingredients")
+                                    .font(.subheadline)
+                                    .fontWeight(.semibold)
+                                    .foregroundStyle(.gray)
+                                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+
+                                Picker("ProsConsSegment", selection: $prosConsSegment) {
+                                    Text("Positive Effect \(getTotalIngredients(prosIngredients))")
+                                        .tag(IngredientsEffectType.pros)
+                                    Text("Hazard \(getTotalIngredients(consIngredients))")
+                                        .tag(IngredientsEffectType.cons)
+                                }
+                                .frame(height: 40)
+                                .colorMultiply(color(prosConsSegment))
+                                .cornerRadius(14)
+                                .pickerStyle(.segmented)
+
+                                switch prosConsSegment {
+                                    case .cons:
+                                        IngredientEffectList(.cons, consIngredients)
+                                            .padding(.horizontal)
+                                    default:
+                                        IngredientEffectList(.pros, prosIngredients)
+                                            .padding(.horizontal)
+                                }
                             }
-                            .frame(height: 40)
-                            .colorMultiply(color(prosConsSegment))
-                            .cornerRadius(14)
-                            .pickerStyle(.segmented)
-                            
-                            switch prosConsSegment {
-                            case .cons:
-                                IngredientEffectList(.cons, consIngredients)
-                                    .padding(.horizontal)
-                            default:
-                                IngredientEffectList(.pros, prosIngredients)
-                                    .padding(.horizontal)
-                            }
+                            .padding(.horizontal)
                         }
-                        .padding(.horizontal)
                     }
                 }
-                
+
+
             }
             .onAppear{
                 skinType = skinTypePersistance
@@ -106,7 +133,13 @@ struct AnalysisResultView: View {
                         print(error.localizedDescription)
                     }
 
-                    self.skinRelatedIngredients = model.getSkinRelatedIngredients(item: apiResponse, type: skinType)
+                    if skinType == SkinType.combination {
+                        self.skinRelatedIngredientsCombOily = model.getSkinRelatedIngredients(item: apiResponse, type: .oily)
+                        self.skinRelatedIngredientsCombDry = model.getSkinRelatedIngredients(item: apiResponse, type: .dry)
+                    } else {
+                        self.skinRelatedIngredients = model.getSkinRelatedIngredients(item: apiResponse, type: skinType)
+                    }
+
                     self.prosIngredients = model.getProsIngredients(data: apiResponse)
                     self.consIngredients = model.getConsIngredients(data: apiResponse)
 

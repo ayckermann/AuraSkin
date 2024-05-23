@@ -39,6 +39,10 @@ struct DonutChartComponent: View {
         // didn't choose skin type, harusnya impossible masuk ke case ini
         case .none:
             self.skinTypeString = "none"
+        case .combinationDry:
+            self.skinTypeString = "Dry"
+        case .combinationOily:
+            self.skinTypeString = "Oily"
         }
     }
     
@@ -69,7 +73,7 @@ struct DonutChartComponent: View {
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     
                     Text("Good for \(skinTypeString)")
-                        .font(.subheadline)
+                        .font(skinType == .combinationDry || skinType == .combinationOily ? .caption2 : .subheadline)
                         .fontWeight(.bold)
                         .foregroundStyle(.gray)
                         .padding(.bottom)
@@ -79,7 +83,7 @@ struct DonutChartComponent: View {
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     
                     Text("Bad for \(skinTypeString)")
-                        .font(.subheadline)
+                        .font(skinType == .combinationDry || skinType == .combinationOily ? .caption2 : .subheadline)
                         .fontWeight(.bold)
                         .foregroundStyle(.gray)
                         .padding(.bottom)
@@ -89,7 +93,7 @@ struct DonutChartComponent: View {
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     
                     Text("Good for \(skinTypeString)")
-                        .font(.subheadline)
+                        .font(skinType == .combinationDry || skinType == .combinationOily ? .caption2 : .subheadline)
                         .fontWeight(.bold)
                         .foregroundStyle(.gray)
                         .padding(.bottom)
@@ -103,5 +107,5 @@ struct DonutChartComponent: View {
     @State var ingredients: [GoodOrBadForSkinType] = [
         AuraSkin.GoodOrBadForSkinType(category: "good", count: 13),
         AuraSkin.GoodOrBadForSkinType(category: "bad", count: 2)]
-    return DonutChartComponent(ingredients: ingredients, skinType: .dry)
+    return DonutChartComponent(ingredients: ingredients, skinType: .combination)
 }

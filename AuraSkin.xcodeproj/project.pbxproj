@@ -27,6 +27,8 @@
 		B28252142BF1027800ADABF2 /* TagModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28252132BF1027800ADABF2 /* TagModel.swift */; };
 		B283B34B2BFCBBA8000D37E0 /* DonutChartComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283B34A2BFCBBA8000D37E0 /* DonutChartComponent.swift */; };
 		B283B34D2BFCEBB7000D37E0 /* SkinTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283B34C2BFCEBB7000D37E0 /* SkinTypeEnum.swift */; };
+		B2CD11C12BFE663200C44A1C /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CD11C02BFE663200C44A1C /* NetworkMonitor.swift */; };
+		B2CD11C32BFE670900C44A1C /* NetworkUnavailableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CD11C22BFE670900C44A1C /* NetworkUnavailableView.swift */; };
 		D952B3912BEF5AF200C09E5F /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3902BEF5AF200C09E5F /* CameraView.swift */; };
 		D952B3962BEF66E000C09E5F /* TestFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3952BEF66E000C09E5F /* TestFunction.swift */; };
 		D952B3982BEF6C1B00C09E5F /* ScanViewRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3972BEF6C1B00C09E5F /* ScanViewRoute.swift */; };
@@ -76,6 +78,8 @@
 		B28252132BF1027800ADABF2 /* TagModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagModel.swift; sourceTree = "<group>"; };
 		B283B34A2BFCBBA8000D37E0 /* DonutChartComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonutChartComponent.swift; sourceTree = "<group>"; };
 		B283B34C2BFCEBB7000D37E0 /* SkinTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinTypeEnum.swift; sourceTree = "<group>"; };
+		B2CD11C02BFE663200C44A1C /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		B2CD11C22BFE670900C44A1C /* NetworkUnavailableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUnavailableView.swift; sourceTree = "<group>"; };
 		D952B3902BEF5AF200C09E5F /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		D952B3952BEF66E000C09E5F /* TestFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFunction.swift; sourceTree = "<group>"; };
 		D952B3972BEF6C1B00C09E5F /* ScanViewRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewRoute.swift; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 				B282520F2BEF994000ADABF2 /* DummyData.swift */,
 				B283B34C2BFCEBB7000D37E0 /* SkinTypeEnum.swift */,
 				F4DC4B512BFCF68B008EF955 /* DataQuiz.swift */,
+				B2CD11C02BFE663200C44A1C /* NetworkMonitor.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -276,6 +281,7 @@
 				B28252042BEF7B7E00ADABF2 /* SwiftUIView.swift */,
 				D952B3A22BEFC4A800C09E5F /* LoadingView.swift */,
 				F4DC4B532BFCF703008EF955 /* QuizView.swift */,
+				B2CD11C22BFE670900C44A1C /* NetworkUnavailableView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -364,12 +370,14 @@
 				9434ED482BFC62AE0074744F /* SaveProductView.swift in Sources */,
 				B28252142BF1027800ADABF2 /* TagModel.swift in Sources */,
 				D9EC3FB72BE91D4600F4B9E7 /* ViewController.swift in Sources */,
+				B2CD11C12BFE663200C44A1C /* NetworkMonitor.swift in Sources */,
 				B28252122BF0DCE000ADABF2 /* IngredientsEffectDetailView.swift in Sources */,
 				9434ED3C2BFC5F110074744F /* ActionChooseSkin.swift in Sources */,
 				B282520E2BEF989500ADABF2 /* Colors.swift in Sources */,
 				D9EC3FB92BE91E8D00F4B9E7 /* ScanView.swift in Sources */,
 				B282520C2BEF86F200ADABF2 /* IngredientsEffectEnum.swift in Sources */,
 				D983CF662BEF107D00588417 /* APIServices.swift in Sources */,
+				B2CD11C32BFE670900C44A1C /* NetworkUnavailableView.swift in Sources */,
 				B28251FD2BEF5DED00ADABF2 /* TextComponents.swift in Sources */,
 				F4DC4B542BFCF703008EF955 /* QuizView.swift in Sources */,
 				9434ED452BFC61CB0074744F /* DatePickerComponent.swift in Sources */,

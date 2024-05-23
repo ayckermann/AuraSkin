@@ -244,6 +244,7 @@ class AnalysisResultViewModel {
                     if let badForDrySkin = ingredient.booleanProperties?.badForDrySkin, badForDrySkin {
                         skinRelatedIngredients[1].count += 1
                     }
+
                 }
             case .normal:
                 print("NORMAL")
@@ -264,6 +265,12 @@ class AnalysisResultViewModel {
             // didn't choose skin type, harusnya impossible masuk ke case ini
             case .none:
                 print("NONE")
+            case .combinationDry:
+                // hanya untuk kepentingan generate chart
+                print()
+            case .combinationOily:
+                // hanya untuk kepentingan generate chart
+                print()
                 
             }
         }
