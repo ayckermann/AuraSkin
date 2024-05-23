@@ -13,7 +13,7 @@ struct ProfileView: View {
     
     var body: some View {
         
-        NavigationSplitView {
+        NavigationStack {
             VStack {
                 VStack {
                     Text("Hi, Aurora!")
@@ -35,6 +35,7 @@ struct ProfileView: View {
                 List {
                     Section {
                         ActionChooseSkin()
+                            .foregroundStyle(.black)
                         navProfileList(img: "person.fill", title: "Check Your Skin", detail: "Quiz for determine your skin type", view: QuizView())
                     }
                     
@@ -50,8 +51,6 @@ struct ProfileView: View {
             }
 
                             
-        } detail: {
-            Text("Select Profile")
         }
 
     }
