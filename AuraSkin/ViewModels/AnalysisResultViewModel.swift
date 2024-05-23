@@ -260,7 +260,15 @@ class AnalysisResultViewModel {
                 case .combination:
                     print("COMBINATION")
                 case .sensitive:
-                    print("SENSITIVE")
+                    for ingredient in ingredientsTable {
+                        if let goodForSensitiveSkin = ingredient.booleanProperties?.goodForSensitiveSkin, goodForSensitiveSkin {
+                            skinRelatedIngredients[0].count += 1
+                        }
+
+                        if let badForSensitiveSkin = ingredient.booleanProperties?.badForSensitiveSkin, badForSensitiveSkin {
+                            skinRelatedIngredients[1].count += 1
+                        }
+                    }
             }
         }
 

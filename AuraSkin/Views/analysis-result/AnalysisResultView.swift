@@ -32,7 +32,7 @@ struct AnalysisResultView: View {
     var model = AnalysisResultViewModel()
     var apiServices: APIServices = APIServices()
     var ingredients: String
-    var skinType: SkinType = .oily
+    var skinType: SkinType = .sensitive
 
     init(ingredients: String) {
         UISegmentedControl.appearance().setTitleTextAttributes([.font: UIFont.boldSystemFont(ofSize: 14)], for: .normal)
