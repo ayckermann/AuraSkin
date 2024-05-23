@@ -22,7 +22,6 @@ struct ViewController : View {
                 .tag(1)
             ScanViewRoute()
                 .tabItem {
-                    
                     Label("Scan", systemImage: selection == 2 ? "camera.fill" : "camera")
                         .environment(\.symbolVariants, .none)
                     
@@ -37,7 +36,7 @@ struct ViewController : View {
                 }
                 .tag(3)
         }
-        .clipShape(UnevenRoundedRectangle(cornerRadii: RectangleCornerRadii(topLeading: 10, topTrailing: 10)))
+    
     }
 }
 
