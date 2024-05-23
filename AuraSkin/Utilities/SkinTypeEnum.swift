@@ -8,5 +8,7 @@
 import Foundation
 
 enum SkinType {
-    case normal, oily, dry, combination, sensitive
+    case normal, oily, dry, combination, sensitive, combinationDry, combinationOily
 }
+
+// combinationDry & combinationOily dibuat hanya untuk kepentingan generate chart. bukan sebagai skintype riil ya cuyyyyy
