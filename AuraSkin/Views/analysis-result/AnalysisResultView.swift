@@ -27,12 +27,20 @@ struct AnalysisResultView: View {
         .init(category: "good", count: 0),
         .init(category: "bad", count: 0)
     ]
+    @State var skinRelatedIngredientsCombOily: [GoodOrBadForSkinType] = [
+        .init(category: "good", count: 0),
+        .init(category: "bad", count: 0)
+    ]
+    @State var skinRelatedIngredientsCombDry: [GoodOrBadForSkinType] = [
+        .init(category: "good", count: 0),
+        .init(category: "bad", count: 0)
+    ]
     @State var isHitApi: Bool = false
 
     var model = AnalysisResultViewModel()
     var apiServices: APIServices = APIServices()
     var ingredients: String
-    var skinType: SkinType = .sensitive
+    var skinType: SkinType = .combination
 
     init(ingredients: String) {
         UISegmentedControl.appearance().setTitleTextAttributes([.font: UIFont.boldSystemFont(ofSize: 14)], for: .normal)
@@ -60,9 +68,22 @@ struct AnalysisResultView: View {
                                         .opacity(0.5)
                                 }
 
-                                DonutChartComponent(ingredients: skinRelatedIngredients, skinType: skinType)
-                                    .aspectRatio(1.5, contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-                                    .padding(.bottom)
+                                switch skinType {
+                                    case .combination:
+                                        HStack {
+                                            DonutChartComponent(ingredients: skinRelatedIngredientsCombDry, skinType: .combinationDry)
+                                                .aspectRatio(1, contentMode: .fit)
+                                                .padding(.bottom)
+
+                                            DonutChartComponent(ingredients: skinRelatedIngredientsCombOily, skinType: .combinationOily)
+                                                .aspectRatio(1, contentMode: .fit)
+                                                .padding(.bottom)
+                                        }
+                                    default:
+                                        DonutChartComponent(ingredients: skinRelatedIngredients, skinType: skinType)
+                                            .aspectRatio(1.1, contentMode: .fit)
+                                            .padding(.bottom)
+                                }
 
                                 Text("Other Non-Skin Type Related Ingredients")
                                     .font(.subheadline)
@@ -107,7 +128,13 @@ struct AnalysisResultView: View {
                         print(error.localizedDescription)
                     }
 
-                    self.skinRelatedIngredients = model.getSkinRelatedIngredients(item: apiResponse, type: skinType)
+                    if skinType == SkinType.combination {
+                        self.skinRelatedIngredientsCombOily = model.getSkinRelatedIngredients(item: apiResponse, type: .oily)
+                        self.skinRelatedIngredientsCombDry = model.getSkinRelatedIngredients(item: apiResponse, type: .dry)
+                    } else {
+                        self.skinRelatedIngredients = model.getSkinRelatedIngredients(item: apiResponse, type: skinType)
+                    }
+
                     self.prosIngredients = model.getProsIngredients(data: apiResponse)
                     self.consIngredients = model.getConsIngredients(data: apiResponse)
 

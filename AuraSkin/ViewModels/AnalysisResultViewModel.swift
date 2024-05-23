@@ -269,6 +269,12 @@ class AnalysisResultViewModel {
                             skinRelatedIngredients[1].count += 1
                         }
                     }
+                case .combinationDry:
+                    // hanya untuk kepentingan generate chart
+                    print()
+                case .combinationOily:
+                    // hanya untuk kepentingan generate chart
+                    print()
             }
         }
 
