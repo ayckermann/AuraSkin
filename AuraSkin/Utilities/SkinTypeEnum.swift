@@ -7,6 +7,26 @@
 
 import Foundation
 
-enum SkinType {
-    case normal, oily, dry, combination, sensitive
+enum SkinType: String, CaseIterable, CustomStringConvertible {
+    
+    case normal, oily, dry, combination, sensitive, none
+    
+    var description: String {
+        
+        switch self {
+            
+        case .normal:
+            return "Normal"
+        case .oily:
+            return "Oily"
+        case .dry:
+            return "Dry"
+        case .combination:
+            return "Combination"
+        case .sensitive:
+            return "Sensitive"
+        case .none:
+            return ""
+        }
+    }
 }

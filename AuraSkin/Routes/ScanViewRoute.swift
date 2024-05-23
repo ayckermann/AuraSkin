@@ -10,9 +10,6 @@ import Mantis
 
 struct ScanViewRoute: View {
     
-/*    @AppStorage("isFirstTimeUser") */var isFirstTimeUser = true
-    
-    
     let cameraService = CameraServices()
     
     @State var capturedImage: UIImage?
@@ -21,7 +18,7 @@ struct ScanViewRoute: View {
     @State var isFlash = false
     @State var isHideInstruction = true
     
-    @State private var presetFixedRatioType: Mantis.PresetFixedRatioType = .canUseMultiplePresetFixedRatio()
+    @AppStorage("skinTypePersistance") var skinTypePersistance: SkinType = .none
     
     func toggleFlash() {
         
@@ -82,7 +79,7 @@ struct ScanViewRoute: View {
                 
             }
             .onAppear {
-                if(isFirstTimeUser){
+                if(skinTypePersistance == .none){
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                         self.isHideInstruction = false
                     }

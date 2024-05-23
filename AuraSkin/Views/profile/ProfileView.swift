@@ -9,9 +9,10 @@ import SwiftUI
 
 struct ProfileView: View {
     @State private var showingOptions = false
-    @State private var selection = "None"
+//    @State private var selection = "None"
     
     var body: some View {
+        
         NavigationSplitView {
             VStack {
                 VStack {
