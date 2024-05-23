@@ -21,7 +21,7 @@ struct ViewController : View {
             tempChooseSkinType()
         }  else{
             TabView(selection : $selection){
-                ProfileView()
+                ProductsView()
                     .tabItem {
                         Label("Products", systemImage: selection == 1 ? "bookmark.fill" : "bookmark")
                             .environment(\.symbolVariants, .none)

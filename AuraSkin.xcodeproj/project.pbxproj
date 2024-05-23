@@ -42,6 +42,7 @@
 		D98F12112BFE52C100B347D6 /* ScanInstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98F12102BFE52C100B347D6 /* ScanInstructionView.swift */; };
 		D98F12132BFE52F700B347D6 /* ScanInstructionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98F12122BFE52F700B347D6 /* ScanInstructionComponent.swift */; };
 		D98F12342BFF457C00B347D6 /* ProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98F12332BFF457C00B347D6 /* ProductsView.swift */; };
+		D98F12362BFF7EDD00B347D6 /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98F12352BFF7EDD00B347D6 /* QuizViewModel.swift */; };
 		D9EC3FA62BE91C8500F4B9E7 /* AuraSkinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EC3FA52BE91C8500F4B9E7 /* AuraSkinApp.swift */; };
 		D9EC3FAA2BE91C8700F4B9E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9EC3FA92BE91C8700F4B9E7 /* Assets.xcassets */; };
 		D9EC3FAD2BE91C8700F4B9E7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9EC3FAC2BE91C8700F4B9E7 /* Preview Assets.xcassets */; };
@@ -89,6 +90,7 @@
 		D98F12102BFE52C100B347D6 /* ScanInstructionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanInstructionView.swift; sourceTree = "<group>"; };
 		D98F12122BFE52F700B347D6 /* ScanInstructionComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanInstructionComponent.swift; sourceTree = "<group>"; };
 		D98F12332BFF457C00B347D6 /* ProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsView.swift; sourceTree = "<group>"; };
+		D98F12352BFF7EDD00B347D6 /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
 		D9EC3FA22BE91C8500F4B9E7 /* AuraSkin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuraSkin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9EC3FA52BE91C8500F4B9E7 /* AuraSkinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuraSkinApp.swift; sourceTree = "<group>"; };
 		D9EC3FA92BE91C8700F4B9E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				D952B3992BEF9A7900C09E5F /* ImageCropper.swift */,
 				B28252062BEF821400ADABF2 /* AnalysisResultViewModel.swift */,
 				D952B3A62BEFC59700C09E5F /* OpticalCharRecognition.swift */,
+				D98F12352BFF7EDD00B347D6 /* QuizViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA6B7CFA2BFB53F700174C13 /* InputIngredientsManualView.swift in Sources */,
+				D98F12362BFF7EDD00B347D6 /* QuizViewModel.swift in Sources */,
 				9434ED3E2BFC5F110074744F /* TermsConditionView.swift in Sources */,
 				B28252052BEF7B7E00ADABF2 /* SwiftUIView.swift in Sources */,
 				B28252092BEF84AB00ADABF2 /* IngredientsEffectListComponent.swift in Sources */,

@@ -11,7 +11,74 @@ struct QuizView: View {
     @State private var currentQuestionIndex = 0
     @State private var progress: Double = 0.1
     @State private var selectedAnswer: Int? = nil
-
+    
+    @State var userAnswer : [UserAnswer] = []
+    
+    func insertOrReplace<T>(array: inout [T], value: T, at index: Int) {
+        // Check if the index is within bounds of the array
+        if index >= 0 && index < array.count {
+            // Replace the value at the specified index
+            array[index] = value
+        } else if index == array.count {
+            // If the index is equal to the array count, append the value
+            array.append(value)
+        } else {
+            // Handle the case where the index is out of bounds
+            print("Index out of bounds")
+        }
+    }
+    
+    
+    func setAnswer(questionIndex: Int,point: Int, skinType:SkinType){
+        insertOrReplace(array: &userAnswer, value: UserAnswer(forSkinType: skinType, point: point), at: questionIndex)
+        print(userAnswer.description)
+        
+        
+    }
+    
+    func getSkinType() -> SkinType{
+        var oilyPoint: Int = 0
+        var dryPoint: Int = 0
+        var normalPoint: Int = 0
+        var combinationPoint: Int = 0
+        var sensitivePoint: Int = 0
+        
+        userAnswer.forEach { answer in
+            switch answer.forSkinType{
+                
+            case .normal:
+                normalPoint = normalPoint + answer.point
+            case .oily:
+                oilyPoint = oilyPoint + answer.point
+            case .dry:
+                dryPoint = dryPoint + answer.point
+            case .combination:
+                combinationPoint = combinationPoint + answer.point
+            case .sensitive:
+                sensitivePoint = sensitivePoint + answer.point
+            case .none: break
+                //
+            }
+        }
+        
+        let highest = max(oilyPoint, dryPoint, normalPoint, combinationPoint, sensitivePoint)
+        
+        if(oilyPoint == highest){
+            return .oily
+        } else if(dryPoint == highest){
+            return .dry
+        } else if(sensitivePoint == highest){
+            return .sensitive
+        } else if(combinationPoint == highest){
+            return .combination
+        } else{
+            return .normal
+        }
+        
+        
+        
+    }
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -39,12 +106,48 @@ struct QuizView: View {
                         .font(.system(size: 18, weight: .medium))
                         .foregroundColor(.gray)
                     
-                    ForEach(0..<Datas.questions[currentQuestionIndex].answerText.count, id: \.self) { index in
-                        CQuestionView(imageName: selectedAnswer == index ? "checkmark.circle.fill" : "circle", question: Datas.questions[currentQuestionIndex].answerText[index], isSelected: selectedAnswer == index)
-                            .onTapGesture {
-                                selectedAnswer = index
+                    if(userAnswer.indices.contains(currentQuestionIndex)){
+                        ForEach(0..<Datas.questions[currentQuestionIndex].questionAnswer.count, id: \.self) { index in
+                            
+                            let skinType =  Datas.questions[currentQuestionIndex].questionAnswer[index].forSkinType
+                            let point =  Datas.questions[currentQuestionIndex].point
+                            
+                            if(userAnswer[currentQuestionIndex].forSkinType == skinType){
+                                CQuestionView(question: Datas.questions[currentQuestionIndex].questionAnswer[index].answerText, isSelected: true)
+                                    .onTapGesture {
+                                        selectedAnswer = index
+                                        setAnswer(questionIndex: currentQuestionIndex, point: point , skinType: skinType)
+                                        
+                                    }
+                                
                             }
+                            else{
+                                CQuestionView(question: Datas.questions[currentQuestionIndex].questionAnswer[index].answerText, isSelected: selectedAnswer == index)
+                                    .onTapGesture {
+                                        selectedAnswer = index
+                                        setAnswer(questionIndex: currentQuestionIndex, point: point , skinType: skinType)
+                                        
+                                    }
+                            }
+                            
+                        }
                     }
+                    else{
+                        ForEach(0..<Datas.questions[currentQuestionIndex].questionAnswer.count, id: \.self) { index in
+                            
+                            let skinType =  Datas.questions[currentQuestionIndex].questionAnswer[index].forSkinType
+                            let point =  Datas.questions[currentQuestionIndex].point
+                            
+                            CQuestionView(question: Datas.questions[currentQuestionIndex].questionAnswer[index].answerText, isSelected: selectedAnswer == index)
+                                .onTapGesture {
+                                    selectedAnswer = index
+                                    setAnswer(questionIndex: currentQuestionIndex, point: point , skinType: skinType)
+                                }
+                            
+                        }
+                        
+                    }
+                    
                 }
                 
                 Spacer()
@@ -60,6 +163,8 @@ struct QuizView: View {
                                 currentQuestionIndex -= 1
                                 progress = Datas.questions[currentQuestionIndex].progres
                                 selectedAnswer = nil
+                                
+                                
                             }
                         }) {
                             HStack {
@@ -81,15 +186,17 @@ struct QuizView: View {
                         )
                         .disabled(currentQuestionIndex == 0)
                         Spacer()
-                    
+                        
                     }
-                Spacer()
+                    Spacer()
                     if currentQuestionIndex < Datas.questions.count - 1 {
                         Button(action: {
                             if currentQuestionIndex < Datas.questions.count - 1 {
                                 currentQuestionIndex += 1
                                 progress = Datas.questions[currentQuestionIndex].progres
                                 selectedAnswer = nil
+                                
+                                
                             }
                         }) {
                             HStack {
@@ -106,9 +213,11 @@ struct QuizView: View {
                         .foregroundColor(Color.white)
                         .background(Color(red: 0.0784313725490196, green: 0.36470588235294116, blue: 0.4))
                         .cornerRadius(10)
-                        .disabled(selectedAnswer == nil)
+                        .disabled(!userAnswer.indices.contains(currentQuestionIndex))
                     } else {
-                        NavigationLink(destination: ProfileView()) {
+                        NavigationLink(destination: ProfileView() .onAppear(){
+                            print(getSkinType().description)
+                        }) {
                             HStack {
                                 Text("Next")
                                     .fontWeight(.bold)
@@ -123,9 +232,10 @@ struct QuizView: View {
                         .foregroundColor(Color.white)
                         .background(Color(red: 0.0784313725490196, green: 0.36470588235294116, blue: 0.4))
                         .cornerRadius(10)
-                        .disabled(selectedAnswer == nil)
+                        .disabled(!userAnswer.indices.contains(currentQuestionIndex))
+                        
                     }
-
+                    
                     Spacer()
                         .frame(width: 16)
                 }.padding(.bottom, 30)
@@ -134,14 +244,14 @@ struct QuizView: View {
     }
 }
 
+
 struct CQuestionView: View {
-    var imageName: String
     var question: String
     var isSelected: Bool
     
     var body: some View {
         HStack(spacing: 20) {
-            Image(systemName: imageName)
+            Image(systemName: isSelected ? "checkmark.circle.fill" : "circle")
                 .resizable()
                 .frame(width: 25, height: 25)
                 .foregroundColor(isSelected ? Color(red: 0.0784313725490196, green: 0.36470588235294116, blue: 0.4) : .gray)
@@ -165,4 +275,6 @@ struct QView_Previews: PreviewProvider {
     }
 }
 
-
+#Preview{
+    CQuestionView(question: "asdasd", isSelected: true)
+}
