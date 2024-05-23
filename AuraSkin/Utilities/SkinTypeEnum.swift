@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 enum SkinType: String, CaseIterable, CustomStringConvertible {
     
     case normal, oily, dry, combination, sensitive, none, combinationDry, combinationOily
@@ -33,6 +34,7 @@ enum SkinType: String, CaseIterable, CustomStringConvertible {
             return "Sensitive"
         }
     }
+
 }
 
 // combinationDry & combinationOily dibuat hanya untuk kepentingan generate chart. bukan sebagai skintype riil ya cuyyyyy

@@ -40,9 +40,11 @@ struct AnalysisResultView: View {
     var model = AnalysisResultViewModel()
     var apiServices: APIServices = APIServices()
     var ingredients: String
+
     @State var skinType: SkinType = .normal
     
     @AppStorage("skinTypePersistance") var skinTypePersistance: SkinType = .normal
+
 
     init(ingredients: String) {
         UISegmentedControl.appearance().setTitleTextAttributes([.font: UIFont.boldSystemFont(ofSize: 14)], for: .normal)
@@ -122,6 +124,7 @@ struct AnalysisResultView: View {
             }
             .onAppear{
                 skinType = skinTypePersistance
+
             }
             .onAppear {
                 Task { @MainActor in
