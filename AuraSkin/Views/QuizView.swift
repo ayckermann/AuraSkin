@@ -58,6 +58,10 @@ struct QuizView: View {
                 sensitivePoint = sensitivePoint + answer.point
             case .none: break
                 //
+            case .combinationDry: break
+                
+            case .combinationOily: break
+                
             }
         }
         
