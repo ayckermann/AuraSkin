@@ -43,6 +43,11 @@ struct DonutChartComponent: View {
             self.skinTypeString = "Dry"
         case .combinationOily:
             self.skinTypeString = "Oily"
+        
+            case .combinationDry:
+                self.skinTypeString = "Dry"
+            case .combinationOily:
+                self.skinTypeString = "Oily"
         }
     }
     
