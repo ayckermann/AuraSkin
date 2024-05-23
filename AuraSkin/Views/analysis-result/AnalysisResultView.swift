@@ -15,6 +15,7 @@ extension UISegmentedControl {
 }
 
 struct AnalysisResultView: View {
+    @State private var networkMonitor: NetworkMonitor = NetworkMonitor()
     @State var apiResponse: IngredientsAnalysisResponse = IngredientsAnalysisResponse()
     @State var prosConsSegment: IngredientsEffectType = IngredientsEffectType.pros
     @State var data: IngredientsAnalysisResponse?
@@ -43,53 +44,58 @@ struct AnalysisResultView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                if showLoading && !isHitApi {
-                    LoadingView()
+                if !networkMonitor.isConnected {
+                    NetworkUnavailableView()
                 } else {
-                    ScrollView {
-                        VStack {
-                            HStack {
-                                Text("Skin Type Related Ingredients")
-                                    .font(.title2)
-                                    .fontWeight(.bold)
-                                    .foregroundStyle(Color.auraSkinPrimaryColor)
-                                    .opacity(0.5)
-                            }
+                    if showLoading && !isHitApi {
+                        LoadingView()
+                    } else {
+                        ScrollView {
+                            VStack {
+                                HStack {
+                                    Text("Skin Type Related Ingredients")
+                                        .font(.title2)
+                                        .fontWeight(.bold)
+                                        .foregroundStyle(Color.auraSkinPrimaryColor)
+                                        .opacity(0.5)
+                                }
 
-                            DonutChartComponent(ingredients: skinRelatedIngredients, skinType: skinType)
-                                .aspectRatio(1.5, contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-                                .padding(.bottom)
+                                DonutChartComponent(ingredients: skinRelatedIngredients, skinType: skinType)
+                                    .aspectRatio(1.5, contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+                                    .padding(.bottom)
 
-                            Text("Other Non-Skin Type Related Ingredients")
-                                .font(.subheadline)
-                                .fontWeight(.semibold)
-                                .foregroundStyle(.gray)
-                                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+                                Text("Other Non-Skin Type Related Ingredients")
+                                    .font(.subheadline)
+                                    .fontWeight(.semibold)
+                                    .foregroundStyle(.gray)
+                                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
 
-                            Picker("ProsConsSegment", selection: $prosConsSegment) {
-                                Text("Positive Effect \(getTotalIngredients(prosIngredients))")
-                                    .tag(IngredientsEffectType.pros)
-                                Text("Hazard \(getTotalIngredients(consIngredients))")
-                                    .tag(IngredientsEffectType.cons)
+                                Picker("ProsConsSegment", selection: $prosConsSegment) {
+                                    Text("Positive Effect \(getTotalIngredients(prosIngredients))")
+                                        .tag(IngredientsEffectType.pros)
+                                    Text("Hazard \(getTotalIngredients(consIngredients))")
+                                        .tag(IngredientsEffectType.cons)
+                                }
+                                .frame(height: 40)
+                                .colorMultiply(color(prosConsSegment))
+                                .cornerRadius(14)
+                                .pickerStyle(.segmented)
+
+                                switch prosConsSegment {
+                                    case .cons:
+                                        IngredientEffectList(.cons, consIngredients)
+                                            .padding(.horizontal)
+                                    default:
+                                        IngredientEffectList(.pros, prosIngredients)
+                                            .padding(.horizontal)
+                                }
                             }
-                            .frame(height: 40)
-                            .colorMultiply(color(prosConsSegment))
-                            .cornerRadius(14)
-                            .pickerStyle(.segmented)
-                            
-                            switch prosConsSegment {
-                            case .cons:
-                                IngredientEffectList(.cons, consIngredients)
-                                    .padding(.horizontal)
-                            default:
-                                IngredientEffectList(.pros, prosIngredients)
-                                    .padding(.horizontal)
-                            }
+                            .padding(.horizontal)
                         }
-                        .padding(.horizontal)
                     }
                 }
-                
+
+
             }
             .onAppear {
                 Task { @MainActor in
