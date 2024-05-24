@@ -15,9 +15,10 @@ struct ProductCardView: View {
     var body: some View {
         VStack {
             ZStack(alignment: .bottom) {
-                RoundedRectangle(cornerRadius: 20)
+                RoundedRectangle(cornerRadius: 15)
                     .fill(Color(red: 232 / 255, green: 232 / 255, blue: 232 / 255))
-                    .shadow(radius: 5)
+                    .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 5)
+                    .shadow(color: Color.black.opacity(0.1), radius: 5, x: 5, y: 0)
                     .frame(width: 177, height: 188)
                 
                 VStack {
@@ -26,7 +27,6 @@ struct ProductCardView: View {
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 154, height: 120)
                         .cornerRadius(10)
-                        .shadow(radius: 5)
                         .offset(y: -20)
                     
                     VStack(alignment: .leading, spacing: 5) {

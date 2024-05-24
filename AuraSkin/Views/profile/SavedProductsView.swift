@@ -10,7 +10,15 @@ import SwiftUI
 struct SavedProductsView: View {
     @StateObject var viewModel = ProductListViewModel()
     @State private var category = ""
-    var starters = ["Facial Wash", "Toner", "Moisturizer", "Sunscreen"]
+    
+    let colorHex = "#003C43"
+    init() {
+        UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(Color.auraSkinPrimaryColor)
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.black], for: .normal)
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
+        UISegmentedControl.appearance().setDividerImage(UIImage(), forLeftSegmentState: .normal, rightSegmentState: .normal, barMetrics: .default)
+        
+    }
     
     var body: some View {
         
@@ -19,47 +27,52 @@ struct SavedProductsView: View {
                 SectionTextLeading("Current Use")
                     .foregroundColor(Color.auraSkinPrimaryColor)
             }.padding(.horizontal)
+            Spacer()
             VStack {
                 ScrollView(.horizontal) {
                     LazyHGrid(rows: [GridItem(.flexible(), spacing: 1)]) {
                         ForEach(viewModel.filteredProducts) { product in
-                            ProductCardView(name: product.name, category: "Face Wash", imageName: product.imageUrl)
+                            ProductCardView(name: product.name, category: product.category, imageName: product.imageUrl)
                                 .listRowSeparator(.hidden, edges: .all)
                         }
                     }
                     .listRowSeparator(.hidden, edges: .all)
                 }
-                .frame(maxWidth: .infinity)
+                .frame(maxWidth: .infinity, maxHeight: 200)
                 .listStyle(.plain)
                 .navigationTitle("Saved Products")
                 .navigationBarTitleDisplayMode(.inline)
                 .searchable(text: $viewModel.searchText)
+                .padding(.leading, -5)
                 
                 Spacer()
                 Spacer()
                 Spacer()
                 
-                Picker("Choose your starter",
-                       selection: $category) {
-                    ForEach(starters, id: \.self) {
+                
+                Picker("Choose your starter", selection: $viewModel.selectedCategory) {
+                    ForEach(viewModel.starters, id: \.self) {
                         Text($0)
                     }
                 }
-                       .frame(height: 40)
-                       .cornerRadius(14)
-                       .pickerStyle(.segmented)
-                       .padding(.horizontal)
+                .pickerStyle(.segmented)
+                .padding(.leading, 9)
+                .padding(.trailing, 9)
+                .frame(height: 30)
                 
                 // below is for after segment
                 List {
-                    LazyVGrid(columns: [GridItem(.flexible(), spacing: 30), GridItem(.flexible())]) {
-                        ForEach(viewModel.filteredProducts) { product in
-                            ProductCardView(name: product.name, category: "Face Wash", imageName: product.imageUrl)
+                    LazyVGrid(columns: [
+                        GridItem(.flexible(), spacing: 30),
+                        GridItem(.flexible(), spacing: 30),
+                        GridItem(.flexible())
+                    ]) {
+                        ForEach(viewModel.filteredSegmentProducts) { product in
+                            ProductCardMiniView(name: product.name, imageName: product.imageUrl)
                                 .listRowSeparator(.hidden, edges: .all)
                         }
                     }
                     .listRowSeparator(.hidden, edges: .all)
-                    
                 }
                 .listStyle(.plain)
                 .navigationTitle("Saved Products")
