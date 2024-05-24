@@ -9,6 +9,9 @@ import SwiftUI
 import AVFoundation
 
 struct CameraView: UIViewControllerRepresentable {
+    var ratioX: Double
+    var ratioY: Double
+
     typealias UIViewControllerType = UIViewController
     
     let cameraServices: CameraServices
@@ -28,7 +31,7 @@ struct CameraView: UIViewControllerRepresentable {
 //        let screenHeight = viewController.view.bounds.height
         
         let previewWidth = screenWidth
-        let previewHeight = screenWidth * (16.0 / 9.0) //
+        let previewHeight = screenWidth * (ratioY / ratioX) //
         
         let xOffset = CGFloat(0.0)
         let yOffset = CGFloat(65.0)

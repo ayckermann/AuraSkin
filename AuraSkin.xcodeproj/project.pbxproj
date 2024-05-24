@@ -14,7 +14,6 @@
 		9434ED452BFC61CB0074744F /* DatePickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434ED422BFC61CA0074744F /* DatePickerComponent.swift */; };
 		9434ED462BFC61CB0074744F /* TextFieldComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434ED432BFC61CA0074744F /* TextFieldComponents.swift */; };
 		9434ED482BFC62AE0074744F /* SaveProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434ED472BFC62AE0074744F /* SaveProductView.swift */; };
-		946AEA562BFF7854003ED237 /* Skincare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 946AEA542BFF7854003ED237 /* Skincare.xcdatamodeld */; };
 		946AEA5E2BFF7DFE003ED237 /* SaveProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946AEA5D2BFF7DFE003ED237 /* SaveProductViewModel.swift */; };
 		946AEA602BFF7FF7003ED237 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946AEA5F2BFF7FF7003ED237 /* ProductModel.swift */; };
 		946AEA672BFF8AA2003ED237 /* Product+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946AEA652BFF8AA2003ED237 /* Product+CoreDataClass.swift */; };
@@ -51,6 +50,7 @@
 		D98F12132BFE52F700B347D6 /* ScanInstructionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98F12122BFE52F700B347D6 /* ScanInstructionComponent.swift */; };
 		D98F12342BFF457C00B347D6 /* ProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98F12332BFF457C00B347D6 /* ProductsView.swift */; };
 		D98F12362BFF7EDD00B347D6 /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98F12352BFF7EDD00B347D6 /* QuizViewModel.swift */; };
+		D98F12392C0077DB00B347D6 /* ProductCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98F12382C0077DB00B347D6 /* ProductCameraView.swift */; };
 		D9EC3FA62BE91C8500F4B9E7 /* AuraSkinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EC3FA52BE91C8500F4B9E7 /* AuraSkinApp.swift */; };
 		D9EC3FAA2BE91C8700F4B9E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9EC3FA92BE91C8700F4B9E7 /* Assets.xcassets */; };
 		D9EC3FAD2BE91C8700F4B9E7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9EC3FAC2BE91C8700F4B9E7 /* Preview Assets.xcassets */; };
@@ -107,6 +107,7 @@
 		D98F12122BFE52F700B347D6 /* ScanInstructionComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanInstructionComponent.swift; sourceTree = "<group>"; };
 		D98F12332BFF457C00B347D6 /* ProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsView.swift; sourceTree = "<group>"; };
 		D98F12352BFF7EDD00B347D6 /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
+		D98F12382C0077DB00B347D6 /* ProductCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCameraView.swift; sourceTree = "<group>"; };
 		D9EC3FA22BE91C8500F4B9E7 /* AuraSkin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuraSkin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9EC3FA52BE91C8500F4B9E7 /* AuraSkinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuraSkinApp.swift; sourceTree = "<group>"; };
 		D9EC3FA92BE91C8700F4B9E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -300,6 +301,7 @@
 				D952B3A22BEFC4A800C09E5F /* LoadingView.swift */,
 				F4DC4B532BFCF703008EF955 /* QuizView.swift */,
 				B2CD11C22BFE670900C44A1C /* NetworkUnavailableView.swift */,
+				D98F12382C0077DB00B347D6 /* ProductCameraView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -398,7 +400,6 @@
 				B2CD11C32BFE670900C44A1C /* NetworkUnavailableView.swift in Sources */,
 				B28251FD2BEF5DED00ADABF2 /* TextComponents.swift in Sources */,
 				F4DC4B542BFCF703008EF955 /* QuizView.swift in Sources */,
-				946AEA562BFF7854003ED237 /* Skincare.xcdatamodeld in Sources */,
 				9434ED452BFC61CB0074744F /* DatePickerComponent.swift in Sources */,
 				B28251FF2BEF661500ADABF2 /* ContainerComponents.swift in Sources */,
 				946AEA6A2BFFA144003ED237 /* CoreDataManager.swift in Sources */,
@@ -428,6 +429,7 @@
 				D9EC3FA62BE91C8500F4B9E7 /* AuraSkinApp.swift in Sources */,
 				B28252072BEF821400ADABF2 /* AnalysisResultViewModel.swift in Sources */,
 				B28251FB2BEF569300ADABF2 /* AnalysisResultView.swift in Sources */,
+				D98F12392C0077DB00B347D6 /* ProductCameraView.swift in Sources */,
 				9434ED442BFC61CB0074744F /* DropdownComponent.swift in Sources */,
 				B283B34B2BFCBBA8000D37E0 /* DonutChartComponent.swift in Sources */,
 				D952B3962BEF66E000C09E5F /* TestFunction.swift in Sources */,
