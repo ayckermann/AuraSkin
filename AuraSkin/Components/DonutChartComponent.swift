@@ -18,27 +18,35 @@ struct DonutChartComponent: View {
     var goodForSkinType: Int8
     var badForSkinType: Int8
     var skinTypeString: String
-
+    
     init(ingredients: [GoodOrBadForSkinType], skinType: SkinType) {
         self.ingredients = ingredients
         self.skinType = skinType
         self.goodForSkinType = ingredients[0].count
         self.badForSkinType = ingredients[1].count
-
+        
         switch skinType {
-            case .dry:
-                self.skinTypeString = "Dry"
-            case .normal:
-                self.skinTypeString = "Normal"
-            case .oily:
-                self.skinTypeString = "Oily"
-            case .combination:
-                self.skinTypeString = "Combination"
-            case .sensitive:
-                self.skinTypeString = "Sensitive"
+        case .dry:
+            self.skinTypeString = "Dry"
+        case .normal:
+            self.skinTypeString = "Normal"
+        case .oily:
+            self.skinTypeString = "Oily"
+        case .combination:
+            self.skinTypeString = "Combination"
+        case .sensitive:
+            self.skinTypeString = "Sensitive"
+        // didn't choose skin type, harusnya impossible masuk ke case ini
+        case .none:
+            self.skinTypeString = "none"
+        case .combinationDry:
+            self.skinTypeString = "Dry"
+        case .combinationOily:
+            self.skinTypeString = "Oily"
+
         }
     }
-
+    
     var body: some View {
         ZStack {
             Chart(ingredients, id: \.self) { ingredients in
@@ -58,15 +66,15 @@ struct DonutChartComponent: View {
                 ]
             )
             .chartLegend(position: .bottom, alignment: .center)
-
+            
             VStack {
                 if badForSkinType == 0 {
                     Text("\(goodForSkinType)")
                         .font(.title3)
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-
+                    
                     Text("Good for \(skinTypeString)")
-                        .font(.subheadline)
+                        .font(skinType == .combinationDry || skinType == .combinationOily ? .caption2 : .subheadline)
                         .fontWeight(.bold)
                         .foregroundStyle(.gray)
                         .padding(.bottom)
@@ -74,9 +82,9 @@ struct DonutChartComponent: View {
                     Text("\(badForSkinType)")
                         .font(.title3)
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-
+                    
                     Text("Bad for \(skinTypeString)")
-                        .font(.subheadline)
+                        .font(skinType == .combinationDry || skinType == .combinationOily ? .caption2 : .subheadline)
                         .fontWeight(.bold)
                         .foregroundStyle(.gray)
                         .padding(.bottom)
@@ -84,9 +92,9 @@ struct DonutChartComponent: View {
                     Text("\(goodForSkinType) / \(badForSkinType+goodForSkinType)")
                         .font(.title3)
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-
+                    
                     Text("Good for \(skinTypeString)")
-                        .font(.subheadline)
+                        .font(skinType == .combinationDry || skinType == .combinationOily ? .caption2 : .subheadline)
                         .fontWeight(.bold)
                         .foregroundStyle(.gray)
                         .padding(.bottom)
@@ -100,5 +108,5 @@ struct DonutChartComponent: View {
     @State var ingredients: [GoodOrBadForSkinType] = [
         AuraSkin.GoodOrBadForSkinType(category: "good", count: 13),
         AuraSkin.GoodOrBadForSkinType(category: "bad", count: 2)]
-    return DonutChartComponent(ingredients: ingredients, skinType: .dry)
+    return DonutChartComponent(ingredients: ingredients, skinType: .combination)
 }

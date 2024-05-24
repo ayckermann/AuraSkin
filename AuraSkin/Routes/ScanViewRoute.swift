@@ -10,9 +10,6 @@ import Mantis
 
 struct ScanViewRoute: View {
     
-    @AppStorage("isFirstTimeUser") var isFirstTimeUser = true
-
-    
     let cameraService = CameraServices()
     
     @State var capturedImage: UIImage?
@@ -21,7 +18,7 @@ struct ScanViewRoute: View {
     @State var isFlash = false
     @State var isHideInstruction = true
     
-    @State private var presetFixedRatioType: Mantis.PresetFixedRatioType = .canUseMultiplePresetFixedRatio()
+    @AppStorage("skinTypePersistance") var skinTypePersistance: SkinType = .none
     
     func toggleFlash() {
         
@@ -31,6 +28,8 @@ struct ScanViewRoute: View {
     var body: some View {
         NavigationStack{
             ZStack{
+                Color(.black)
+                    .ignoresSafeArea(.all)
                 
                 CameraView(cameraServices: cameraService){ result in
                     switch result {
@@ -80,14 +79,13 @@ struct ScanViewRoute: View {
                 
             }
             .onAppear {
-                if(isFirstTimeUser){
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                if(skinTypePersistance == .none){
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                         self.isHideInstruction = false
                     }
-
+                    
                 }
             }
-            
             .navigationDestination(isPresented: $isCaptured) {
                 if isCaptured{
                     
@@ -106,11 +104,14 @@ struct ScanViewRoute: View {
                         .ignoresSafeArea(.all)
                         .navigationBarBackButtonHidden(true)
                         .toolbar(.hidden, for: .tabBar)
+                        .preferredColorScheme(.dark)
+                        
                     }
                     
                     
                     
                 }
+                
                 
                 
                 
@@ -123,10 +124,16 @@ struct ScanViewRoute: View {
                 }
             }
             
-            
-            
-            
         }
+//        .ignoresSafeArea(.all)
+        
+//        .environment(\.colorScheme, .dark)
+//        .preferredColorScheme(.dark)
+//        .toolbarColorScheme(.dark, for: .bottomBar)
+//        .toolbarColorScheme(.dark, for: .navigationBar)
+        .toolbarColorScheme(.dark, for: .tabBar)
+
+
         
         
     }

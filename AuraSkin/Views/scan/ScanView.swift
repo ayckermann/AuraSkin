@@ -18,15 +18,11 @@ struct ScanView: View {
     @Binding var selectedImage: UIImage?
     
     @Binding var isSelected: Bool
-    //    @State var isClickCapture: Bool = false
     @Binding var isFlash: Bool
     
     
     
     var body: some View {
-        
-        
-        
         
         VStack{
             VStack {
@@ -63,11 +59,8 @@ struct ScanView: View {
                     .frame(height: 16)
                 
             }
-            //                .background(.grayOverlay)
-            
             
             Spacer()
-            //                    .frame(height: 476)
             
             HStack(){
                 Spacer()
@@ -116,9 +109,14 @@ struct ScanView: View {
                 Spacer()
                 NavigationLink {
                     InputIngredientsManualView()
+                        .environment(\.colorScheme, .light)
+
                 } label: {
                     Image(systemName: "keyboard")
-                        .font(.system(size: 33))
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 33)
+
                 }
                 .coordinateSpace(name: "manualbutton")
                 
@@ -126,9 +124,7 @@ struct ScanView: View {
                 
                 
             }
-            .padding(.vertical, 26)
-            //                .background(.grayOverlay, ignoresSafeAreaEdges: .all)
-            
+            .padding(.vertical, 28)
         }
         .foregroundStyle(.white)
         

@@ -77,12 +77,17 @@ class CameraServices{
         checkPermission(completion: completion)
     }
     
-    func capturePhoto(){
+    func capturePhoto() {
         let settings = AVCapturePhotoSettings()
         
-        output.capturePhoto(with: settings, delegate: self.delegate!)
+        guard let delegate = self.delegate else {
+            print("Delegate is nil")
+            return
+        }
+        
+        output.capturePhoto(with: settings, delegate: delegate)
     }
-    
+
     func toggleFlash() -> Bool {
             guard let device = AVCaptureDevice.default(for: .video) else { return false }
             
