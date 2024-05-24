@@ -219,7 +219,7 @@ struct QuizView: View {
                         .cornerRadius(10)
                         .disabled(!userAnswer.indices.contains(currentQuestionIndex))
                     } else {
-                        NavigationLink(destination: ProfileView() .onAppear(){
+                        NavigationLink(destination: OnboardingView().onAppear(){
                             print(getSkinType().description)
                         }) {
                             HStack {

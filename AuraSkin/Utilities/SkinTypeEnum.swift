@@ -34,7 +34,18 @@ enum SkinType: String, CaseIterable, CustomStringConvertible {
             return "Sensitive"
         }
     }
-
+    
 }
 
 // combinationDry & combinationOily dibuat hanya untuk kepentingan generate chart. bukan sebagai skintype riil ya cuyyyyy
+
+struct SkinSelectionData {
+    static let selections: [SelectionSkin] = [
+        SelectionSkin(imageName: "drop.circle", skinType: .oily, declaration: "Has large pores and an overall shine", info: "info.circle"),
+        SelectionSkin(imageName: "wind.circle.fill", skinType: .dry, declaration: "Feels tight, might be flaky", info: "info.circle"),
+        SelectionSkin(imageName: "circle.lefthalf.striped.horizontal", skinType: .combination, declaration: "Has large pores", info: "info.circle"),
+        SelectionSkin(imageName: "circle.dotted.circle", skinType: .sensitive,  declaration: "Has large pores", info: "info.circle"),
+        SelectionSkin(imageName: "swirl.circle.righthalf.filled",skinType: .normal,  declaration: "Has large pores", info: "info.circle"),
+        
+    ]
+}

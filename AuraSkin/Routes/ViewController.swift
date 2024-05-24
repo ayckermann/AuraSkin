@@ -13,12 +13,13 @@ struct ViewController : View {
     // user-default untuk user ski type; kalo udah ada page buat milih ini diganti ke .none
     @AppStorage("skinTypePersistance") var skinTypePersistance: SkinType = .none
     
+    
     @State var skinType: SkinType = .none
     
     var body: some View {
         
         if skinTypePersistance == .none {
-            tempChooseSkinType()
+            OnboardingView()
         }  else{
             TabView(selection : $selection){
                 ProductsView()
@@ -53,27 +54,7 @@ struct ViewController : View {
 }
 
 
-struct tempChooseSkinType: View{
-    @State var selection: SkinType = .none
-    @AppStorage("skinTypePersistance") var skinTypePersistance: SkinType = .none
-    
-    
-    var body: some View{
-        Picker("Select", selection: $selection) {
-            ForEach(SkinType.allCases.filter{return $0 != .none}, id:\.self) { option in
-                Text(String(describing: option))
-            }
-        }
-        .pickerStyle(.menu)
-        
-        Button(action: {
-            skinTypePersistance = selection
-        }, label: {
-            TestButton(text: "done")
-        })
-        
-    }
-}
+
 
 
 
