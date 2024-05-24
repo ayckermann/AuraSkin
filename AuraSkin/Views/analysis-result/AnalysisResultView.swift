@@ -120,7 +120,7 @@ struct AnalysisResultView: View {
         }
         .sheet(isPresented: $showSaveProduct) {
             NavigationStack {
-                SaveProductView()
+                SaveProductView(ingredients: ingredients)
             }
         }
     }

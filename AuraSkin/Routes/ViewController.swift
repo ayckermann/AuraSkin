@@ -12,7 +12,7 @@ struct ViewController : View {
     
     var body: some View {
         TabView(selection : $selection){
-            SaveProductView()
+            SaveProductView(ingredients: "Sample ingredients")
                 .tabItem {
                     Label("Products", systemImage: selection == 1 ? "bookmark.fill" : "bookmark")
                         .environment(\.symbolVariants, .none)
