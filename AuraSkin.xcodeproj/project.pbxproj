@@ -14,6 +14,12 @@
 		9434ED452BFC61CB0074744F /* DatePickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434ED422BFC61CA0074744F /* DatePickerComponent.swift */; };
 		9434ED462BFC61CB0074744F /* TextFieldComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434ED432BFC61CA0074744F /* TextFieldComponents.swift */; };
 		9434ED482BFC62AE0074744F /* SaveProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434ED472BFC62AE0074744F /* SaveProductView.swift */; };
+		946AEA562BFF7854003ED237 /* Skincare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 946AEA542BFF7854003ED237 /* Skincare.xcdatamodeld */; };
+		946AEA5E2BFF7DFE003ED237 /* SaveProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946AEA5D2BFF7DFE003ED237 /* SaveProductViewModel.swift */; };
+		946AEA602BFF7FF7003ED237 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946AEA5F2BFF7FF7003ED237 /* ProductModel.swift */; };
+		946AEA672BFF8AA2003ED237 /* Product+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946AEA652BFF8AA2003ED237 /* Product+CoreDataClass.swift */; };
+		946AEA682BFF8AA2003ED237 /* Product+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946AEA662BFF8AA2003ED237 /* Product+CoreDataProperties.swift */; };
+		946AEA6A2BFFA144003ED237 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946AEA692BFFA144003ED237 /* CoreDataManager.swift */; };
 		B28251FB2BEF569300ADABF2 /* AnalysisResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28251FA2BEF569300ADABF2 /* AnalysisResultView.swift */; };
 		B28251FD2BEF5DED00ADABF2 /* TextComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28251FC2BEF5DED00ADABF2 /* TextComponents.swift */; };
 		B28251FF2BEF661500ADABF2 /* ContainerComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28251FE2BEF661500ADABF2 /* ContainerComponents.swift */; };
@@ -65,6 +71,12 @@
 		9434ED422BFC61CA0074744F /* DatePickerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerComponent.swift; sourceTree = "<group>"; };
 		9434ED432BFC61CA0074744F /* TextFieldComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldComponents.swift; sourceTree = "<group>"; };
 		9434ED472BFC62AE0074744F /* SaveProductView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveProductView.swift; sourceTree = "<group>"; };
+		946AEA552BFF7854003ED237 /* Skincare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Skincare.xcdatamodel; sourceTree = "<group>"; };
+		946AEA5D2BFF7DFE003ED237 /* SaveProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveProductViewModel.swift; sourceTree = "<group>"; };
+		946AEA5F2BFF7FF7003ED237 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		946AEA652BFF8AA2003ED237 /* Product+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataClass.swift"; sourceTree = "<group>"; };
+		946AEA662BFF8AA2003ED237 /* Product+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		946AEA692BFFA144003ED237 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		B28251FA2BEF569300ADABF2 /* AnalysisResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisResultView.swift; sourceTree = "<group>"; };
 		B28251FC2BEF5DED00ADABF2 /* TextComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextComponents.swift; sourceTree = "<group>"; };
 		B28251FE2BEF661500ADABF2 /* ContainerComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerComponents.swift; sourceTree = "<group>"; };
@@ -146,9 +158,13 @@
 		D983CF5C2BEF068E00588417 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				946AEA652BFF8AA2003ED237 /* Product+CoreDataClass.swift */,
+				946AEA662BFF8AA2003ED237 /* Product+CoreDataProperties.swift */,
 				D983CF602BEF070700588417 /* Ingredients.swift */,
 				B28252132BF1027800ADABF2 /* TagModel.swift */,
 				F4DC4B4F2BFCF51D008EF955 /* Question.swift */,
+				946AEA5F2BFF7FF7003ED237 /* ProductModel.swift */,
+				946AEA692BFFA144003ED237 /* CoreDataManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -159,6 +175,7 @@
 				D952B3992BEF9A7900C09E5F /* ImageCropper.swift */,
 				B28252062BEF821400ADABF2 /* AnalysisResultViewModel.swift */,
 				D952B3A62BEFC59700C09E5F /* OpticalCharRecognition.swift */,
+				946AEA5D2BFF7DFE003ED237 /* SaveProductViewModel.swift */,
 				D98F12352BFF7EDD00B347D6 /* QuizViewModel.swift */,
 			);
 			path = ViewModels;
@@ -257,6 +274,7 @@
 				D9EC3FA52BE91C8500F4B9E7 /* AuraSkinApp.swift */,
 				D9EC3FA92BE91C8700F4B9E7 /* Assets.xcassets */,
 				D9EC3FAB2BE91C8700F4B9E7 /* Preview Content */,
+				946AEA542BFF7854003ED237 /* Skincare.xcdatamodeld */,
 			);
 			path = AuraSkin;
 			sourceTree = "<group>";
@@ -380,14 +398,19 @@
 				B2CD11C32BFE670900C44A1C /* NetworkUnavailableView.swift in Sources */,
 				B28251FD2BEF5DED00ADABF2 /* TextComponents.swift in Sources */,
 				F4DC4B542BFCF703008EF955 /* QuizView.swift in Sources */,
+				946AEA562BFF7854003ED237 /* Skincare.xcdatamodeld in Sources */,
 				9434ED452BFC61CB0074744F /* DatePickerComponent.swift in Sources */,
 				B28251FF2BEF661500ADABF2 /* ContainerComponents.swift in Sources */,
+				946AEA6A2BFFA144003ED237 /* CoreDataManager.swift in Sources */,
 				D9EC3FBE2BE91EBF00F4B9E7 /* ProfileView.swift in Sources */,
 				B283B34D2BFCEBB7000D37E0 /* SkinTypeEnum.swift in Sources */,
 				D983CF682BEF109200588417 /* CameraServices.swift in Sources */,
 				B28252102BEF994000ADABF2 /* DummyData.swift in Sources */,
+				946AEA5E2BFF7DFE003ED237 /* SaveProductViewModel.swift in Sources */,
 				D952B3A72BEFC59700C09E5F /* OpticalCharRecognition.swift in Sources */,
 				D983CF662BEF107D00588417 /* APIServices.swift in Sources */,
+				946AEA672BFF8AA2003ED237 /* Product+CoreDataClass.swift in Sources */,
+				946AEA682BFF8AA2003ED237 /* Product+CoreDataProperties.swift in Sources */,
 				F4DC4B502BFCF51D008EF955 /* Question.swift in Sources */,
 				D952B3912BEF5AF200C09E5F /* CameraView.swift in Sources */,
 				D952B3A32BEFC4A800C09E5F /* LoadingView.swift in Sources */,
@@ -408,6 +431,7 @@
 				9434ED442BFC61CB0074744F /* DropdownComponent.swift in Sources */,
 				B283B34B2BFCBBA8000D37E0 /* DonutChartComponent.swift in Sources */,
 				D952B3962BEF66E000C09E5F /* TestFunction.swift in Sources */,
+				946AEA602BFF7FF7003ED237 /* ProductModel.swift in Sources */,
 				D98F12132BFE52F700B347D6 /* ScanInstructionComponent.swift in Sources */,
 				D98F12342BFF457C00B347D6 /* ProductsView.swift in Sources */,
 			);
@@ -640,6 +664,20 @@
 			productName = Mantis;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		946AEA542BFF7854003ED237 /* Skincare.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				946AEA552BFF7854003ED237 /* Skincare.xcdatamodel */,
+			);
+			currentVersion = 946AEA552BFF7854003ED237 /* Skincare.xcdatamodel */;
+			name = Skincare.xcdatamodeld;
+			path = "/Users/syuhadarantisi/MyProgram/learn-SwiftUI/AuraSkin/AuraSkin/Skincare.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D9EC3F9A2BE91C8500F4B9E7 /* Project object */;
 }
