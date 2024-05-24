@@ -13,7 +13,7 @@ struct SaveProductView: View {
     @EnvironmentObject var manager: CoreDataManager
     @Environment(\.managedObjectContext) var viewContext
     @Environment(\.dismiss) var dismiss
-
+    
     enum photoStateEnum {
         case noImage, image
     }
@@ -100,6 +100,7 @@ struct SaveProductView: View {
 
             Button(action: {
                 saveProductViewModel.saveProduct(context: viewContext, product: product)
+                dismiss()
             }, label: {
                 TestButton(text: "Save")
             })
