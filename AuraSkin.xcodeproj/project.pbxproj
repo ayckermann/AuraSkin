@@ -20,6 +20,8 @@
 		946AEA672BFF8AA2003ED237 /* Product+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946AEA652BFF8AA2003ED237 /* Product+CoreDataClass.swift */; };
 		946AEA682BFF8AA2003ED237 /* Product+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946AEA662BFF8AA2003ED237 /* Product+CoreDataProperties.swift */; };
 		946AEA6A2BFFA144003ED237 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946AEA692BFFA144003ED237 /* CoreDataManager.swift */; };
+		947BBC2B2C009C9100D29B69 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947BBC2A2C009C9100D29B69 /* LocalFileManager.swift */; };
+		947BBC2D2C00C70C00D29B69 /* TestingReadProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947BBC2C2C00C70C00D29B69 /* TestingReadProductView.swift */; };
 		B28251FB2BEF569300ADABF2 /* AnalysisResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28251FA2BEF569300ADABF2 /* AnalysisResultView.swift */; };
 		B28251FD2BEF5DED00ADABF2 /* TextComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28251FC2BEF5DED00ADABF2 /* TextComponents.swift */; };
 		B28251FF2BEF661500ADABF2 /* ContainerComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28251FE2BEF661500ADABF2 /* ContainerComponents.swift */; };
@@ -77,6 +79,8 @@
 		946AEA652BFF8AA2003ED237 /* Product+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataClass.swift"; sourceTree = "<group>"; };
 		946AEA662BFF8AA2003ED237 /* Product+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		946AEA692BFFA144003ED237 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		947BBC2A2C009C9100D29B69 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
+		947BBC2C2C00C70C00D29B69 /* TestingReadProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingReadProductView.swift; sourceTree = "<group>"; };
 		B28251FA2BEF569300ADABF2 /* AnalysisResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisResultView.swift; sourceTree = "<group>"; };
 		B28251FC2BEF5DED00ADABF2 /* TextComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextComponents.swift; sourceTree = "<group>"; };
 		B28251FE2BEF661500ADABF2 /* ContainerComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerComponents.swift; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 				B283B34C2BFCEBB7000D37E0 /* SkinTypeEnum.swift */,
 				F4DC4B512BFCF68B008EF955 /* DataQuiz.swift */,
 				B2CD11C02BFE663200C44A1C /* NetworkMonitor.swift */,
+				947BBC2A2C009C9100D29B69 /* LocalFileManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -300,6 +305,7 @@
 				D952B3A22BEFC4A800C09E5F /* LoadingView.swift */,
 				F4DC4B532BFCF703008EF955 /* QuizView.swift */,
 				B2CD11C22BFE670900C44A1C /* NetworkUnavailableView.swift */,
+				947BBC2C2C00C70C00D29B69 /* TestingReadProductView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -392,6 +398,7 @@
 				B28252122BF0DCE000ADABF2 /* IngredientsEffectDetailView.swift in Sources */,
 				9434ED3C2BFC5F110074744F /* ActionChooseSkin.swift in Sources */,
 				B282520E2BEF989500ADABF2 /* Colors.swift in Sources */,
+				947BBC2B2C009C9100D29B69 /* LocalFileManager.swift in Sources */,
 				D9EC3FB92BE91E8D00F4B9E7 /* ScanView.swift in Sources */,
 				B282520C2BEF86F200ADABF2 /* IngredientsEffectEnum.swift in Sources */,
 				D983CF662BEF107D00588417 /* APIServices.swift in Sources */,
@@ -400,6 +407,7 @@
 				F4DC4B542BFCF703008EF955 /* QuizView.swift in Sources */,
 				946AEA562BFF7854003ED237 /* Skincare.xcdatamodeld in Sources */,
 				9434ED452BFC61CB0074744F /* DatePickerComponent.swift in Sources */,
+				947BBC2D2C00C70C00D29B69 /* TestingReadProductView.swift in Sources */,
 				B28251FF2BEF661500ADABF2 /* ContainerComponents.swift in Sources */,
 				946AEA6A2BFFA144003ED237 /* CoreDataManager.swift in Sources */,
 				D9EC3FBE2BE91EBF00F4B9E7 /* ProfileView.swift in Sources */,

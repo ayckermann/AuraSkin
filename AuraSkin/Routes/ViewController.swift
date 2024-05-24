@@ -43,6 +43,10 @@ struct ViewController : View {
                         
                     }
                     .tag(3)
+                TestingReadProductView()
+                    .tabItem {
+                        Label("Profile", systemImage: "swiftdata")
+                    }
             }
             .tint(.greenAccent)
         }

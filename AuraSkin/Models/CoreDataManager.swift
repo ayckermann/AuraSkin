@@ -12,7 +12,7 @@ import Foundation
 class CoreDataManager: NSObject, ObservableObject {
     
     /// Dynamic properties that the UI will react to
-    @Published var animesData: [Product] = [Product]()
+    @Published var products: [Product] = [Product]()
     
     // Add the Core Data container with the model name
     let container: NSPersistentContainer = NSPersistentContainer(name: "Skincare")

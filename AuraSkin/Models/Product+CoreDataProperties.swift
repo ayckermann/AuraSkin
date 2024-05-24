@@ -23,6 +23,7 @@ extension Product {
     @NSManaged public var expiredDate: Date?
     @NSManaged public var id: UUID?
     @NSManaged public var ingredients: String?
+    @NSManaged public var imageName: String?
 
 }
 

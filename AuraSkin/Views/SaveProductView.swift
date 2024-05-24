@@ -34,7 +34,9 @@ struct SaveProductView: View {
             category: "Facial Wash",
             currentlyUsed: true,
             expiredDate: Date.now,
-            image: UIImage(named: "productImageDefault")?.pngData()
+//            image: UIImage(named: "productImageDefault")?.pngData()  // binary
+            imageName: "",
+            image: UIImage(named: "productImageDefault")!
         ))
     }
 
@@ -52,7 +54,8 @@ struct SaveProductView: View {
                             .overlay(RoundedRectangle(cornerRadius: 11).stroke(.gray))
                             .padding(.bottom)
                     case .image:
-                        Image(data: (product.image ?? UIImage(named: "productImageDefault")?.pngData())!)!
+//                        Image(data: (product.image ?? UIImage(named: "productImageDefault")?.pngData())!)! // binary
+                    Image(uiImage: product.image!)
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 250, height: 235)
@@ -64,14 +67,23 @@ struct SaveProductView: View {
                 .onChange(of: photosPickerItem) { _, _ in
                     Task {
                         if let photosPickerItem,
-                           let data = try? await photosPickerItem.loadTransferable(type: Data.self) {
-                            if UIImage(data: data) != nil {
-                                product.image = data
-                                self.photoState = .image
-                            }
+                           let data = try? await photosPickerItem.loadTransferable(type: Data.self),
+                           let uiImage = UIImage(data: data) {
+                            product.image = uiImage
+                            self.photoState = .image
                         }
                         photosPickerItem = nil
                     }
+//                    Task {
+//                        if let photosPickerItem,
+//                           let data = try? await photosPickerItem.loadTransferable(type: Data.self) {
+//                            if UIImage(data: data) != nil {
+//                                product.image = data
+//                                self.photoState = .image
+//                            }
+//                        }
+//                        photosPickerItem = nil
+//                    }
                 }
 
 

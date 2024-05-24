@@ -17,7 +17,7 @@ extension Image {
 }
 
 class SaveProductViewModel {
-    
+        
     func saveProduct(context: NSManagedObjectContext, product: ProductModel) {
         let productEntity = Product(context: context)
         productEntity.id = product.id
@@ -25,7 +25,18 @@ class SaveProductViewModel {
         productEntity.expiredDate = product.expiredDate
         productEntity.currentlyUsed = product.currentlyUsed
         productEntity.ingredients = product.ingredients
-        productEntity.image = product.image
+//        productEntity.image = product.image // binary
+        
+//        let imageName = UUID().uuidString // Buat nama unik untuk gambar
+//        LocalFileManager.instance.saveImage(image: product.image!, imageName: imageName, folderName: "ProductImages")
+//        productEntity.imageName = imageName // Simpan nama gambar ke Core Data
+        
+        if let image = product.image {
+            let imageName = UUID().uuidString // Buat nama unik untuk gambar
+            LocalFileManager.instance.saveImage(image: image, imageName: imageName, folderName: "ProductImages")
+            productEntity.imageName = imageName // Simpan nama gambar ke Core Data
+        }
+
         
         do {
             try context.save()
@@ -35,5 +46,14 @@ class SaveProductViewModel {
             print("Whoops \(error.localizedDescription)")
         }
     }
+
+    func getProductImage(imageName: String) -> UIImage? {
+        return LocalFileManager.instance.getImage(imageName: imageName, folderName: "ProductImages")
+    }
+    
+    func deleteProductImage(imageName: String) {
+        LocalFileManager.instance.deleteImage(imageName: imageName, folderName: "ProductImages")
+    }
+    
 }
 
