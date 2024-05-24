@@ -29,9 +29,9 @@ enum SkinType: String, CaseIterable, CustomStringConvertible {
         case .none:
             return ""
         case .combinationDry:
-            return "Sensitive"
+            return "Combination"
         case .combinationOily:
-            return "Sensitive"
+            return "Combination"
         }
     }
 
