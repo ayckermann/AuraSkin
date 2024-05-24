@@ -19,7 +19,6 @@
 		946AEA672BFF8AA2003ED237 /* Product+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946AEA652BFF8AA2003ED237 /* Product+CoreDataClass.swift */; };
 		946AEA682BFF8AA2003ED237 /* Product+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946AEA662BFF8AA2003ED237 /* Product+CoreDataProperties.swift */; };
 		946AEA6A2BFFA144003ED237 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946AEA692BFFA144003ED237 /* CoreDataManager.swift */; };
-		B22DA2442C006B1A0024ECC1 /* Skincare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B22DA2422C006B1A0024ECC1 /* Skincare.xcdatamodeld */; };
 		B22DA2462C008C420024ECC1 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DA2452C008C420024ECC1 /* ProductDetailView.swift */; };
 		B22DA2482C0090C50024ECC1 /* AnalysisResultComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DA2472C0090C50024ECC1 /* AnalysisResultComponent.swift */; };
 		B22DA24A2C0094B00024ECC1 /* ToggleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DA2492C0094B00024ECC1 /* ToggleComponent.swift */; };
@@ -61,10 +60,11 @@
 		D9EC3FB92BE91E8D00F4B9E7 /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EC3FB82BE91E8D00F4B9E7 /* ScanView.swift */; };
 		D9EC3FBE2BE91EBF00F4B9E7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EC3FBD2BE91EBF00F4B9E7 /* ProfileView.swift */; };
 		DA08E8B72BFF2C0B00DA86FF /* SavedProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA08E8B62BFF2C0B00DA86FF /* SavedProductsView.swift */; };
-		DA08E8B92BFF76C600DA86FF /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA08E8B82BFF76C600DA86FF /* Product.swift */; };
 		DA08E8BB2BFF782B00DA86FF /* ProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA08E8BA2BFF782B00DA86FF /* ProductCardView.swift */; };
 		DA08E8BF2BFF9B4D00DA86FF /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA08E8BE2BFF9B4D00DA86FF /* ProductListViewModel.swift */; };
 		DA08E8C32C008C9B00DA86FF /* ProductCardMiniView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA08E8C22C008C9B00DA86FF /* ProductCardMiniView.swift */; };
+		DA08E8C82C00ABF000DA86FF /* Skincare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA08E8C62C00ABF000DA86FF /* Skincare.xcdatamodeld */; };
+		DA08E8CA2C00AE4E00DA86FF /* ProductDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA08E8C92C00AE4E00DA86FF /* ProductDummy.swift */; };
 		DA6B7CFA2BFB53F700174C13 /* InputIngredientsManualView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6B7CF92BFB53F700174C13 /* InputIngredientsManualView.swift */; };
 		F4DC4B502BFCF51D008EF955 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC4B4F2BFCF51D008EF955 /* Question.swift */; };
 		F4DC4B522BFCF68B008EF955 /* DataQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC4B512BFCF68B008EF955 /* DataQuiz.swift */; };
@@ -84,7 +84,6 @@
 		946AEA652BFF8AA2003ED237 /* Product+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataClass.swift"; sourceTree = "<group>"; };
 		946AEA662BFF8AA2003ED237 /* Product+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		946AEA692BFFA144003ED237 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		B22DA2432C006B1A0024ECC1 /* Skincare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Skincare.xcdatamodel; sourceTree = "<group>"; };
 		B22DA2452C008C420024ECC1 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		B22DA2472C0090C50024ECC1 /* AnalysisResultComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisResultComponent.swift; sourceTree = "<group>"; };
 		B22DA2492C0094B00024ECC1 /* ToggleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleComponent.swift; sourceTree = "<group>"; };
@@ -126,10 +125,11 @@
 		D9EC3FB82BE91E8D00F4B9E7 /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
 		D9EC3FBD2BE91EBF00F4B9E7 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		DA08E8B62BFF2C0B00DA86FF /* SavedProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedProductsView.swift; sourceTree = "<group>"; };
-		DA08E8B82BFF76C600DA86FF /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		DA08E8BA2BFF782B00DA86FF /* ProductCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardView.swift; sourceTree = "<group>"; };
 		DA08E8BE2BFF9B4D00DA86FF /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
 		DA08E8C22C008C9B00DA86FF /* ProductCardMiniView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardMiniView.swift; sourceTree = "<group>"; };
+		DA08E8C72C00ABF000DA86FF /* Skincare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Skincare.xcdatamodel; sourceTree = "<group>"; };
+		DA08E8C92C00AE4E00DA86FF /* ProductDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDummy.swift; sourceTree = "<group>"; };
 		DA6B7CF92BFB53F700174C13 /* InputIngredientsManualView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputIngredientsManualView.swift; sourceTree = "<group>"; };
 		F4DC4B4F2BFCF51D008EF955 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		F4DC4B512BFCF68B008EF955 /* DataQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataQuiz.swift; sourceTree = "<group>"; };
@@ -181,7 +181,7 @@
 				F4DC4B4F2BFCF51D008EF955 /* Question.swift */,
 				946AEA5F2BFF7FF7003ED237 /* ProductModel.swift */,
 				946AEA692BFFA144003ED237 /* CoreDataManager.swift */,
-				DA08E8B82BFF76C600DA86FF /* Product.swift */,
+				DA08E8C92C00AE4E00DA86FF /* ProductDummy.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -288,7 +288,7 @@
 		D9EC3FA42BE91C8500F4B9E7 /* AuraSkin */ = {
 			isa = PBXGroup;
 			children = (
-				B22DA2422C006B1A0024ECC1 /* Skincare.xcdatamodeld */,
+				DA08E8C62C00ABF000DA86FF /* Skincare.xcdatamodeld */,
 				D9E4374D2BF73AAC006B9A59 /* Routes */,
 				D952B3942BEF66A000C09E5F /* Utilities */,
 				D983CF5F2BEF06D300588417 /* Services */,
@@ -415,7 +415,6 @@
 				B2CD11C12BFE663200C44A1C /* NetworkMonitor.swift in Sources */,
 				B28252122BF0DCE000ADABF2 /* IngredientsEffectDetailView.swift in Sources */,
 				B22DA24A2C0094B00024ECC1 /* ToggleComponent.swift in Sources */,
-				B22DA2442C006B1A0024ECC1 /* Skincare.xcdatamodeld in Sources */,
 				9434ED3C2BFC5F110074744F /* ActionChooseSkin.swift in Sources */,
 				B282520E2BEF989500ADABF2 /* Colors.swift in Sources */,
 				D9EC3FB92BE91E8D00F4B9E7 /* ScanView.swift in Sources */,
@@ -430,6 +429,7 @@
 				9434ED452BFC61CB0074744F /* DatePickerComponent.swift in Sources */,
 				B28251FF2BEF661500ADABF2 /* ContainerComponents.swift in Sources */,
 				946AEA6A2BFFA144003ED237 /* CoreDataManager.swift in Sources */,
+				DA08E8CA2C00AE4E00DA86FF /* ProductDummy.swift in Sources */,
 				D9EC3FBE2BE91EBF00F4B9E7 /* ProfileView.swift in Sources */,
 				B283B34D2BFCEBB7000D37E0 /* SkinTypeEnum.swift in Sources */,
 				D983CF682BEF109200588417 /* CameraServices.swift in Sources */,
@@ -452,7 +452,6 @@
 				D952B3982BEF6C1B00C09E5F /* ScanViewRoute.swift in Sources */,
 				D98F12112BFE52C100B347D6 /* ScanInstructionView.swift in Sources */,
 				D952B39A2BEF9A7900C09E5F /* ImageCropper.swift in Sources */,
-				DA08E8B92BFF76C600DA86FF /* Product.swift in Sources */,
 				D983CF612BEF070700588417 /* Ingredients.swift in Sources */,
 				D983CF642BEF085E00588417 /* TestButton.swift in Sources */,
 				D952B3A52BEFC56800C09E5F /* TypoCheckRoute.swift in Sources */,
@@ -464,6 +463,7 @@
 				B283B34B2BFCBBA8000D37E0 /* DonutChartComponent.swift in Sources */,
 				D952B3962BEF66E000C09E5F /* TestFunction.swift in Sources */,
 				946AEA602BFF7FF7003ED237 /* ProductModel.swift in Sources */,
+				DA08E8C82C00ABF000DA86FF /* Skincare.xcdatamodeld in Sources */,
 				D98F12132BFE52F700B347D6 /* ScanInstructionComponent.swift in Sources */,
 				D98F12342BFF457C00B347D6 /* ProductsView.swift in Sources */,
 			);
@@ -599,7 +599,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AuraSkin/Preview Content\"";
-				DEVELOPMENT_TEAM = 4YT8AV67AJ;
+				DEVELOPMENT_TEAM = HNLBPGWVZW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AuraSkin/Info.plist;
@@ -616,7 +616,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.aurora.AuraSkin-dev-ilham";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aurora.AuraSkin-dev-har";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -632,7 +632,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AuraSkin/Preview Content\"";
-				DEVELOPMENT_TEAM = 4YT8AV67AJ;
+				DEVELOPMENT_TEAM = HNLBPGWVZW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AuraSkin/Info.plist;
@@ -649,7 +649,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.aurora.AuraSkin-dev-ilham";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aurora.AuraSkin-dev-har";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -700,14 +700,14 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		B22DA2422C006B1A0024ECC1 /* Skincare.xcdatamodeld */ = {
+		DA08E8C62C00ABF000DA86FF /* Skincare.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				B22DA2432C006B1A0024ECC1 /* Skincare.xcdatamodel */,
+				DA08E8C72C00ABF000DA86FF /* Skincare.xcdatamodel */,
 			);
-			currentVersion = B22DA2432C006B1A0024ECC1 /* Skincare.xcdatamodel */;
+			currentVersion = DA08E8C72C00ABF000DA86FF /* Skincare.xcdatamodel */;
 			name = Skincare.xcdatamodeld;
-			path = "/Users/rangerhitam142/GRINDING ZONE/Apple Developer Academy/Mini Challenge/AuraSkin/AuraSkin/AuraSkin/Skincare.xcdatamodeld";
+			path = "/Users/rismaharby/Documents/Apple Developer Academy/AuraSkin/AuraSkin/Skincare.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
