@@ -43,7 +43,7 @@ struct AnalysisResultView: View {
 
     @State var skinType: SkinType = .normal
     
-    @AppStorage("skinTypePersistance") var skinTypePersistance: SkinType = .normal
+    @AppStorage("skinTypePersistance") var skinTypePersistance: SkinType = .combination
 
 
     init(ingredients: String) {

@@ -18,7 +18,7 @@ struct TestButton: View{
             .font(.headline)
             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
             .padding()
-            .background(Color.auraSkinPrimaryColor)
+            .background(.accent)
             .foregroundStyle(.white)
             .clipShape(RoundedRectangle(cornerRadius: 25))
     }
