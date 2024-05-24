@@ -20,10 +20,23 @@ struct SaveProductView: View {
 
     @State private var photosPickerItem: PhotosPickerItem?
     @State private var photoState: photoStateEnum = .noImage
-    @State var product: ProductModel = ProductModel(name: "", ingredients: "ingredients", category: "Facial Wash", currentlyUsed: true, expiredDate: Date.now, image: UIImage(named: "productImageDefault")?.pngData())
 
-    let saveProductViewModel = SaveProductViewModel()
-    let basicSkincare: [String] = ["Facial Wash", "Toner", "Moisturizer", "Sunscreen"]
+    @State var product: ProductModel
+    
+    var saveProductViewModel = SaveProductViewModel()
+
+    var basicSkincare: [String] = ["Facial Wash", "Toner", "Moisturizer", "Sunscreen"]
+    
+    init(ingredients: String) {
+        _product = State(initialValue: ProductModel(
+            name: "",
+            ingredients: ingredients,
+            category: "Facial Wash",
+            currentlyUsed: true,
+            expiredDate: Date.now,
+            image: UIImage(named: "productImageDefault")?.pngData()
+        ))
+    }
 
     var body: some View {
         VStack {
@@ -111,6 +124,6 @@ struct SaveProductView: View {
 }
 
 #Preview {
-    SaveProductView()
+    SaveProductView(ingredients: "Sample ingredients")
 }
 

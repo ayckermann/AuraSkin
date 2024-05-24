@@ -15,8 +15,7 @@ struct ViewController : View {
     
     @State var skinType: SkinType = .none
     
-    var body: some View {
-        
+    var body: some View {        
         if skinTypePersistance == .none {
             tempChooseSkinType()
         }  else{
@@ -45,7 +44,6 @@ struct ViewController : View {
                     }
                     .tag(3)
             }
-            
             .tint(.greenAccent)
         }
         

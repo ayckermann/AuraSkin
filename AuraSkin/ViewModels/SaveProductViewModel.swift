@@ -22,7 +22,7 @@ class SaveProductViewModel {
         let productEntity = Product(context: context)
         productEntity.id = product.id
         productEntity.name = product.name
-        productEntity.expired = product.expiredDate
+        productEntity.expiredDate = product.expiredDate
         productEntity.currentlyUsed = product.currentlyUsed
         productEntity.ingredients = product.ingredients
         productEntity.image = product.image
@@ -37,29 +37,3 @@ class SaveProductViewModel {
     }
 }
 
-
-
-//import Foundation
-//import CoreData
-//import SwiftUI
-//
-//class SaveProductViewModel {
-//    
-//    func saveProduct(context: NSManagedObjectContext, name: String, ingredients: String, category: String, currentlyUsed: Bool, expiredDate: Date, image: UIImage){
-//        let product = Product(context: context)
-//        product.id = UUID()
-//        product.name = name
-//        product.expired = expiredDate
-//        product.currentlyUsed = currentlyUsed
-//        product.ingredients = ingredients
-//        product.image = image.pngData()
-//        
-//        do {
-//            try context.save()
-//            print("Product saved successfully!")
-//            print(product)
-//        } catch {
-//            print("Whoops \(error.localizedDescription)")
-//        }
-//    }
-//}
