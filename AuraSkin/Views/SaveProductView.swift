@@ -13,24 +13,44 @@ struct SaveProductView: View {
     @State var expiredDate: Date = Date.now
     @State var currentlyUsed: Bool = true
 
+    enum productPhotoState {
+        case noPhoto, photo
+    }
+
+    @State var photo: productPhotoState = .noPhoto
+
     @Environment(\.dismiss) var dismiss
 
-    var basicSkincare: [String] = ["Facial Wash", "Toner", "Moisturizer", "Sunscreen"]
+    let basicSkincare: [String] = ["Facial Wash", "Toner", "Moisturizer", "Sunscreen"]
 
     var body: some View {
         VStack {
-            VStack {
-                Image(systemName: "plus")
-                    .resizable()
-                    .frame(width: 55, height: 55)
-                    .foregroundColor(.gray)
+            switch photo {
+                case .noPhoto:
+                    Image(systemName: "plus")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 55, height: 55)
+                        .foregroundColor(.gray)
+                        .frame(width: 250, height: 235)
+                        .overlay(RoundedRectangle(cornerRadius: 11).stroke(.gray))
+                        .padding(.bottom)
+                        .onTapGesture {
+                            // action
+                        }
+                case .photo:
+                    Image(.bebek)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 250, height: 235)
+                        .foregroundColor(.gray)
+                        .clipShape(RoundedRectangle(cornerRadius: 11))
+                        .padding(.bottom)
+                        .onTapGesture {
+                            // action
+                        }
             }
-            .frame(width: 250, height: 235)
-            .overlay(RoundedRectangle(cornerRadius: 11).stroke(.gray, lineWidth: 1))
-            .padding(.bottom)
-            .onTapGesture {
-                // launch camera view
-            }
+
 
             SectionTextLeading("Product's Name")
                 .foregroundStyle(Color(UIColor.darkGray))

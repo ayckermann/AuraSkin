@@ -59,7 +59,7 @@ struct AnalysisResultView: View {
                         LoadingView()
                     } else {
                         ScrollView {
-                            VStack {
+                            LazyVStack {
                                 HStack {
                                     Text("Skin Type Related Ingredients")
                                         .font(.title2)

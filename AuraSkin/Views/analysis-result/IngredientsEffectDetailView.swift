@@ -13,7 +13,7 @@ struct IngredientsEffectDetailView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(alignment: .leading) {
+                LazyVStack(alignment: .leading) {
                     ForEach(data.ingredientsTable, id: \.title) { data in
                         Text(data.title)
                             .font(.body)
@@ -29,7 +29,6 @@ struct IngredientsEffectDetailView: View {
             }
         }
         .navigationTitle(data.effect)
-        .accentColor(.red)
     }
 
     private func removeHtmlTag(text: String) -> String {
