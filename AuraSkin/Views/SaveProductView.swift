@@ -78,12 +78,7 @@ struct SaveProductView: View {
             DatePickerComponent(expiredDate: $product.expiredDate)
                 .padding(.bottom)
 
-            Toggle("Currently used", isOn: $product.currentlyUsed)
-                .frame(height: 45)
-                .tint(.accentColor)
-                .padding([.leading, .trailing], 15)
-                .overlay(RoundedRectangle(cornerRadius: 5).stroke(.gray, lineWidth: 1))
-                .padding(.bottom)
+            ToggleComponent(text: "Currently used", isOn: $product.currentlyUsed)
 
             Button(action: {
                 saveProductViewModel.saveProduct(context: viewContext, product: product)
