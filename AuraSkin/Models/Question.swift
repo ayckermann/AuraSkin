@@ -23,3 +23,19 @@ struct UserAnswer{
     let forSkinType: SkinType
     let point: Int
 }
+
+
+struct SelectionSkin: Identifiable { // Menambahkan conform ke Identifiable
+    var id = UUID() // Menambahkan properti id
+    var imageName: String
+    var skinType: SkinType
+    var declaration: String
+    var info: String
+}
+
+struct SkinTypeInfo{
+    var skinType: SkinType
+    var imageSkin: String
+    var description: String
+    var characteristics: String
+}

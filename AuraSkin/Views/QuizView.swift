@@ -14,6 +14,8 @@ struct QuizView: View {
     
     @State var userAnswer : [UserAnswer] = []
     
+    var quizFrom : QuizFrom
+    
     func insertOrReplace<T>(array: inout [T], value: T, at index: Int) {
         // Check if the index is within bounds of the array
         if index >= 0 && index < array.count {
@@ -219,8 +221,9 @@ struct QuizView: View {
                         .cornerRadius(10)
                         .disabled(!userAnswer.indices.contains(currentQuestionIndex))
                     } else {
-                        NavigationLink(destination: ProfileView() .onAppear(){
-                            print(getSkinType().description)
+                        NavigationLink(destination: {
+                            ResultSkinType(skinType: getSkinType(), quizFrom: quizFrom)
+                                .navigationBarBackButtonHidden()
                         }) {
                             HStack {
                                 Text("Next")
@@ -271,14 +274,92 @@ struct CQuestionView: View {
     }
 }
 
+enum QuizFrom{
+    case onboard, profile
+}
 
+struct ResultSkinType: View {
+    var skinType: SkinType
+    var quizFrom : QuizFrom
+    
+    @AppStorage("skinTypePersistance") var skinTypePersistance: SkinType = .none
+
+    @State var isPicked = false
+
+    var body: some View {
+        NavigationStack {
+            VStack{
+                NavigationLink {
+                    if(quizFrom == .onboard){
+                        OnboardingView()
+                            .navigationBarBackButtonHidden()
+                    }else{
+                        ProfileView()
+                            .navigationBarBackButtonHidden()
+                    }
+                    
+                } label: {
+                    Image(systemName: "xmark")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                        .foregroundStyle(.greenAccent)
+                }
+                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+                .padding()
+                
+                
+                InfoSkinView(skinType: skinType)
+                
+                HStack{
+                    NavigationLink {
+                        QuizView(quizFrom: quizFrom)
+                        
+                    } label: {
+                        Text("Retake")
+                            .frame(width: 176, height: 52)
+                            .foregroundColor(Color(red: 0.0784313725490196, green: 0.36470588235294116, blue: 0.4))
+                            .background(Color.white)
+                            .cornerRadius(10)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(Color(red: 0.0784313725490196, green: 0.36470588235294116, blue: 0.4), lineWidth: 1)
+                            )
+                        
+                    }
+                    Button(action: {
+                        isPicked = true
+                        skinTypePersistance = skinType
+                    }, label: {
+                        Text("Set Skin Type")
+                            .frame(width: 176, height: 52)
+                            .foregroundColor(Color(red: 0.0784313725490196, green: 0.36470588235294116, blue: 0.4))
+                            .background(Color.white)
+                            .cornerRadius(10)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(Color(red: 0.0784313725490196, green: 0.36470588235294116, blue: 0.4), lineWidth: 1)
+                            )
+                    })
+                    
+                }
+            }
+            .navigationDestination(isPresented: $isPicked){
+                if(skinTypePersistance != .none){
+                    ViewController()
+                        .navigationBarBackButtonHidden()
+                }
+            }
+        }
+       
+    }
+}
 
 struct QView_Previews: PreviewProvider {
     static var previews: some View {
-        QuizView()
+        QuizView(quizFrom: .profile)
     }
 }
 
 #Preview{
-    CQuestionView(question: "asdasd", isSelected: true)
+    ResultSkinType(skinType: .normal, quizFrom: .profile)
 }

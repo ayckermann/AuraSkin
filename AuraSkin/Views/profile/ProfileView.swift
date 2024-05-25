@@ -10,6 +10,8 @@ import SwiftUI
 struct ProfileView: View {
     @State private var showingOptions = false
 //    @State private var selection = "None"
+    @AppStorage("skinTypePersistance") var skinTypePersistance: SkinType = .none
+
     
     var body: some View {
         
@@ -36,13 +38,19 @@ struct ProfileView: View {
                     Section {
                         ActionChooseSkin()
                             .foregroundStyle(.black)
-                        navProfileList(img: "person.fill", title: "Check Your Skin", detail: "Quiz for determine your skin type", view: QuizView())
+                        navProfileList(img: "person.fill", title: "Check Your Skin", detail: "Quiz for determine your skin type", view: QuizView(quizFrom: .profile))
                     }
                     
                     Section {
                         navProfileList(img: "exclamationmark.triangle.fill", title: "Medical Disclaimer", detail: "Detail", view: MedicalDisclaimerView())
                         navProfileList(img: "checkmark.seal.fill", title: "Terms and Condition", detail: "Detail", view: TermsConditionView())
                     }
+                    
+                    Button(action: {
+                        skinTypePersistance = .none
+                    }, label: {
+                        Text("Reset skin tyoe")
+                    })
                 }
                 .scrollContentBackground(.hidden)
                 .offset(y: -80)
