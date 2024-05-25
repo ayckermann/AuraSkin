@@ -10,8 +10,7 @@ import SwiftUI
 
 struct ImageCropper: UIViewControllerRepresentable {
     @Binding var image: UIImage?
-    @Binding var presetFixedRatioType: Mantis.PresetFixedRatioType
-    
+//    @Binding var presetFixedRatioType: Mantis.PresetFixedRatioType
     
     @Environment(\.dismiss) var dismiss
     
@@ -32,7 +31,10 @@ struct ImageCropper: UIViewControllerRepresentable {
             parent.onImageCropped?(cropped)
             //     print("transformation is \(transformation)")
             
-            self.parent.dismiss()
+//            self.parent.dismiss()
+            
+            
+            
         }
         
         
@@ -69,7 +71,7 @@ struct ImageCropper: UIViewControllerRepresentable {
         var config = Mantis.Config()
         config.cropShapeType = .rect
         
-        config.presetFixedRatioType = presetFixedRatioType
+        config.presetFixedRatioType = .canUseMultiplePresetFixedRatio()
         let cropViewController = Mantis.cropViewController(image: image!,
                                                            config: config)
         cropViewController.delegate = context.coordinator

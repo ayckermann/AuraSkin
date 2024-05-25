@@ -24,16 +24,22 @@ struct CameraView: UIViewControllerRepresentable {
             }
         }
         
-        cameraServices.previewLayer.frame = viewController.view.bounds
-//        cameraManager.previewLayer.frame = CGRect(x: -200, y: -49, width: viewController.view.bounds.height, height: viewController.view.bounds.height)
+        let screenWidth = viewController.view.bounds.width
+//        let screenHeight = viewController.view.bounds.height
         
-        viewController.view.backgroundColor = UIColor.systemBackground
+        let previewWidth = screenWidth
+        let previewHeight = screenWidth * (16.0 / 9.0) //
+        
+        let xOffset = CGFloat(0.0)
+        let yOffset = CGFloat(65.0)
+            //(screenHeight - previewHeight) / 2.0
+        
+        cameraServices.previewLayer.frame = CGRect(x: xOffset, y: yOffset, width: previewWidth, height: previewHeight)
+        
+        // Add preview layer to view controller's view
+        viewController.view.backgroundColor = .black
         viewController.view.layer.addSublayer(cameraServices.previewLayer)
-        
-        
-        
-//
-        
+                
         
         return viewController
     }

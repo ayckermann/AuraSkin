@@ -10,21 +10,21 @@ import SwiftUI
 
 //component example
 struct TestButton: View{
+    var text: String = ""
+    
     var body: some View{
-        Text("TEST")
+        Text(text)
+            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
             .font(.headline)
             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-            .frame(width: 250)
             .padding()
-            .background(.green)
+            .background(.accent)
             .foregroundStyle(.white)
-            .clipShape(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/))
-        
-            
+            .clipShape(RoundedRectangle(cornerRadius: 25))
     }
 }
 
 
 #Preview {
-    TestButton()
+    TestButton(text: "Test")
 }
