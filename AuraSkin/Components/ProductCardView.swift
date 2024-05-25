@@ -10,7 +10,7 @@ import SwiftUI
 struct ProductCardView: View {
     var name: String
     var category: String
-    var imageName: String
+    var imageName: Data?
     
     var body: some View {
         VStack {
@@ -22,12 +22,21 @@ struct ProductCardView: View {
                     .frame(width: 177, height: 188)
                 
                 VStack {
-                    Image(imageName)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 154, height: 120)
-                        .cornerRadius(10)
-                        .offset(y: -20)
+                    if let imageData = imageName, let uiImage = UIImage(data: imageName!) {
+                        Image(uiImage: uiImage)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 154, height: 120)
+                            .cornerRadius(10)
+                            .offset(y: -20)
+                    } else {
+                        Image(uiImage: UIImage(data: imageName ?? Data())!)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 154, height: 120)
+                            .cornerRadius(10)
+                            .offset(y: -20)
+                    }
                     
                     VStack(alignment: .leading, spacing: 5) {
                         Spacer().frame(height: 1)
@@ -50,6 +59,6 @@ struct ProductCardView: View {
     }
 }
 
-#Preview {
-    ProductCardView(name: "Curology Facial Wash", category:"Face Wash", imageName: "unsplash_p3O5f4u95Lo")
-}
+//#Preview {
+//    ProductCardView(name: "Curology Facial Wash", category:"Face Wash", imageName: <#Data#>, imageName: )
+//}

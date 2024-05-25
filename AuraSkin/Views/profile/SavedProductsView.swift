@@ -32,7 +32,7 @@ struct SavedProductsView: View {
                 ScrollView(.horizontal) {
                     LazyHGrid(rows: [GridItem(.flexible(), spacing: 1)]) {
                         ForEach(viewModel.filteredProducts) { product in
-                            ProductCardView(name: product.name, category: product.category, imageName: product.imageUrl)
+                            ProductCardView(name: product.name, category: product.category, imageName: product.image)
                                 .listRowSeparator(.hidden, edges: .all)
                         }
                     }
@@ -68,7 +68,7 @@ struct SavedProductsView: View {
                         GridItem(.flexible())
                     ]) {
                         ForEach(viewModel.filteredSegmentProducts) { product in
-                            ProductCardMiniView(name: product.name, imageName: product.imageUrl)
+                            ProductCardView(name: product.name, category: product.category, imageName: product.image)
                                 .listRowSeparator(.hidden, edges: .all)
                         }
                     }
