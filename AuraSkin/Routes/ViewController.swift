@@ -15,13 +15,12 @@ struct ViewController : View {
     
     @State var skinType: SkinType = .none
     
-    var body: some View {
-        
+    var body: some View {        
         if skinTypePersistance == .none {
             tempChooseSkinType()
         }  else{
             TabView(selection : $selection){
-                ProductsView()
+                SavedProductsView()
                     .tabItem {
                         Label("Products", systemImage: selection == 1 ? "bookmark.fill" : "bookmark")
                             .environment(\.symbolVariants, .none)
@@ -45,7 +44,6 @@ struct ViewController : View {
                     }
                     .tag(3)
             }
-            
             .tint(.greenAccent)
         }
         

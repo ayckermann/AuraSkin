@@ -18,7 +18,6 @@ struct InputIngredientsManualView: View {
            return dummyNames.randomElement() ?? ""
        }()
     
-//    private let dummyNames: [String] = []
     private let dummyNames: [String] = ["Alice", "Bob", "Charlie", "Diana", "Eve"]
 
     var model = AnalysisResultViewModel()
@@ -65,7 +64,7 @@ struct InputIngredientsManualView: View {
                         .disableAutocorrection(true)
 //                        .foregroundColor(Color(.systemBackground))
                         .foregroundColor(.black)
-                        .onChange(of: newTagName) { value in
+                        .onChange(of: newTagName) {
                             processInput()
                         }
                 }.padding()

@@ -12,47 +12,68 @@ struct SaveProductView: View {
     // MARK: Core data
     @EnvironmentObject var manager: CoreDataManager
     @Environment(\.managedObjectContext) var viewContext
-    
     @Environment(\.dismiss) var dismiss
     
-    @State var product: ProductModel = ProductModel(name: "", ingredients: "ingredients", category: "Facial Wash", currentlyUsed: true, expiredDate: Date.now, image: UIImage(named: "productImageDefault")?.pngData())
-    
+    enum photoStateEnum {
+        case noImage, image
+    }
+
     @State private var photosPickerItem: PhotosPickerItem?
+    @State private var photoState: photoStateEnum = .noImage
+
+    @State var product: ProductModel
+    
     var saveProductViewModel = SaveProductViewModel()
 
     var basicSkincare: [String] = ["Facial Wash", "Toner", "Moisturizer", "Sunscreen"]
+    
+    init(ingredients: String) {
+        _product = State(initialValue: ProductModel(
+            name: "",
+            ingredients: ingredients,
+            category: "Facial Wash",
+            currentlyUsed: true,
+            expiredDate: Date.now,
+            image: UIImage(named: "productImageDefault")?.pngData()
+        ))
+    }
 
     var body: some View {
         VStack {
-            VStack {
-                Image(systemName: "plus")
-                    .resizable()
-                    .frame(width: 55, height: 55)
-                    .foregroundColor(.gray)
-                PhotosPicker(selection: $photosPickerItem, matching: .images){
-                    Image(uiImage: UIImage(data: product.image ?? UIImage(named: "productImageDefault")!.pngData()!) ?? UIImage(named: "productImageDefault")!)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 100, height: 100)
+            PhotosPicker(selection: $photosPickerItem, matching: .images) {
+                switch photoState {
+                    case .noImage:
+                        Image(systemName: "plus")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 55, height: 55)
+                            .foregroundStyle(.gray)
+                            .frame(width: 250, height: 235)
+                            .overlay(RoundedRectangle(cornerRadius: 11).stroke(.gray))
+                            .padding(.bottom)
+                    case .image:
+                        Image(data: (product.image ?? UIImage(named: "productImageDefault")?.pngData())!)!
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 250, height: 235)
+                            .foregroundColor(.gray)
+                            .clipShape(RoundedRectangle(cornerRadius: 11))
+                            .padding(.bottom)
                 }
             }
-            .frame(width: 250, height: 235)
-            .overlay(RoundedRectangle(cornerRadius: 11).stroke(.gray, lineWidth: 1))
-            .padding(.bottom)
-            .onTapGesture {
-                // launch camera view
-            }
-            .onChange(of: photosPickerItem) { _, _ in
-                Task {
-                    if let photosPickerItem,
-                       let data = try? await photosPickerItem.loadTransferable(type: Data.self) {
-                        if let image = UIImage(data: data) {
-                            product.image = data
+                .onChange(of: photosPickerItem) { _, _ in
+                    Task {
+                        if let photosPickerItem,
+                           let data = try? await photosPickerItem.loadTransferable(type: Data.self) {
+                            if UIImage(data: data) != nil {
+                                product.image = data
+                                self.photoState = .image
+                            }
                         }
+                        photosPickerItem = nil
                     }
-                    photosPickerItem = nil
                 }
-            }
+
 
             SectionTextLeading("Product's Name")
                 .foregroundStyle(Color(UIColor.darkGray))
@@ -70,15 +91,11 @@ struct SaveProductView: View {
             DatePickerComponent(expiredDate: $product.expiredDate)
                 .padding(.bottom)
 
-            Toggle("Currently used", isOn: $product.currentlyUsed)
-                .frame(height: 45)
-                .tint(Color.auraSkinPrimaryColor)
-                .padding([.leading, .trailing], 15)
-                .overlay(RoundedRectangle(cornerRadius: 5).stroke(.gray, lineWidth: 1))
-                .padding(.bottom)
+            ToggleComponent(text: "Currently used", isOn: $product.currentlyUsed)
 
             Button(action: {
                 saveProductViewModel.saveProduct(context: viewContext, product: product)
+                dismiss()
             }, label: {
                 TestButton(text: "Save")
             })
@@ -103,6 +120,6 @@ struct SaveProductView: View {
 }
 
 #Preview {
-    SaveProductView()
+    SaveProductView(ingredients: "Sample ingredients")
 }
 

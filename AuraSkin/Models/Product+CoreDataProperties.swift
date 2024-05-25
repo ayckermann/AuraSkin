@@ -20,7 +20,7 @@ extension Product {
     @NSManaged public var image: Data?
     @NSManaged public var currentlyUsed: Bool
     @NSManaged public var category: String?
-    @NSManaged public var expired: Date?
+    @NSManaged public var expiredDate: Date?
     @NSManaged public var id: UUID?
     @NSManaged public var ingredients: String?
 
