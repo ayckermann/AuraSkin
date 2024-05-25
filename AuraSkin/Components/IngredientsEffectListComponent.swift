@@ -26,9 +26,9 @@ struct IngredientEffectList: View {
                         .toolbar(.visible, for: .tabBar)
                 } label: {
                     HStack {
-                        Image(systemName: item.symbol)
+                        Image(item.symbol)
                             .resizable()
-                            .frame(width: 30, height: 30)
+                            .frame(width: 40, height: 40)
                             .foregroundStyle(.black)
 
                         VStack {
@@ -42,10 +42,11 @@ struct IngredientEffectList: View {
                                 .foregroundStyle(.gray)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                         }
-                        .padding(.leading)
+                        .padding(.leading, 10)
+
+                        Spacer()
 
                         Text("\(item.count)")
-                            .frame(alignment: .trailing)
                             .foregroundStyle(.gray)
 
                         Image(systemName: "chevron.right")
