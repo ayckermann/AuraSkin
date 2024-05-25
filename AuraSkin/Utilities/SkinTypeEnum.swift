@@ -49,3 +49,15 @@ struct SkinSelectionData {
         
     ]
 }
+
+
+struct SkinTypeInfoData{
+    
+    static let skinTypesData :[SkinTypeInfo] = [
+        SkinTypeInfo(skinType:  .oily,imageSkin: "Group 376",  description: "Kulit berminyak memiliki pori-pori besar dan biasanya berkilau.", characteristics: "Sering berjerawat, pori-pori besar, dan berminyak di seluruh wajah."),
+        SkinTypeInfo(skinType: .dry,imageSkin: "dry1", description: "Kulit kering adalah kondisi kulit yang ditandai dengan rasa gatal, bersisik dan pecah-pecah.", characteristics: "Kulit terasa ketat, bersisik,kadang-kadang pecah-pecah, Pori-pori tidak terlihat, Terasa kering setelah membersihkan wajah, Kerut dan garis halus lebih terlihat."),
+        SkinTypeInfo(skinType: .combination,imageSkin: "combination", description: "Kulit kombinasi memiliki area yang berminyak dan area yang kering.", characteristics: "Zona T berminyak (dahi, hidung, dagu) dan pipi kering."),
+        SkinTypeInfo(skinType: .sensitive,imageSkin: "sensitive", description: "Kulit sensitif mudah bereaksi terhadap berbagai faktor.", characteristics: "Mudah kemerahan, gatal, dan seringkali terasa terbakar."),
+        SkinTypeInfo(skinType: .normal,imageSkin: "normal", description: "Kulit normal memiliki keseimbangan yang baik antara kelembapan dan minyak.", characteristics: "Tidak terlalu kering atau berminyak, pori-pori kecil, dan jarang berjerawat.")
+    ]
+}

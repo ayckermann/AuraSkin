@@ -38,7 +38,7 @@ struct ProfileView: View {
                     Section {
                         ActionChooseSkin()
                             .foregroundStyle(.black)
-                        navProfileList(img: "person.fill", title: "Check Your Skin", detail: "Quiz for determine your skin type", view: QuizView())
+                        navProfileList(img: "person.fill", title: "Check Your Skin", detail: "Quiz for determine your skin type", view: QuizView(quizFrom: .profile))
                     }
                     
                     Section {

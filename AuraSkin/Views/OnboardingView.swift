@@ -7,6 +7,7 @@ struct OnboardingView: View {
     
     @State var isPicked = false
     
+    
     var body: some View {
         NavigationStack {
             VStack(spacing: 50) {
@@ -39,9 +40,15 @@ struct OnboardingView: View {
                                 }
                         }
                         
+//                        SelectSkinView(selection: selection, isSelected: true, isShowDetail: $isShowDetail)
+//                            .onTapGesture {
+//                                skinType = selection.skinType
+//                                print(skinType)
+//                            }
+//                        
                     }
                     
-                    NavigationLink(destination: QuizView()) { // Menggunakan NavigationLink untuk pergi ke halaman berikutnya
+                    NavigationLink(destination: QuizView(quizFrom: .onboard)) { // Menggunakan NavigationLink untuk pergi ke halaman berikutnya
                         Text("Don’t know your skin type?")
                             .frame(width: 359, height: 75)
                             .foregroundColor(Color(red: 0.0784313725490196, green: 0.36470588235294116, blue: 0.4))
@@ -63,12 +70,13 @@ struct OnboardingView: View {
                         .background(Color(red: 0.0784313725490196, green: 0.36470588235294116, blue: 0.4))
                         .font(.system(size: 20, weight: .bold, design: .default))
                         .cornerRadius(20)
-                    .foregroundStyle(.white)            
+                        .foregroundStyle(.white)
                 })
                 
                 .navigationDestination(isPresented: $isPicked){
                     if(skinTypePersistance != .none){
                         ViewController()
+                            .navigationBarBackButtonHidden()
                     }
                 }
                 
@@ -76,8 +84,9 @@ struct OnboardingView: View {
             }
             .navigationTitle("")
             .navigationBarHidden(true)
-        
+            
         }
+        
     }
 }
 
@@ -92,8 +101,11 @@ struct SwiftUIView_Previews: PreviewProvider {
 
 
 struct SelectSkinView: View {
+    
     var selection: SelectionSkin
     var isSelected: Bool
+    
+    @State var isShowDetail: Bool = false
     
     var body: some View {
         HStack(spacing: 20) {
@@ -112,11 +124,15 @@ struct SelectSkinView: View {
                     .foregroundColor(.gray)
                     .padding(.bottom, 6)
             }
+            Button(action: {
+                isShowDetail = true
+            }, label: {
+                Image(systemName: selection.info)
+                    .resizable()
+                    .frame(width: 22, height: 22)
+                .foregroundColor(Color(red: 0.0784313725490196, green: 0.36470588235294116, blue: 0.4))         
+            })
             
-            Image(systemName: selection.info)
-                .resizable()
-                .frame(width: 22, height: 22)
-                .foregroundColor(Color(red: 0.0784313725490196, green: 0.36470588235294116, blue: 0.4))
         }
         .padding()
         .frame(width: 359, height: 75)
@@ -125,5 +141,21 @@ struct SelectSkinView: View {
                 .stroke(Color.gray, lineWidth: 1)
         )
         .background(isSelected ? Color.green.opacity(0.2) : .clear)
+        .sheet(isPresented: $isShowDetail, content: {
+            VStack {
+                Button {
+                    isShowDetail = false
+                } label: {
+                    Image(systemName: "xmark")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                        .foregroundStyle(.greenAccent)
+                }
+                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+                .padding()
+                
+                InfoSkinView(skinType: selection.skinType)
+            }
+        })
     }
 }

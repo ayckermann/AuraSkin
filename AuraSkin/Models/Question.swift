@@ -32,3 +32,10 @@ struct SelectionSkin: Identifiable { // Menambahkan conform ke Identifiable
     var declaration: String
     var info: String
 }
+
+struct SkinTypeInfo{
+    var skinType: SkinType
+    var imageSkin: String
+    var description: String
+    var characteristics: String
+}
