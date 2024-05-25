@@ -240,6 +240,7 @@ struct QuizView: View {
                         .background(Color(red: 0.0784313725490196, green: 0.36470588235294116, blue: 0.4))
                         .cornerRadius(10)
                         .disabled(!userAnswer.indices.contains(currentQuestionIndex))
+                        .navigationBarBackButtonHidden()
                         
                     }
                     
