@@ -15,6 +15,7 @@ extension UISegmentedControl {
 }
 
 struct AnalysisResultComponent: View {
+    @StateObject var segmentState = SegmentState()
     @AppStorage("skinTypePersistance") var skinType: SkinType = .dry
 
     @State private var networkMonitor: NetworkMonitor = NetworkMonitor()
@@ -45,8 +46,8 @@ struct AnalysisResultComponent: View {
 
 
     init(ingredients: String) {
-        UISegmentedControl.appearance().setTitleTextAttributes([.font: UIFont.boldSystemFont(ofSize: 14)], for: .normal)
-        UISegmentedControl.appearance().backgroundColor = .systemBackground.withAlphaComponent(0.10)
+//        UISegmentedControl.appearance().setTitleTextAttributes([.font: UIFont.boldSystemFont(ofSize: 14)], for: .normal)
+//        UISegmentedControl.appearance().backgroundColor = .systemBackground.withAlphaComponent(0.10)
 
         self.ingredients = ingredients
     }
@@ -119,7 +120,14 @@ struct AnalysisResultComponent: View {
 
         }
         .onAppear {
+            segmentState.segment = "result"
+            if segmentState.segment == "result" {
+                UISegmentedControl.appearance().setTitleTextAttributes([.font: UIFont.boldSystemFont(ofSize: 14)], for: .normal)
+                UISegmentedControl.appearance().backgroundColor = .systemBackground.withAlphaComponent(0.10)
+            }
             Task { @MainActor in
+                
+                
                 self.showLoading = true
 
                 do {
@@ -154,6 +162,7 @@ struct AnalysisResultComponent: View {
     }
 
     private func getTotalIngredients(_ ingredients: [IngredientsEffect]) -> Int {
+        print("Segment State: \(segmentState.segment)")
         var total: Int = 0
 
         for ingredient in ingredients {

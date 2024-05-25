@@ -11,6 +11,9 @@ struct ProductCardView: View {
     var name: String
     var category: String
     var imageName: Data?
+    var productId: UUID
+    
+    @State private var isLiked = false
     
     var body: some View {
         VStack {
@@ -54,6 +57,17 @@ struct ProductCardView: View {
                     .padding(.bottom, 10)
                 }
             }
+            .overlay(
+                Button(action: {
+                    isLiked.toggle()
+                    print("Product UID: \(productId.uuidString)")
+                }) {
+                    Image(systemName: isLiked ? "heart.fill" : "heart")
+                        .foregroundColor(isLiked ? .red : .gray)
+                        .padding()
+                },
+                alignment: .topTrailing
+            )
         }
         .padding()
     }

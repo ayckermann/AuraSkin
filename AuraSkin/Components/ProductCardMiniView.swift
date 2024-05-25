@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProductCardMiniView: View {
     var name: String
-    var imageName: String
+    var imageName: Data?
     var body: some View {
         VStack {
             ZStack(alignment: .bottom) {
@@ -20,13 +20,28 @@ struct ProductCardMiniView: View {
                     .frame(width: 116, height: 130)
                 
                 VStack {
-                    Image(imageName)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 100, height: 86)
-                        .listStyle(.plain)
-                        .cornerRadius(10)
-                        .padding(.top, 10)
+                    if let imageData = imageName, let uiImage = UIImage(data: imageName!) {
+                        Image(uiImage: uiImage)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 100, height: 86)
+                            .cornerRadius(10)
+                            .padding(.top, 10)
+                    } else {
+                        Image(uiImage: UIImage(data: imageName ?? Data())!)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 100, height: 86)
+                            .cornerRadius(10)
+                            .padding(.top, 10)
+                    }
+//                    Image(imageName)
+//                        .resizable()
+//                        .aspectRatio(contentMode: .fill)
+//                        .frame(width: 100, height: 86)
+//                        .listStyle(.plain)
+//                        .cornerRadius(10)
+//                        .padding(.top, 10)
                     
                     Spacer()
                     VStack(alignment: .center) {
@@ -45,6 +60,6 @@ struct ProductCardMiniView: View {
     }
 }
 
-#Preview {
-    ProductCardMiniView(name: "yrdy yrdy yrdy yrdy yrdy", imageName: "unsplash_p3O5f4u95Lo")
-}
+//#Preview {
+//    ProductCardMiniView(name: "yrdy yrdy yrdy yrdy yrdy", imageName: "unsplash_p3O5f4u95Lo")
+//}

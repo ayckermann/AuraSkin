@@ -12,59 +12,57 @@ import SwiftUI
 class ProductListViewModel: ObservableObject {
     @Published var searchText: String       = ""
     @Published var selectedCategory: String = "Facial Wash"
-    @Published var products: [ProductModel]      = []
-    
+//    @Published var products: [ProductModel] = []
     @FetchRequest(
-        entity: Product.entity(),
-        sortDescriptors: []
-    ) private var fetchedProducts: FetchedResults<Product>
-    
+           entity: Product.entity(),
+           sortDescriptors: [NSSortDescriptor(keyPath: \Product.name, ascending: true)]
+       ) var products: FetchedResults<Product>
     
     var starters: [String] {
         ["Facial Wash", "Toner", "Moisturizer", "Sunscreen"]
     }
     
-    init() {
-        //        self.context = context
-        products = fetchedProducts.map { product in
-            ProductModel(
-                name: product.name ?? "Unknown",
-                ingredients: product.ingredients ?? "",
-                category: product.category ?? "Unknown",
-                currentlyUsed: product.currentlyUsed,
-                expiredDate: product.expiredDate ?? Date(),
-                image: product.image ?? Data()
-            )
-        }
-    }
+//    init() {
+//        print(todos)
+//        self.products = todos.map { product in
+//            ProductModel(
+//                name: product.name ?? "Unknown",
+//                ingredients: product.ingredients ?? "",
+//                category: product.category ?? "Unknown",
+//                currentlyUsed: product.currentlyUsed,
+//                expiredDate: product.expiredDate ?? Date(),
+//                image: product.image ?? Data()
+//            )
+//        }.compactMap { $0 }
+//    }
     
-    private func loadProducts() {
-        products = fetchedProducts.map { product in
-            ProductModel(
-                name: product.name ?? "Unknown",
-                ingredients: product.ingredients ?? "",
-                category: product.category ?? "Unknown",
-                currentlyUsed: product.currentlyUsed,
-                expiredDate: product.expiredDate ?? Date(),
-                image: product.image ?? Data()
-            )
-        }
-    }
+    //    private func loadProducts() {
+    //        products = fetchedProducts.map { product in
+    //            ProductModel(
+    //                name: product.name ?? "Unknown",
+    //                ingredients: product.ingredients ?? "",
+    //                category: product.category ?? "Unknown",
+    //                currentlyUsed: product.currentlyUsed,
+    //                expiredDate: product.expiredDate ?? Date(),
+    //                image: product.image ?? Data()
+    //            )
+    //        }
+    //    }
     
-    var filteredProducts: [ProductModel] {
-        print (products )
-        guard !searchText.isEmpty else { return products }
-        return products.filter { product in
-            return (product.name.lowercased().contains(searchText.lowercased()))
-        }
-    }
-    
-    
-    
-    var filteredSegmentProducts: [ProductModel] {
-        products.filter { product in
-            (selectedCategory.isEmpty || product.category == selectedCategory) &&
-            (searchText.isEmpty || ((product.name.lowercased().contains(searchText.lowercased()))))
-        }
-    }
+//    var filteredProducts: [ProductModel] {
+//        print (products )
+//        guard !searchText.isEmpty else { return products }
+//        return products.filter { product in
+//            return (product.name.lowercased().contains(searchText.lowercased()))
+//        }
+//    }
+//    
+//    
+//    
+//    var filteredSegmentProducts: [ProductModel] {
+//        products.filter { product in
+//            (selectedCategory.isEmpty || product.category == selectedCategory) &&
+//            (searchText.isEmpty || ((product.name.lowercased().contains(searchText.lowercased()))))
+//        }
+//    }
 }

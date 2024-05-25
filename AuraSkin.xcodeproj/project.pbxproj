@@ -66,6 +66,7 @@
 		DA08E8C82C00ABF000DA86FF /* Skincare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA08E8C62C00ABF000DA86FF /* Skincare.xcdatamodeld */; };
 		DA08E8CA2C00AE4E00DA86FF /* ProductDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA08E8C92C00AE4E00DA86FF /* ProductDummy.swift */; };
 		DA6B7CFA2BFB53F700174C13 /* InputIngredientsManualView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6B7CF92BFB53F700174C13 /* InputIngredientsManualView.swift */; };
+		DAB3E2CC2C023CC500BE9D68 /* SegmentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3E2CB2C023CC500BE9D68 /* SegmentState.swift */; };
 		F4DC4B502BFCF51D008EF955 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC4B4F2BFCF51D008EF955 /* Question.swift */; };
 		F4DC4B522BFCF68B008EF955 /* DataQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC4B512BFCF68B008EF955 /* DataQuiz.swift */; };
 		F4DC4B542BFCF703008EF955 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC4B532BFCF703008EF955 /* QuizView.swift */; };
@@ -131,6 +132,7 @@
 		DA08E8C72C00ABF000DA86FF /* Skincare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Skincare.xcdatamodel; sourceTree = "<group>"; };
 		DA08E8C92C00AE4E00DA86FF /* ProductDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDummy.swift; sourceTree = "<group>"; };
 		DA6B7CF92BFB53F700174C13 /* InputIngredientsManualView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputIngredientsManualView.swift; sourceTree = "<group>"; };
+		DAB3E2CB2C023CC500BE9D68 /* SegmentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentState.swift; sourceTree = "<group>"; };
 		F4DC4B4F2BFCF51D008EF955 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		F4DC4B512BFCF68B008EF955 /* DataQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataQuiz.swift; sourceTree = "<group>"; };
 		F4DC4B532BFCF703008EF955 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				B283B34C2BFCEBB7000D37E0 /* SkinTypeEnum.swift */,
 				F4DC4B512BFCF68B008EF955 /* DataQuiz.swift */,
 				B2CD11C02BFE663200C44A1C /* NetworkMonitor.swift */,
+				DAB3E2CB2C023CC500BE9D68 /* SegmentState.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA6B7CFA2BFB53F700174C13 /* InputIngredientsManualView.swift in Sources */,
+				DAB3E2CC2C023CC500BE9D68 /* SegmentState.swift in Sources */,
 				D98F12362BFF7EDD00B347D6 /* QuizViewModel.swift in Sources */,
 				9434ED3E2BFC5F110074744F /* TermsConditionView.swift in Sources */,
 				B28252052BEF7B7E00ADABF2 /* SwiftUIView.swift in Sources */,
