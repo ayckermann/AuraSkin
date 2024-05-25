@@ -47,6 +47,7 @@ struct AnalysisResultView: View {
         .sheet(isPresented: $showSaveProduct) {
             NavigationStack {
                 SaveProductView(ingredients: ingredients)
+                    .padding(.top, 5)
             }
         }
     }

@@ -24,8 +24,6 @@ struct SaveProductView: View {
     @State var product: ProductModel
     
     var saveProductViewModel = SaveProductViewModel()
-
-    var basicSkincare: [String] = ["Facial Wash", "Toner", "Moisturizer", "Sunscreen"]
     
     init(ingredients: String) {
         _product = State(initialValue: ProductModel(
@@ -48,14 +46,14 @@ struct SaveProductView: View {
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 55, height: 55)
                             .foregroundStyle(.gray)
-                            .frame(width: 250, height: 235)
+                            .frame(width: 215, height: 200)
                             .overlay(RoundedRectangle(cornerRadius: 11).stroke(.gray))
                             .padding(.bottom)
                     case .image:
                         Image(data: (product.image ?? UIImage(named: "productImageDefault")?.pngData())!)!
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 250, height: 235)
+                            .frame(width: 215, height: 200)
                             .foregroundColor(.gray)
                             .clipShape(RoundedRectangle(cornerRadius: 11))
                             .padding(.bottom)
@@ -83,7 +81,7 @@ struct SaveProductView: View {
 
             SectionTextLeading("Basic Skincare Category")
                 .foregroundStyle(Color(UIColor.darkGray))
-            DropdownComponent(selectedOption: $product.category, title: "Category", items: basicSkincare)
+            ConfirmationDialogComponent(selectedOption: $product.category, confirmationDialogTitle: "Select category", items: productCategory)
                 .padding(.bottom)
 
             SectionTextLeading("Expired Date")
@@ -103,7 +101,6 @@ struct SaveProductView: View {
         .navigationTitle("Add Product")
         .navigationBarTitleDisplayMode(.inline)
         .padding()
-        .padding(.top, 10)
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 Button {
@@ -119,7 +116,15 @@ struct SaveProductView: View {
     }
 }
 
+struct SaveProductView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationStack {
+            SaveProductView(ingredients: "Sample ingredients")
+        }
+    }
+}
+
 #Preview {
-    SaveProductView(ingredients: "Sample ingredients")
+    SaveProductView_Previews.previews
 }
 

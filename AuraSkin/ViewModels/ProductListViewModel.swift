@@ -11,11 +11,6 @@ class ProductListViewModel: ObservableObject {
     @Published var searchText: String = ""
     @Published var selectedCategory: String = "Facial Wash"
     
-    var starters: [String] {
-            ["Facial Wash", "Toner", "Moisturizer", "Sunscreen"]
-        }
-
-    
     let dummyData = [
         ProductDummy(name: "Gaung",category: "Facial Wash", description: "Description for sample product 1", imageUrl: "unsplash_p3O5f4u95Lo"),
         ProductDummy(name: "Alif",category: "Toner", description: "Description for sample product 2", imageUrl: "unsplash_ZIihTgf5uGg"),

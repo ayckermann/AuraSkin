@@ -51,7 +51,7 @@ struct SavedProductsView: View {
                 
                 
                 Picker("Choose your starter", selection: $viewModel.selectedCategory) {
-                    ForEach(viewModel.starters, id: \.self) {
+                    ForEach(productCategory, id: \.self) {
                         Text($0)
                     }
                 }
