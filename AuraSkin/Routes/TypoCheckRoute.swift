@@ -15,23 +15,17 @@ struct TypoCheckRoute: View {
     
     var body: some View {
         ZStack{
-            SwiftUIView(text: ocrOutput)
-                .toolbar(.hidden, for: .tabBar)
             
-            VStack{
-                Spacer()
-                
-                NavigationLink {
-                    AnalysisResultView(ingredients: ocrOutput)
-                        .toolbar(.visible, for: .tabBar)
-                } label: {
-                    TestButton(text: "ANALYZE")
-                }
-
+            if( ocrOutput != ""){
+                TypoCheckView(ingredients: ocrOutput)
+                    .toolbar(.hidden, for: .tabBar)
             }
             
+            
+          
+            
         }
-        .task {
+        .onAppear() {
             ocr.performOCR(on: image!) { result in
                 switch result {
                 case .success(let text):
