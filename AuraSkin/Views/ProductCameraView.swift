@@ -12,88 +12,118 @@ import SwiftUI
 struct ProductCameraView: View {
     
     let cameraService = CameraServices()
+    @Environment(\.dismiss) var dismiss
     
-    @State var capturedImage: UIImage?
-    @State var isCaptured = false
+    @Binding var capturedImage: Data?
+    @State var isFlash: Bool = false
+
     
     
     var body: some View {
         ZStack{
             Color(.black)
             
-            if(capturedImage != nil){
-                VStack{
-                    tempShowPhotoView(image: capturedImage!)
+            CameraView(ratioX: 9.0, ratioY: 16.0, cameraServices: cameraService){ result in
+                switch result {
                     
-                    Button(action: {
-                        capturedImage = nil
-                    }, label: {
-                        TestButton(text: "reset")
-                        
-                    })
+                case .success(let photo):
+                    if let data = photo.fileDataRepresentation(){
+                        capturedImage = data
+                        self.dismiss()
+                    }
+                    else{
+                        print("Error: no image data found")
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    
                 }
             }
-            else{
-                CameraView(ratioX: 1.0, ratioY: 1.0, cameraServices: cameraService){ result in
-                    switch result {
-                        
-                    case .success(let photo):
-                        if let data = photo.fileDataRepresentation(){
-                            capturedImage = UIImage(data: data)
-//                            print(capturedImage!.size.width)
-//                            capturedImage = cropImage(capturedImage!,  aspectRatio: 4/3, width: capturedImage!.size.width)
-//                            capturedImage = crop(image: capturedImage!, to: 4/3)
-
-                            isCaptured = true
-                            
-                        }
-                        else{
-                            print("Error: no image data found")
-                        }
-                    case .failure(let error):
-                        print(error.localizedDescription)
-                        
-                    }
-                }
-                .padding(EdgeInsets( top: 0, leading: 0, bottom: 400, trailing: 0))
-                
-                VStack{
+            .padding(EdgeInsets( top: 0, leading: 0, bottom: 400, trailing: 0))
+            
+            ZStack{
+                Rectangle()
+                    .padding(.bottom, 5)
+                    .padding(.top, 5)
+                    .foregroundStyle(.grayOverlay)
+                RoundedRectangle(cornerRadius: 20)
+                    .padding(.top, 10)
+                    .aspectRatio(1.06382979, contentMode: .fit)
+                    .foregroundStyle(.opacity(1))
+                    .blendMode(.destinationOut)
+            }
+            .compositingGroup()
+            .coordinateSpace(name: "camerabox")
+            
+            VStack{
+                Spacer()
+                    .frame(height: 15)
+                HStack {
                     Spacer()
+                        .frame(width: 35)
                     Button(action: {
-                        cameraService.capturePhoto()
-
-                        
+                        self.dismiss()
+                        capturedImage = nil
+    
                     }, label: {
-                        Image(systemName: "circle")
+                        Image(systemName: "xmark")
+                            .resizable()
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 75)
-                            .foregroundStyle(.white)
+                            .frame(width: 20, height: 20)
+                        
                     })
                     Spacer()
-                        .frame(height: 28)
+                        .frame(width: 35)
+                    Spacer()
+                    Button(action: {
+
+                        toggleFlash()
+                        isFlash.toggle()
+                        
+                    }, label: {
+                        Image(systemName: isFlash ? "bolt.fill" : "bolt.slash.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 26, height: 26)
+                            .frame(minWidth: 26, maxWidth: 26, minHeight: 26, maxHeight: 26)
+                        
+                    })
+                    Spacer()
+                        .frame(width: 35)
                 }
                 
+                Spacer()
+                Button(action: {
+                    cameraService.capturePhoto()
+                    
+                    
+                }, label: {
+                    Image(systemName: "circle")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 75)
+                })
+                Spacer()
+                    .frame(height: 30)
             }
+            .foregroundStyle(.white)
+
+            
         }
-//        .toolbar(.hidden, for: .tabBar)
-    
-        
-        
-        
-        
     }
+    
+    
+    func toggleFlash() {
+        
+        isFlash = self.cameraService.toggleFlash()
+    }
+    
+    
+   
 }
 
-struct tempShowPhotoView : View {
-    var image: UIImage
-    var body: some View {
-        Image(uiImage: image)
-            .resizable()
-            .scaledToFit()
-    }
-}
 
 #Preview{
-    ProductCameraView()
+    ProductCameraView( capturedImage: .constant(UIImage(contentsOfFile: "dry")?.pngData()))
 }
