@@ -23,11 +23,6 @@ extension String {
 
 class AnalysisResultViewModel {
     
-    //    init(){
-    //        getTags()
-    //
-    //    }
-    
     func getTags(ingredients: String) -> [[Tag]] {
         var tagRows: [[Tag]] = []
         var tags: [Tag] = []

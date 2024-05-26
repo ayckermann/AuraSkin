@@ -43,11 +43,7 @@ struct AnalysisResultComponent: View {
     var apiServices: APIServices = APIServices()
     var ingredients: String
 
-
     init(ingredients: String) {
-        UISegmentedControl.appearance().setTitleTextAttributes([.font: UIFont.boldSystemFont(ofSize: 14)], for: .normal)
-        UISegmentedControl.appearance().backgroundColor = .systemBackground.withAlphaComponent(0.10)
-
         self.ingredients = ingredients
     }
 
@@ -59,8 +55,7 @@ struct AnalysisResultComponent: View {
                 if showLoading && !isHitApi {
                     LoadingView()
                 } else {
-                    ScrollView {
-                        LazyVStack {
+                    VStack {
                             HStack {
                                 Text("Skin Type Related Ingredients")
                                     .font(.title2)
@@ -92,31 +87,25 @@ struct AnalysisResultComponent: View {
                                 .foregroundStyle(.gray)
                                 .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
 
-                            Picker("ProsConsSegment", selection: $prosConsSegment) {
-                                Text("Positive Effect \(getTotalIngredients(prosIngredients))")
-                                    .tag(IngredientsEffectType.pros)
-                                Text("Hazard \(getTotalIngredients(consIngredients))")
-                                    .tag(IngredientsEffectType.cons)
-                            }
-                            .frame(height: 40)
-                            .colorMultiply(color(prosConsSegment))
-                            .cornerRadius(14)
-                            .pickerStyle(.segmented)
+
+                        AnalysisResultSegmentedControl(selection: $prosConsSegment, titles: [
+                            "Positive Effect \(getTotalIngredients(prosIngredients))",
+                            "Hazard \(getTotalIngredients(consIngredients))"
+                        ])
+                        .frame(height: 40)
+                        .cornerRadius(14)
 
                             switch prosConsSegment {
                                 case .cons:
                                     IngredientEffectList(.cons, consIngredients)
                                         .padding(.horizontal)
-                                default:
+                                case .pros:
                                     IngredientEffectList(.pros, prosIngredients)
                                         .padding(.horizontal)
                             }
                         }
-                    }
                 }
             }
-
-
         }
         .onAppear {
             Task { @MainActor in

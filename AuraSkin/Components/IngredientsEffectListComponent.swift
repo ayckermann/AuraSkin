@@ -17,9 +17,10 @@ struct IngredientEffectList: View {
     }
     
     var body: some View {
-        VStack {
-            ForEach(ingredients, id: \.effect) { item in
-                let data: IngredientsEffect = item
+        ScrollView {
+            VStack {
+                ForEach(ingredients, id: \.effect) { item in
+                    let data: IngredientsEffect = item
 
                 NavigationLink {
                     IngredientsEffectDetailView(data: data)
@@ -49,14 +50,16 @@ struct IngredientEffectList: View {
                         Text("\(item.count)")
                             .foregroundStyle(.gray)
 
-                        Image(systemName: "chevron.right")
-                            .foregroundStyle(.gray)
+                            Image(systemName: "chevron.right")
+                                .foregroundStyle(.gray)
+                        }
+                        .padding(.bottom)
                     }
-                    .padding(.bottom)
                 }
+
             }
-            
         }
+
         .padding(.top)
     }
 }

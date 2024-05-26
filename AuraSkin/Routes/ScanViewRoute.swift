@@ -31,7 +31,7 @@ struct ScanViewRoute: View {
                 Color(.black)
                     .ignoresSafeArea(.all)
                 
-                CameraView(cameraServices: cameraService){ result in
+                CameraView(ratioX: 9.0, ratioY: 16.0, cameraServices: cameraService){ result in
                     switch result {
                         
                     case .success(let photo):

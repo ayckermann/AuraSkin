@@ -12,13 +12,13 @@ struct ProductDummy: Identifiable {
     let name: String
     let category: String
     let description: String
-    let imageUrl: String
+    let image: Data
 
-    init(id: UUID = UUID(), name: String, category: String, description: String, imageUrl: String) {
+    init(id: UUID = UUID(), name: String, category: String, description: String, imageUrl: Data) {
         self.id = id
         self.name = name
         self.category = category
         self.description = description
-        self.imageUrl = imageUrl
+        self.image = imageUrl
     }
 }
