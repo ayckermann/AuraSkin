@@ -13,12 +13,12 @@ struct SwiftUIView: View {
     
     var body: some View {
         NavigationStack {
-            NavigationLink {
-                ProductDetailView()
-                    .toolbar(.visible, for: .tabBar)
-            } label: {
-                Text("CLICK DISINI BRADER")
-            }
+//            NavigationLink {
+//                ProductDetailView()
+//                    .toolbar(.visible, for: .tabBar)
+//            } label: {
+//                Text("CLICK DISINI BRADER")
+//            }
 
             Menu {
                 Button(action: test) {

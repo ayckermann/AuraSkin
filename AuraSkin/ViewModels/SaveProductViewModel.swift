@@ -22,6 +22,7 @@ class SaveProductViewModel {
         let productEntity = Product(context: context)
         productEntity.id = product.id
         productEntity.name = product.name
+        productEntity.category = product.category
         productEntity.expiredDate = product.expiredDate
         productEntity.currentlyUsed = product.currentlyUsed
         productEntity.ingredients = product.ingredients
@@ -35,5 +36,16 @@ class SaveProductViewModel {
             print("Whoops \(error.localizedDescription)")
         }
     }
+    
+    func updateProduct(context: NSManagedObjectContext, product: Product) {
+        do {
+            try context.save()
+            print("Product edit successfully!")
+            print(product)
+        } catch {
+            print("Whoops \(error.localizedDescription)")
+        }
+    }
+    
 }
 

@@ -110,7 +110,7 @@ struct SaveProductView: View {
             
             SectionTextLeading("Basic Skincare Category")
                 .foregroundStyle(Color(UIColor.darkGray))
-            DropdownComponent(selectedOption: $product.category, title: "Category", items: basicSkincare)
+            ConfirmationDialogComponent(selectedOption: $product.category, confirmationDialogTitle: "Select category", items: productCategory)
                 .padding(.bottom)
             
             SectionTextLeading("Expired Date")
@@ -130,7 +130,6 @@ struct SaveProductView: View {
         .navigationTitle("Add Product")
         .navigationBarTitleDisplayMode(.inline)
         .padding()
-        .padding(.top, 10)
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 Button {
@@ -158,7 +157,14 @@ struct SaveProductView: View {
     }
 }
 
-#Preview {
-    SaveProductView(ingredients: "Sample ingredients")
+struct SaveProductView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationStack {
+            SaveProductView(ingredients: "Sample ingredients")
+        }
+    }
 }
 
+#Preview {
+    SaveProductView_Previews.previews
+}

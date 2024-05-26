@@ -32,8 +32,6 @@ struct AnalysisResultView: View {
                             .padding()
                     }
                 }
-
-
             }
         }
         .navigationTitle("Analysis Result")
@@ -47,6 +45,7 @@ struct AnalysisResultView: View {
         .sheet(isPresented: $showSaveProduct) {
             NavigationStack {
                 SaveProductView(ingredients: ingredients)
+                    .padding(.top, 5)
             }
         }
     }
