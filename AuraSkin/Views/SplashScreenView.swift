@@ -19,9 +19,11 @@ struct SplashScreenView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 89, height: 75)
-                Text("Aurora")
+                Text("AuraSkin")
                     .foregroundColor(.white)
-                    .font(.custom("Poppins-Regular", size: 24))
+                    .font(.system(size: 24, design: .serif))
+                 
+                    
                 
             }
         }

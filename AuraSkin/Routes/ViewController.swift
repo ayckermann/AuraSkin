@@ -15,43 +15,61 @@ struct ViewController : View {
     
     
     @State var skinType: SkinType = .none
+    @State var isActive: Bool = false
     
-    var body: some View {        
-        if skinTypePersistance == .none {
-            OnboardingView()
-        }  else{
-            TabView(selection : $selection){
-                SavedProductsView()
-                    .tabItem {
-                        Label("Products", systemImage: selection == 1 ? "bookmark.fill" : "bookmark")
-                            .environment(\.symbolVariants, .none)
-                        
-                        
+    
+    var body: some View {
+        
+        if !isActive{
+            SplashScreenView()
+                .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                        withAnimation {
+                            self.isActive = true
+                        }
                     }
-                    .tag(1)
-                ScanViewRoute()
-                    .tabItem {
-                        Label("Scan", systemImage: selection == 2 ? "camera.fill" : "camera")
-                            .environment(\.symbolVariants, .none)
-                        
-                    }
-                    .tag(2)
+                }
+        }
+        else{
+            
+            if skinTypePersistance == .none {
+                OnboardingView()
+            }  else{
+                TabView(selection : $selection){
+                    SavedProductsView()
+                        .tabItem {
+                            Label("Products", systemImage: selection == 1 ? "bookmark.fill" : "bookmark")
+                                .environment(\.symbolVariants, .none)
+                            
+                            
+                        }
+                        .tag(1)
+                    ScanViewRoute()
+                        .tabItem {
+                            Label("Scan", systemImage: selection == 2 ? "camera.fill" : "camera")
+                                .environment(\.symbolVariants, .none)
+                            
+                        }
+                        .tag(2)
+                    
+                    ProfileView()
+                        .tabItem {
+                            Label("Profile", systemImage: selection == 3 ? "person.fill" : "person")
+                                .environment(\.symbolVariants, .none)
+                            
+                        }
+                        .tag(3)
+                    TestingProductView()
+                        .tabItem {
+                            Label("Testing View", systemImage: "swiftdata")
+                                .environment(\.symbolVariants, .none)
+                            
+                        }
+                }
+                .tint(.greenAccent)
                 
-                ProfileView()
-                    .tabItem {
-                        Label("Profile", systemImage: selection == 3 ? "person.fill" : "person")
-                            .environment(\.symbolVariants, .none)
-                        
-                    }
-                    .tag(3)
-                TestingProductView()
-                    .tabItem {
-                        Label("Testing View", systemImage: "swiftdata")
-                            .environment(\.symbolVariants, .none)
-                        
-                    }
             }
-            .tint(.greenAccent)
+            
         }
         
     }

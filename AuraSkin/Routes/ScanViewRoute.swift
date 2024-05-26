@@ -84,8 +84,10 @@ struct ScanViewRoute: View {
                     if let error = error {
                         print("Camera start error: \(error.localizedDescription)")
                     }
-                    
                 }
+            }
+            .onDisappear(){
+                cameraService.stopSession()
             }
             .onAppear {
                 if(isFirstTimeUser){
@@ -134,7 +136,7 @@ struct ScanViewRoute: View {
             }
             
         }
-
+        
         .toolbarColorScheme(.dark, for: .tabBar)
         
         

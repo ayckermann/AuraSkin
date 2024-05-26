@@ -35,23 +35,18 @@ class CameraServices: NSObject {
     
     @objc private func handleInterruptionEnded(notification: Notification) {
         print("Capture session interruption ended")
-        DispatchQueue.global(qos: .userInitiated).async {
-            self.session?.startRunning()
-        }
+        startSession()
     }
     
     @objc private func handleDidEnterBackground() {
         print("App entered background")
-        DispatchQueue.global(qos: .userInitiated).async {
-            self.session?.stopRunning()
-        }
+        stopSession()
+        resetCamera()
     }
     
     @objc private func handleWillEnterForeground() {
         print("App will enter foreground")
-        DispatchQueue.global(qos: .userInitiated).async {
-            self.session?.startRunning()
-        }
+        startSession()
     }
     
     private func checkPermission(completion: @escaping (Error?) -> ()) {
@@ -96,11 +91,8 @@ class CameraServices: NSObject {
                 previewLayer.videoGravity = .resizeAspectFill
                 previewLayer.session = session
                 
-                DispatchQueue.global(qos: .userInitiated).async {
-                    session.startRunning()
-                }
-                
                 self.session = session
+                startSession()
                 completion(nil)
             } catch {
                 completion(error)
@@ -126,16 +118,22 @@ class CameraServices: NSObject {
         output.capturePhoto(with: settings, delegate: delegate)
     }
     
-    func stopCamera() {
+    func stopSession() {
         DispatchQueue.global(qos: .userInitiated).async {
             self.session?.stopRunning()
         }
     }
     
+    func startSession() {
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.session?.startRunning()
+        }
+    }
+    
     func resetCamera() {
-           stopCamera()
-           session = nil
-       }
+        stopSession()
+        session = nil
+    }
     
     func toggleFlash() -> Bool {
         guard let device = AVCaptureDevice.default(for: .video) else { return false }

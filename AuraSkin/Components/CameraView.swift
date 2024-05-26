@@ -47,7 +47,7 @@ struct CameraView: UIViewControllerRepresentable {
     func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
     
     func dismantleUIViewController(_ uiViewController: UIViewController, coordinator: Coordinator) {
-        cameraServices.stopCamera()
+        cameraServices.stopSession()
     }
     
     class Coordinator: NSObject, AVCapturePhotoCaptureDelegate {
@@ -68,4 +68,3 @@ struct CameraView: UIViewControllerRepresentable {
         }
     }
 }
-
