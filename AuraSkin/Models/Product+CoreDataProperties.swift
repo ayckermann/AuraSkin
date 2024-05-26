@@ -2,7 +2,7 @@
 //  Product+CoreDataProperties.swift
 //  AuraSkin
 //
-//  Created by Syuhada Rantisi on 23/05/24.
+//  Created by Syuhada Rantisi on 26/05/24.
 //
 //
 
@@ -16,13 +16,14 @@ extension Product {
         return NSFetchRequest<Product>(entityName: "Product")
     }
 
-    @NSManaged public var name: String?
-    @NSManaged public var image: Data?
-    @NSManaged public var currentlyUsed: Bool
     @NSManaged public var category: String?
+    @NSManaged public var currentlyUsed: Bool
     @NSManaged public var expiredDate: Date?
     @NSManaged public var id: UUID?
+    @NSManaged public var image: Data?
     @NSManaged public var ingredients: String?
+    @NSManaged public var name: String?
+    
 
 }
 

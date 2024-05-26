@@ -2,7 +2,7 @@
 //  Product+CoreDataClass.swift
 //  AuraSkin
 //
-//  Created by Syuhada Rantisi on 23/05/24.
+//  Created by Syuhada Rantisi on 26/05/24.
 //
 //
 

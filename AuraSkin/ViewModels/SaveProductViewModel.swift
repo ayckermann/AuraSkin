@@ -36,5 +36,16 @@ class SaveProductViewModel {
             print("Whoops \(error.localizedDescription)")
         }
     }
+    
+    func updateProduct(context: NSManagedObjectContext, product: Product) {
+        do {
+            try context.save()
+            print("Product edit successfully!")
+            print(product)
+        } catch {
+            print("Whoops \(error.localizedDescription)")
+        }
+    }
+    
 }
 
