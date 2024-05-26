@@ -80,8 +80,6 @@
 		DAB3E2CC2C023CC500BE9D68 /* SegmentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3E2CB2C023CC500BE9D68 /* SegmentState.swift */; };
 		F40502422C00C14000EADF6E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40502412C00C14000EADF6E /* OnboardingView.swift */; };
 		F40502442C00EF9800EADF6E /* InfoSkinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40502432C00EF9800EADF6E /* InfoSkinView.swift */; };
-		F45750F32C0243590079AB04 /* ManualInputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45750F22C0243590079AB04 /* ManualInputTextField.swift */; };
-		F45750F52C024AFA0079AB04 /* TypoCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45750F42C024AFA0079AB04 /* TypoCheckView.swift */; };
 		F45750F72C032DE30079AB04 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45750F62C032DE30079AB04 /* SplashScreenView.swift */; };
 		F498FBB02C032F790012EED7 /* Skincare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F498FBAE2C032F790012EED7 /* Skincare.xcdatamodeld */; };
 		F4DC4B502BFCF51D008EF955 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC4B4F2BFCF51D008EF955 /* Question.swift */; };
@@ -163,8 +161,6 @@
 		DAB3E2CB2C023CC500BE9D68 /* SegmentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentState.swift; sourceTree = "<group>"; };
 		F40502412C00C14000EADF6E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		F40502432C00EF9800EADF6E /* InfoSkinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSkinView.swift; sourceTree = "<group>"; };
-		F45750F22C0243590079AB04 /* ManualInputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualInputTextField.swift; sourceTree = "<group>"; };
-		F45750F42C024AFA0079AB04 /* TypoCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypoCheckView.swift; sourceTree = "<group>"; };
 		F45750F62C032DE30079AB04 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		F498FBAF2C032F790012EED7 /* Skincare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Skincare.xcdatamodel; sourceTree = "<group>"; };
 		F4DC4B4F2BFCF51D008EF955 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };

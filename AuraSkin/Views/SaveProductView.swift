@@ -165,6 +165,14 @@ struct SaveProductView_Previews: PreviewProvider {
     }
 }
 
+struct SaveProductView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationStack {
+            SaveProductView(ingredients: "Sample ingredients")
+        }
+    }
+}
+
 #Preview {
     SaveProductView_Previews.previews
 }
