@@ -24,6 +24,7 @@
 		946AEA5E2BFF7DFE003ED237 /* SaveProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946AEA5D2BFF7DFE003ED237 /* SaveProductViewModel.swift */; };
 		946AEA602BFF7FF7003ED237 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946AEA5F2BFF7FF7003ED237 /* ProductModel.swift */; };
 		946AEA6A2BFFA144003ED237 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946AEA692BFFA144003ED237 /* CoreDataManager.swift */; };
+		B20196142C01BE6900C6A768 /* Skincare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B20196122C01BE6900C6A768 /* Skincare.xcdatamodeld */; };
 		B22DA2462C008C420024ECC1 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DA2452C008C420024ECC1 /* ProductDetailView.swift */; };
 		B22DA2482C0090C50024ECC1 /* AnalysisResultComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DA2472C0090C50024ECC1 /* AnalysisResultComponent.swift */; };
 		B22DA24A2C0094B00024ECC1 /* ToggleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DA2492C0094B00024ECC1 /* ToggleComponent.swift */; };
@@ -104,6 +105,7 @@
 		946AEA5D2BFF7DFE003ED237 /* SaveProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveProductViewModel.swift; sourceTree = "<group>"; };
 		946AEA5F2BFF7FF7003ED237 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		946AEA692BFFA144003ED237 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		B20196132C01BE6900C6A768 /* Skincare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Skincare.xcdatamodel; sourceTree = "<group>"; };
 		B22DA2452C008C420024ECC1 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		B22DA2472C0090C50024ECC1 /* AnalysisResultComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisResultComponent.swift; sourceTree = "<group>"; };
 		B22DA2492C0094B00024ECC1 /* ToggleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleComponent.swift; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 				D9EC3FB32BE91C8C00F4B9E7 /* Views */,
 				D9EC3FA52BE91C8500F4B9E7 /* AuraSkinApp.swift */,
 				D9EC3FA92BE91C8700F4B9E7 /* Assets.xcassets */,
+				94194DFA2C02367D00DC1541 /* Skincare.xcdatamodeld */,
 				D9EC3FAB2BE91C8700F4B9E7 /* Preview Content */,
 			);
 			path = AuraSkin;

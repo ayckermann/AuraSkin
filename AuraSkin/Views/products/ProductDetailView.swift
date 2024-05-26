@@ -6,14 +6,21 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ProductDetailView: View {
     @State var isOn: Bool = true
-    var product: Product
+//    var product: Product
     
-    init(product: Product) {
-        self.product = product
-    }
+    @State var product: Product
+    @State var context: NSManagedObjectContext
+    @Environment(\.dismiss) var dismiss
+    @State var isPresentedEdit = false
+
+    
+//    init(product: Product) {
+//        self.product = product
+//    }
 
     var body: some View {
         NavigationStack {
@@ -51,16 +58,31 @@ struct ProductDetailView: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Menu {
-                    Button(action: edit) {
+                    Button(action: {
+                        isPresentedEdit = true
+                    }) {
                         Label("Edit", systemImage: "square.and.pencil")
                     }
-                    Button(role: .destructive, action: delete) {
+                    Button(role: .destructive, action: {
+                        context.delete(product)
+                        do {
+                            try context.save()
+                            print("Product delete successfully!")
+                            print(product)
+                            self.dismiss()
+                        } catch {
+                            print("Whoops \(error.localizedDescription)")
+                        }
+                    }) {
                         Label("Delete", systemImage: "trash")
                     }
                 } label: {
                     Image(systemName: "ellipsis")
                 }
             }
+        }
+        .sheet(isPresented: $isPresentedEdit) {
+            EditProductView(context: $context, product: $product, isPresentedEdit: $isPresentedEdit)
         }
     }
 
@@ -74,7 +96,17 @@ struct ProductDetailView: View {
     
     private func edit() -> Void {}
 
-    private func delete() -> Void {}
+    private func delete() -> Void {
+//        context.delete(product)
+//        do {
+//            try context.save()
+//            print("Product delete successfully!")
+//            print(product)
+//            self.dismiss()
+//        } catch {
+//            print("Whoops \(error.localizedDescription)")
+//        }
+    }
 }
 
 //struct ProductDetail_Previews: PreviewProvider {
