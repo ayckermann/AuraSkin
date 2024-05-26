@@ -6,9 +6,13 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ProductCardView: View {
     // Add context
+    @State var context: NSManagedObjectContext
+    @Environment(\.dismiss) var dismiss
+    
     @EnvironmentObject var manager: CoreDataManager
     @Environment(\.managedObjectContext) var viewContext
     var product: Product
