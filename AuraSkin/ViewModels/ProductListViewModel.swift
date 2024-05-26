@@ -16,9 +16,4 @@ class ProductListViewModel: ObservableObject {
            entity: Product.entity(),
            sortDescriptors: [NSSortDescriptor(keyPath: \Product.name, ascending: true)]
        ) var products: FetchedResults<Product>
-    
-    var starters: [String] {
-        ["Facial Wash", "Toner", "Moisturizer", "Sunscreen"]
-    }
-    
 }

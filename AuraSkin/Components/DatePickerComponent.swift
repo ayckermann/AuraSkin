@@ -17,20 +17,20 @@ struct DatePickerComponent: View {
 
             Image(systemName: "calendar")
                 .font(.title)
-                .overlay {
-                    DatePicker("", selection: $expiredDate, displayedComponents: .date)
-                        .blendMode(.destinationOver)
-                }
                 .foregroundStyle(.gray)
         }
+        .overlay(
+            DatePicker("", selection: $expiredDate, displayedComponents: .date)
+                .blendMode(.destinationOver)
+        )
         .frame(height: 45)
         .padding([.leading, .trailing], 15)
         .overlay(RoundedRectangle(cornerRadius: 5).stroke(.gray, lineWidth: 1))
     }
 
-    func getDate(from date: Date) -> String {
+    private func getDate(from date: Date) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
+        dateFormatter.dateFormat = "dd-MM-YYYY"
 
         return dateFormatter.string(from: date)
     }

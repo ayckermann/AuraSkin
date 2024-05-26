@@ -22,32 +22,33 @@ struct IngredientEffectList: View {
                 ForEach(ingredients, id: \.effect) { item in
                     let data: IngredientsEffect = item
 
-                    NavigationLink {
-                        IngredientsEffectDetailView(data: data)
-                            .toolbar(.visible, for: .tabBar)
-                    } label: {
-                        HStack {
-                            Image(systemName: item.symbol)
-                                .resizable()
-                                .frame(width: 30, height: 30)
+                NavigationLink {
+                    IngredientsEffectDetailView(data: data)
+                        .toolbar(.visible, for: .tabBar)
+                } label: {
+                    HStack {
+                        Image(item.symbol)
+                            .resizable()
+                            .frame(width: 40, height: 40)
+                            .foregroundStyle(.black)
+
+                        VStack {
+                            Text(item.effect)
+                                .font(.title3)
                                 .foregroundStyle(.black)
-
-                            VStack {
-                                Text(item.effect)
-                                    .font(.body)
-                                    .foregroundStyle(.black)
-                                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
-                                Text(item.description)
-                                    .font(.subheadline)
-                                    .italic()
-                                    .foregroundStyle(.gray)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                            }
-                            .padding(.leading)
-
-                            Text("\(item.count)")
-                                .frame(alignment: .trailing)
+                                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+                            Text(item.description)
+                                .font(.subheadline)
+                                .italic()
                                 .foregroundStyle(.gray)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        }
+                        .padding(.leading, 10)
+
+                        Spacer()
+
+                        Text("\(item.count)")
+                            .foregroundStyle(.gray)
 
                             Image(systemName: "chevron.right")
                                 .foregroundStyle(.gray)

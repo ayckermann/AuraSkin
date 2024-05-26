@@ -19,9 +19,12 @@
 		946AEA672BFF8AA2003ED237 /* Product+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946AEA652BFF8AA2003ED237 /* Product+CoreDataClass.swift */; };
 		946AEA682BFF8AA2003ED237 /* Product+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946AEA662BFF8AA2003ED237 /* Product+CoreDataProperties.swift */; };
 		946AEA6A2BFFA144003ED237 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946AEA692BFFA144003ED237 /* CoreDataManager.swift */; };
+		B20196142C01BE6900C6A768 /* Skincare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B20196122C01BE6900C6A768 /* Skincare.xcdatamodeld */; };
 		B22DA2462C008C420024ECC1 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DA2452C008C420024ECC1 /* ProductDetailView.swift */; };
 		B22DA2482C0090C50024ECC1 /* AnalysisResultComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DA2472C0090C50024ECC1 /* AnalysisResultComponent.swift */; };
 		B22DA24A2C0094B00024ECC1 /* ToggleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DA2492C0094B00024ECC1 /* ToggleComponent.swift */; };
+		B235F84A2C024063009DEE80 /* ConfirmationDialogComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235F8492C024063009DEE80 /* ConfirmationDialogComponent.swift */; };
+		B235F84C2C024B5E009DEE80 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235F84B2C024B5E009DEE80 /* GlobalVariables.swift */; };
 		B235F84F2C0264C9009DEE80 /* Skincare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B235F84D2C0264C9009DEE80 /* Skincare.xcdatamodeld */; };
 		B25508F42C027C5E00BF2EB7 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25508F32C027C5E00BF2EB7 /* CustomSegmentedControl.swift */; };
 		B28251FB2BEF569300ADABF2 /* AnalysisResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28251FA2BEF569300ADABF2 /* AnalysisResultView.swift */; };
@@ -90,9 +93,12 @@
 		946AEA652BFF8AA2003ED237 /* Product+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataClass.swift"; sourceTree = "<group>"; };
 		946AEA662BFF8AA2003ED237 /* Product+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		946AEA692BFFA144003ED237 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		B20196132C01BE6900C6A768 /* Skincare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Skincare.xcdatamodel; sourceTree = "<group>"; };
 		B22DA2452C008C420024ECC1 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		B22DA2472C0090C50024ECC1 /* AnalysisResultComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisResultComponent.swift; sourceTree = "<group>"; };
 		B22DA2492C0094B00024ECC1 /* ToggleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleComponent.swift; sourceTree = "<group>"; };
+		B235F8492C024063009DEE80 /* ConfirmationDialogComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationDialogComponent.swift; sourceTree = "<group>"; };
+		B235F84B2C024B5E009DEE80 /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
 		B235F84E2C0264C9009DEE80 /* Skincare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Skincare.xcdatamodel; sourceTree = "<group>"; };
 		B25508F32C027C5E00BF2EB7 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		B28251FA2BEF569300ADABF2 /* AnalysisResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisResultView.swift; sourceTree = "<group>"; };
@@ -179,6 +185,7 @@
 				B283B34C2BFCEBB7000D37E0 /* SkinTypeEnum.swift */,
 				F4DC4B512BFCF68B008EF955 /* DataQuiz.swift */,
 				B2CD11C02BFE663200C44A1C /* NetworkMonitor.swift */,
+				B235F84B2C024B5E009DEE80 /* GlobalVariables.swift */,
 				DAB3E2CB2C023CC500BE9D68 /* SegmentState.swift */,
 			);
 			path = Utilities;
@@ -231,6 +238,7 @@
 				B22DA2492C0094B00024ECC1 /* ToggleComponent.swift */,
 				DA08E8BA2BFF782B00DA86FF /* ProductCardView.swift */,
 				DA08E8C22C008C9B00DA86FF /* ProductCardMiniView.swift */,
+				B235F8492C024063009DEE80 /* ConfirmationDialogComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -450,7 +458,9 @@
 				B28251FF2BEF661500ADABF2 /* ContainerComponents.swift in Sources */,
 				946AEA6A2BFFA144003ED237 /* CoreDataManager.swift in Sources */,
 				DA08E8CA2C00AE4E00DA86FF /* ProductDummy.swift in Sources */,
+				B235F84C2C024B5E009DEE80 /* GlobalVariables.swift in Sources */,
 				D9EC3FBE2BE91EBF00F4B9E7 /* ProfileView.swift in Sources */,
+				B235F84A2C024063009DEE80 /* ConfirmationDialogComponent.swift in Sources */,
 				B283B34D2BFCEBB7000D37E0 /* SkinTypeEnum.swift in Sources */,
 				B235F84F2C0264C9009DEE80 /* Skincare.xcdatamodeld in Sources */,
 				D983CF682BEF109200588417 /* CameraServices.swift in Sources */,
