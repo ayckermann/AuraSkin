@@ -64,15 +64,7 @@ struct ProductDetailView: View {
                         Label("Edit", systemImage: "square.and.pencil")
                     }
                     Button(role: .destructive, action: {
-                        context.delete(product)
-                        do {
-                            try context.save()
-                            print("Product delete successfully!")
-                            print(product)
-                            self.dismiss()
-                        } catch {
-                            print("Whoops \(error.localizedDescription)")
-                        }
+                        delete()
                     }) {
                         Label("Delete", systemImage: "trash")
                     }
@@ -96,16 +88,16 @@ struct ProductDetailView: View {
     
     private func edit() -> Void {}
 
-    private func delete() -> Void {
-//        context.delete(product)
-//        do {
-//            try context.save()
-//            print("Product delete successfully!")
-//            print(product)
-//            self.dismiss()
-//        } catch {
-//            print("Whoops \(error.localizedDescription)")
-//        }
+    private func delete() {
+        context.delete(product)
+        do {
+            try context.save()
+            print("Product delete successfully!")
+            print(product)
+            self.dismiss()
+        } catch {
+            print("Whoops \(error.localizedDescription)")
+        }
     }
 }
 

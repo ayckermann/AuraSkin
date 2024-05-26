@@ -41,7 +41,7 @@ struct EditProductView: View {
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 55, height: 55)
                         .foregroundStyle(.gray)
-                        .frame(width: 250, height: 235)
+                        .frame(width: 215, height: 200)
                         .overlay(RoundedRectangle(cornerRadius: 11).stroke(.gray))
                         .padding(.bottom)
                 case .image:
@@ -49,7 +49,7 @@ struct EditProductView: View {
                         Image(uiImage: uiImage)
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 250, height: 235)
+                            .frame(width: 215, height: 200)
                             .foregroundColor(.gray)
                             .clipShape(RoundedRectangle(cornerRadius: 11))
                             .padding(.bottom)
@@ -57,7 +57,7 @@ struct EditProductView: View {
                         Image("productImageDefault")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 250, height: 235)
+                            .frame(width: 215, height: 200)
                             .foregroundColor(.gray)
                             .clipShape(RoundedRectangle(cornerRadius: 11))
                             .padding(.bottom)
@@ -105,9 +105,7 @@ struct EditProductView: View {
             ToggleComponent(text: "Currently used", isOn: $product.currentlyUsed)
             
             Button(action: {
-                saveProductViewModel.updateProduct(context: context, product: product)
-                isPresentedEdit = false
-
+                edit()
             }, label: {
                 TestButton(text: "Save")
             })
@@ -138,7 +136,11 @@ struct EditProductView: View {
         }
     }
     
-    
+    private func edit() {
+        saveProductViewModel.updateProduct(context: context, product: product)
+        isPresentedEdit = false
+    }
+
 }
 
 //#Preview {
