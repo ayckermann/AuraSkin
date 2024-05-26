@@ -132,6 +132,11 @@ class CameraServices: NSObject {
         }
     }
     
+    func resetCamera() {
+           stopCamera()
+           session = nil
+       }
+    
     func toggleFlash() -> Bool {
         guard let device = AVCaptureDevice.default(for: .video) else { return false }
         
