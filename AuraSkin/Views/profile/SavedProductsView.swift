@@ -12,12 +12,15 @@ struct SavedProductsView: View {
     @State private var category = ""
     @State private var searchText: String = ""
     @State private var selectedCategory: String = "Facial Wash"
+    @EnvironmentObject var manager: CoreDataManager
+    @Environment(\.managedObjectContext) var viewContext
     
     let categories = ["Facial Wash", "Toner", "Moisturizer", "Sunscreen"]
     @FetchRequest(sortDescriptors: []) private var products: FetchedResults<Product>
     
-    let colorHex = "#003C43"
     
+    let colorHex = "#003C43"
+
     var body: some View {
         NavigationStack {
             HStack {
@@ -28,7 +31,7 @@ struct SavedProductsView: View {
                 ScrollView(.horizontal) {
                     LazyHGrid(rows: [GridItem(.flexible(), spacing: 1)]) {
                         ForEach(filteredProducts, id: \.self) { product in
-                            ProductCardView(product: product)
+                            ProductCardView(context: viewContext, product: product)
                                 .listRowSeparator(.hidden, edges: .all)
                         }
                     }
@@ -55,7 +58,7 @@ struct SavedProductsView: View {
                     ]) {
                         ForEach(filteredSegmentProducts, id: \.self) { product in
                             
-                            ProductCardMiniView(product: product)
+                            ProductCardMiniView(context: viewContext, product: product)
                                 .listRowSeparator(.hidden, edges: .all)
                         }
                     }
