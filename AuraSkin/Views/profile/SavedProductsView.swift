@@ -42,12 +42,12 @@ struct SavedProductsView: View {
                         UISegmentedControl.appearance().backgroundColor = .systemBackground.withAlphaComponent(0.10)
                     }
                 }
-            Spacer()
-            VStack {
+            
+            VStack() {
                 ScrollView(.horizontal) {
                     LazyHGrid(rows: [GridItem(.flexible(), spacing: 1)]) {
                         ForEach(filteredProducts, id: \.self) { product in
-                            ProductCardView(name: product.name ?? "no name", category: product.category ?? "", imageName: product.image ?? Data(), productId: product.id ?? UUID())
+                            ProductCardView(product: product)
                                 .listRowSeparator(.hidden, edges: .all)
                         }
                     }
@@ -59,10 +59,7 @@ struct SavedProductsView: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .searchable(text: $searchText)
                 .padding(.leading, -5)
-                
-                Spacer()
-                Spacer()
-                Spacer()
+                .padding(.bottom, 5)
                 
                 Picker("Choose your starter", selection: $selectedCategory) {
                     ForEach(categories, id: \.self) {
@@ -71,30 +68,34 @@ struct SavedProductsView: View {
                     }
                 }
                 .pickerStyle(.segmented)
-                //                .colorMultiply(.accent)
                 .padding(.leading, 9)
                 .padding(.trailing, 9)
                 .frame(height: 30)
                 
                 // below is for after segment
-                List {
+                ScrollView(.vertical) {
                     LazyVGrid(columns: [
-                        GridItem(.flexible(), spacing: 30),
-                        GridItem(.flexible(), spacing: 30),
-                        GridItem(.flexible())
+                        GridItem(.flexible(), spacing: 5),
+                        GridItem(.flexible(), spacing: 5),
+                        GridItem(.flexible(), spacing: 5)
                     ]) {
                         ForEach(filteredSegmentProducts, id: \.self) { product in
-                            ProductCardMiniView(name: product.name ?? "no name", imageName: product.image ?? Data())
+                            
+                            ProductCardMiniView(product: product)
                                 .listRowSeparator(.hidden, edges: .all)
                         }
                     }
                     .listRowSeparator(.hidden, edges: .all)
+                    
+                    .listStyle(.plain)
+                    .navigationTitle("Saved Products")
+                    .navigationBarTitleDisplayMode(.inline)
+                    .searchable(text: $selectedCategory)
                 }
-                .listStyle(.plain)
-                .navigationTitle("Saved Products")
-                .navigationBarTitleDisplayMode(.inline)
-                .searchable(text: $selectedCategory)
+                .padding(.leading, 9)
+                .padding(.trailing, 9)
             }
+            .frame(alignment: .top)
         }
     }
     var filteredProducts: [Product] {
@@ -102,7 +103,8 @@ struct SavedProductsView: View {
             return products.map { $0 }
         } else {
             return products.filter { product in
-                (product.name?.lowercased().contains(searchText.lowercased()) ?? false) ||
+                (product.currentlyUsed == true) &&
+                ( product.name?.lowercased().contains(searchText.lowercased()) ?? false) ||
                 (product.category?.lowercased().contains(searchText.lowercased()) ?? false)
             }
         }
