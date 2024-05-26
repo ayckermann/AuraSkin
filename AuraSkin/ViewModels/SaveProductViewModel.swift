@@ -22,6 +22,7 @@ class SaveProductViewModel {
         let productEntity = Product(context: context)
         productEntity.id = product.id
         productEntity.name = product.name
+        productEntity.category = product.category
         productEntity.expiredDate = product.expiredDate
         productEntity.currentlyUsed = product.currentlyUsed
         productEntity.ingredients = product.ingredients
