@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		94194DFC2C02367D00DC1541 /* Skincare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 94194DFA2C02367D00DC1541 /* Skincare.xcdatamodeld */; };
+		94194DFC2C02367D00DC1541 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		94194DFE2C023A8C00DC1541 /* TestingProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94194DFD2C023A8C00DC1541 /* TestingProductView.swift */; };
 		94194E062C0264D100DC1541 /* TestingProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94194E052C0264D100DC1541 /* TestingProductDetailView.swift */; };
 		94194E082C02777800DC1541 /* SaveProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94194E072C02777800DC1541 /* SaveProductView.swift */; };
@@ -24,13 +24,11 @@
 		946AEA5E2BFF7DFE003ED237 /* SaveProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946AEA5D2BFF7DFE003ED237 /* SaveProductViewModel.swift */; };
 		946AEA602BFF7FF7003ED237 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946AEA5F2BFF7FF7003ED237 /* ProductModel.swift */; };
 		946AEA6A2BFFA144003ED237 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946AEA692BFFA144003ED237 /* CoreDataManager.swift */; };
-		B20196142C01BE6900C6A768 /* Skincare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B20196122C01BE6900C6A768 /* Skincare.xcdatamodeld */; };
 		B22DA2462C008C420024ECC1 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DA2452C008C420024ECC1 /* ProductDetailView.swift */; };
 		B22DA2482C0090C50024ECC1 /* AnalysisResultComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DA2472C0090C50024ECC1 /* AnalysisResultComponent.swift */; };
 		B22DA24A2C0094B00024ECC1 /* ToggleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DA2492C0094B00024ECC1 /* ToggleComponent.swift */; };
 		B235F84A2C024063009DEE80 /* ConfirmationDialogComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235F8492C024063009DEE80 /* ConfirmationDialogComponent.swift */; };
 		B235F84C2C024B5E009DEE80 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235F84B2C024B5E009DEE80 /* GlobalVariables.swift */; };
-		B235F84F2C0264C9009DEE80 /* Skincare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B235F84D2C0264C9009DEE80 /* Skincare.xcdatamodeld */; };
 		B25508F42C027C5E00BF2EB7 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25508F32C027C5E00BF2EB7 /* CustomSegmentedControl.swift */; };
 		B28251FB2BEF569300ADABF2 /* AnalysisResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28251FA2BEF569300ADABF2 /* AnalysisResultView.swift */; };
 		B28251FD2BEF5DED00ADABF2 /* TextComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28251FC2BEF5DED00ADABF2 /* TextComponents.swift */; };
@@ -48,6 +46,8 @@
 		B2CD11C12BFE663200C44A1C /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CD11C02BFE663200C44A1C /* NetworkMonitor.swift */; };
 		B2CD11C32BFE670900C44A1C /* NetworkUnavailableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CD11C22BFE670900C44A1C /* NetworkUnavailableView.swift */; };
 		D926CB832C02E0BA00225ADA /* Skincare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D926CB812C02E0BA00225ADA /* Skincare.xcdatamodeld */; };
+		D926CB8A2C03653800225ADA /* TypoCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D926CB892C03653800225ADA /* TypoCheckView.swift */; };
+		D926CB8C2C03655200225ADA /* ManualInputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D926CB8B2C03655200225ADA /* ManualInputTextField.swift */; };
 		D952B3912BEF5AF200C09E5F /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3902BEF5AF200C09E5F /* CameraView.swift */; };
 		D952B3962BEF66E000C09E5F /* TestFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3952BEF66E000C09E5F /* TestFunction.swift */; };
 		D952B3982BEF6C1B00C09E5F /* ScanViewRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B3972BEF6C1B00C09E5F /* ScanViewRoute.swift */; };
@@ -81,14 +81,13 @@
 		F40502422C00C14000EADF6E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40502412C00C14000EADF6E /* OnboardingView.swift */; };
 		F40502442C00EF9800EADF6E /* InfoSkinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40502432C00EF9800EADF6E /* InfoSkinView.swift */; };
 		F45750F72C032DE30079AB04 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45750F62C032DE30079AB04 /* SplashScreenView.swift */; };
-		F498FBB02C032F790012EED7 /* Skincare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F498FBAE2C032F790012EED7 /* Skincare.xcdatamodeld */; };
+		F498FBB02C032F790012EED7 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		F4DC4B502BFCF51D008EF955 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC4B4F2BFCF51D008EF955 /* Question.swift */; };
 		F4DC4B522BFCF68B008EF955 /* DataQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC4B512BFCF68B008EF955 /* DataQuiz.swift */; };
 		F4DC4B542BFCF703008EF955 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC4B532BFCF703008EF955 /* QuizView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		94194DFB2C02367D00DC1541 /* Skincare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Skincare.xcdatamodel; sourceTree = "<group>"; };
 		94194DFD2C023A8C00DC1541 /* TestingProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingProductView.swift; sourceTree = "<group>"; };
 		94194E052C0264D100DC1541 /* TestingProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingProductDetailView.swift; sourceTree = "<group>"; };
 		94194E072C02777800DC1541 /* SaveProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveProductView.swift; sourceTree = "<group>"; };
@@ -105,13 +104,11 @@
 		946AEA5D2BFF7DFE003ED237 /* SaveProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveProductViewModel.swift; sourceTree = "<group>"; };
 		946AEA5F2BFF7FF7003ED237 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		946AEA692BFFA144003ED237 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		B20196132C01BE6900C6A768 /* Skincare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Skincare.xcdatamodel; sourceTree = "<group>"; };
 		B22DA2452C008C420024ECC1 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		B22DA2472C0090C50024ECC1 /* AnalysisResultComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisResultComponent.swift; sourceTree = "<group>"; };
 		B22DA2492C0094B00024ECC1 /* ToggleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleComponent.swift; sourceTree = "<group>"; };
 		B235F8492C024063009DEE80 /* ConfirmationDialogComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationDialogComponent.swift; sourceTree = "<group>"; };
 		B235F84B2C024B5E009DEE80 /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
-		B235F84E2C0264C9009DEE80 /* Skincare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Skincare.xcdatamodel; sourceTree = "<group>"; };
 		B25508F32C027C5E00BF2EB7 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		B28251FA2BEF569300ADABF2 /* AnalysisResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisResultView.swift; sourceTree = "<group>"; };
 		B28251FC2BEF5DED00ADABF2 /* TextComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextComponents.swift; sourceTree = "<group>"; };
@@ -129,6 +126,8 @@
 		B2CD11C02BFE663200C44A1C /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		B2CD11C22BFE670900C44A1C /* NetworkUnavailableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUnavailableView.swift; sourceTree = "<group>"; };
 		D926CB822C02E0BA00225ADA /* Skincare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Skincare.xcdatamodel; sourceTree = "<group>"; };
+		D926CB892C03653800225ADA /* TypoCheckView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypoCheckView.swift; sourceTree = "<group>"; };
+		D926CB8B2C03655200225ADA /* ManualInputTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManualInputTextField.swift; sourceTree = "<group>"; };
 		D952B3902BEF5AF200C09E5F /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		D952B3952BEF66E000C09E5F /* TestFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFunction.swift; sourceTree = "<group>"; };
 		D952B3972BEF6C1B00C09E5F /* ScanViewRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewRoute.swift; sourceTree = "<group>"; };
@@ -162,7 +161,6 @@
 		F40502412C00C14000EADF6E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		F40502432C00EF9800EADF6E /* InfoSkinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSkinView.swift; sourceTree = "<group>"; };
 		F45750F62C032DE30079AB04 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
-		F498FBAF2C032F790012EED7 /* Skincare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Skincare.xcdatamodel; sourceTree = "<group>"; };
 		F4DC4B4F2BFCF51D008EF955 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		F4DC4B512BFCF68B008EF955 /* DataQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataQuiz.swift; sourceTree = "<group>"; };
 		F4DC4B532BFCF703008EF955 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
@@ -254,6 +252,7 @@
 				DA08E8BA2BFF782B00DA86FF /* ProductCardView.swift */,
 				DA08E8C22C008C9B00DA86FF /* ProductCardMiniView.swift */,
 				B235F8492C024063009DEE80 /* ConfirmationDialogComponent.swift */,
+				D926CB8B2C03655200225ADA /* ManualInputTextField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -336,7 +335,6 @@
 				D9EC3FB32BE91C8C00F4B9E7 /* Views */,
 				D9EC3FA52BE91C8500F4B9E7 /* AuraSkinApp.swift */,
 				D9EC3FA92BE91C8700F4B9E7 /* Assets.xcassets */,
-				94194DFA2C02367D00DC1541 /* Skincare.xcdatamodeld */,
 				D9EC3FAB2BE91C8700F4B9E7 /* Preview Content */,
 			);
 			path = AuraSkin;
@@ -365,11 +363,11 @@
 				B2CD11C22BFE670900C44A1C /* NetworkUnavailableView.swift */,
 				D98F12382C0077DB00B347D6 /* ProductCameraView.swift */,
 				F40502412C00C14000EADF6E /* OnboardingView.swift */,
-				F45750F42C024AFA0079AB04 /* TypoCheckView.swift */,
 				F45750F62C032DE30079AB04 /* SplashScreenView.swift */,
 				94194DFD2C023A8C00DC1541 /* TestingProductView.swift */,
 				94194E052C0264D100DC1541 /* TestingProductDetailView.swift */,
 				94194E072C02777800DC1541 /* SaveProductView.swift */,
+				D926CB892C03653800225ADA /* TypoCheckView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -450,7 +448,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94194DFC2C02367D00DC1541 /* Skincare.xcdatamodeld in Sources */,
+				94194DFC2C02367D00DC1541 /* (null) in Sources */,
 				DA6B7CFA2BFB53F700174C13 /* InputIngredientsManualView.swift in Sources */,
 				DAB3E2CC2C023CC500BE9D68 /* SegmentState.swift in Sources */,
 				D98F12362BFF7EDD00B347D6 /* QuizViewModel.swift in Sources */,
@@ -472,7 +470,6 @@
 				D983CF662BEF107D00588417 /* APIServices.swift in Sources */,
 				B2CD11C32BFE670900C44A1C /* NetworkUnavailableView.swift in Sources */,
 				DA08E8B72BFF2C0B00DA86FF /* SavedProductsView.swift in Sources */,
-				F45750F32C0243590079AB04 /* ManualInputTextField.swift in Sources */,
 				DA08E8BF2BFF9B4D00DA86FF /* ProductListViewModel.swift in Sources */,
 				DA08E8C32C008C9B00DA86FF /* ProductCardMiniView.swift in Sources */,
 				B28251FD2BEF5DED00ADABF2 /* TextComponents.swift in Sources */,
@@ -499,9 +496,10 @@
 				F4DC4B522BFCF68B008EF955 /* DataQuiz.swift in Sources */,
 				D926CB832C02E0BA00225ADA /* Skincare.xcdatamodeld in Sources */,
 				B22DA2482C0090C50024ECC1 /* AnalysisResultComponent.swift in Sources */,
-				F498FBB02C032F790012EED7 /* Skincare.xcdatamodeld in Sources */,
+				F498FBB02C032F790012EED7 /* (null) in Sources */,
 				9434ED462BFC61CB0074744F /* TextFieldComponents.swift in Sources */,
 				B25508F42C027C5E00BF2EB7 /* CustomSegmentedControl.swift in Sources */,
+				D926CB8A2C03653800225ADA /* TypoCheckView.swift in Sources */,
 				D952B3982BEF6C1B00C09E5F /* ScanViewRoute.swift in Sources */,
 				D98F12112BFE52C100B347D6 /* ScanInstructionView.swift in Sources */,
 				D952B39A2BEF9A7900C09E5F /* ImageCropper.swift in Sources */,
@@ -516,7 +514,6 @@
 				B28252072BEF821400ADABF2 /* AnalysisResultViewModel.swift in Sources */,
 				B28251FB2BEF569300ADABF2 /* AnalysisResultView.swift in Sources */,
 				D98F12392C0077DB00B347D6 /* ProductCameraView.swift in Sources */,
-				F45750F52C024AFA0079AB04 /* TypoCheckView.swift in Sources */,
 				9434ED442BFC61CB0074744F /* DropdownComponent.swift in Sources */,
 				B283B34B2BFCBBA8000D37E0 /* DonutChartComponent.swift in Sources */,
 				F45750F72C032DE30079AB04 /* SplashScreenView.swift in Sources */,
@@ -525,6 +522,7 @@
 				D98F12132BFE52F700B347D6 /* ScanInstructionComponent.swift in Sources */,
 				D98F12342BFF457C00B347D6 /* ProductsView.swift in Sources */,
 				F40502422C00C14000EADF6E /* OnboardingView.swift in Sources */,
+				D926CB8C2C03655200225ADA /* ManualInputTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
