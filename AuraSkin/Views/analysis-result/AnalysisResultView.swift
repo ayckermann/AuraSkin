@@ -32,8 +32,6 @@ struct AnalysisResultView: View {
                             .padding()
                     }
                 }
-
-
             }
         }
         .navigationTitle("Analysis Result")

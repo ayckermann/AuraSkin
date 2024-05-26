@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct SavedProductsView: View {
-    @StateObject var segmentState = SegmentState()
-    
     @StateObject var viewModel = ProductListViewModel()
     @State private var category = ""
     @State private var searchText: String = ""
@@ -20,28 +18,12 @@ struct SavedProductsView: View {
     
     let colorHex = "#003C43"
     
-    init() {
-        
-    }
-    
     var body: some View {
         NavigationStack {
             HStack {
                 SectionTextLeading("Current Use")
                     .foregroundColor(Color.auraSkinPrimaryColor)
             }.padding(.horizontal)
-                .onAppear {
-                    segmentState.segment = "saved"
-                    if segmentState.segment == "saved" {
-                        UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(Color.auraSkinPrimaryColor)
-                        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.black], for: .normal)
-                        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
-                        UISegmentedControl.appearance().setDividerImage(UIImage(), forLeftSegmentState: .normal, rightSegmentState: .normal, barMetrics: .default)
-                    } else {
-                        UISegmentedControl.appearance().setTitleTextAttributes([.font: UIFont.boldSystemFont(ofSize: 14)], for: .normal)
-                        UISegmentedControl.appearance().backgroundColor = .systemBackground.withAlphaComponent(0.10)
-                    }
-                }
             Spacer()
             VStack {
                 ScrollView(.horizontal) {
@@ -64,18 +46,10 @@ struct SavedProductsView: View {
                 Spacer()
                 Spacer()
                 
-                Picker("Choose your starter", selection: $selectedCategory) {
-                    ForEach(categories, id: \.self) {
-                        Text($0)
-                            .foregroundColor(.white)
-                    }
-                }
-                .pickerStyle(.segmented)
-                //                .colorMultiply(.accent)
-                .padding(.leading, 9)
-                .padding(.trailing, 9)
-                .frame(height: 30)
-                
+                SavedSegmentedControl(selection: $selectedCategory, categories: categories)
+                    .padding(.horizontal, 9)
+                    .frame(height: 30)
+
                 // below is for after segment
                 List {
                     LazyVGrid(columns: [
@@ -108,7 +82,6 @@ struct SavedProductsView: View {
         }
     }
     var filteredSegmentProducts: [Product] {
-        print("Segment State: \(segmentState.segment)")
         return products.filter { product in
             (product.category == selectedCategory) &&
             (searchText.isEmpty || (product.name?.lowercased().contains(searchText.lowercased()) ?? false))
