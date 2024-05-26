@@ -13,6 +13,9 @@ struct ScanInstructionView: View {
     
     @Environment(\.dismiss) var dismiss
     
+    @AppStorage("isFirstTimeUser") var isFirstTimeUser: Bool = true
+
+    
     var body: some View {
         GeometryReader{ proxy in
             ZStack{
@@ -40,6 +43,7 @@ struct ScanInstructionView: View {
                 else if instructionIndex == 3 {
                     ScanInstructionComponent(nextFunction: {
                         instructionIndex = 0
+                        isFirstTimeUser = false
                     }, text: "Or manually input ingredients", arrow: .bottomRight, index: $instructionIndex)
                     .position(
                         x: proxy.frame(in: .named("manualbutton")).minX + 230,

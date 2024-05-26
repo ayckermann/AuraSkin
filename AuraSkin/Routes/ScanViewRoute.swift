@@ -19,6 +19,8 @@ struct ScanViewRoute: View {
     @State var isHideInstruction = true
     
     @AppStorage("skinTypePersistance") var skinTypePersistance: SkinType = .none
+    @AppStorage("isFirstTimeUser") var isFirstTimeUser: Bool = true
+
     
     func toggleFlash() {
         
@@ -79,7 +81,7 @@ struct ScanViewRoute: View {
                 
             }
             .onAppear {
-                if(skinTypePersistance == .none){
+                if(isFirstTimeUser){
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                         self.isHideInstruction = false
                     }
