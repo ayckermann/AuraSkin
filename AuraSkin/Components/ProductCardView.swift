@@ -61,8 +61,10 @@ struct ProductCardView: View {
                             
                             Text(product.name ?? "")
                                 .font(.system(size: 15, weight: .semibold))
-                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .frame(maxWidth: 150, alignment: .leading)
                                 .padding(.leading, 20)
+                                .lineLimit(1)
+                                .truncationMode(.tail)
                         }
                         .padding(.top, -30)
                         .padding(.bottom, 10)
