@@ -59,12 +59,12 @@ struct ViewController : View {
                             
                         }
                         .tag(3)
-                    TestingProductView()
-                        .tabItem {
-                            Label("Testing View", systemImage: "swiftdata")
-                                .environment(\.symbolVariants, .none)
-                            
-                        }
+//                    TestingProductView()
+//                        .tabItem {
+//                            Label("Testing View", systemImage: "swiftdata")
+//                                .environment(\.symbolVariants, .none)
+//                            
+//                        }
                 }
                 .tint(.greenAccent)
                 
