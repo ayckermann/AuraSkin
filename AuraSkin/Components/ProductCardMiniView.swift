@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct ProductCardMiniView: View {
+    // Add context
+    @EnvironmentObject var manager: CoreDataManager
+    @Environment(\.managedObjectContext) var viewContext
     var product: Product
     
     var body: some View {
         VStack {
             NavigationLink(destination: {
-                ProductDetailView(product: product)
+                ProductDetailView(product: product, context: viewContext)
                     .toolbar(.visible, for: .tabBar)
             }) {
                 ZStack(alignment: .bottom) {

@@ -78,7 +78,7 @@ struct SavedProductsView: View {
         } else {
             return products.filter { product in
                 (product.currentlyUsed == true) &&
-                ( product.name?.lowercased().contains(searchText.lowercased()) ?? false) ||
+                (product.name?.lowercased().contains(searchText.lowercased()) ?? false) ||
                 (product.category?.lowercased().contains(searchText.lowercased()) ?? false)
             }
         }
