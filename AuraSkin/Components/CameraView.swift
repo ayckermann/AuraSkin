@@ -57,7 +57,7 @@ struct CameraView: UIViewControllerRepresentable {
             self.didFinishProcessingPhoto = didFinishProcessingPhoto
         }
         
-        func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: (any Error)?) {
+        func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
             if let error = error {
                 didFinishProcessingPhoto(.failure(error))
                 return
@@ -66,3 +66,4 @@ struct CameraView: UIViewControllerRepresentable {
         }
     }
 }
+
