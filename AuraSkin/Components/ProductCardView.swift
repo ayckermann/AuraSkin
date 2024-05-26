@@ -40,9 +40,9 @@ struct ProductCardView: View {
                                 .cornerRadius(10)
                                 .offset(y: -20)
                         } else {
-                            Image(systemName: "photo")
+                            Image("productImageDefault")
                                 .resizable()
-                                .aspectRatio(contentMode: .fill)
+                                .aspectRatio(contentMode: .fit)
                                 .frame(width: 154, height: 120)
                                 .cornerRadius(10)
                                 .offset(y: -20)
