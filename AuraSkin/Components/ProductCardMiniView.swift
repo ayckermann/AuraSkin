@@ -34,9 +34,9 @@ struct ProductCardMiniView: View {
                                 .cornerRadius(10)
                                 .padding(.top, 10)
                         } else {
-                            Image(uiImage: UIImage(data: product.image ?? Data())!)
+                            Image("productImageDefault")
                                 .resizable()
-                                .aspectRatio(contentMode: .fill)
+                                .aspectRatio(contentMode: .fit)
                                 .frame(width: 100, height: 86)
                                 .cornerRadius(10)
                                 .padding(.top, 10)

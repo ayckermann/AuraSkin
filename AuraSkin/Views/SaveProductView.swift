@@ -50,13 +50,23 @@ struct SaveProductView: View {
                             .overlay(RoundedRectangle(cornerRadius: 11).stroke(.gray))
                             .padding(.bottom)
                     case .image:
-                        Image(data: (product.image ?? UIImage(named: "productImageDefault")?.pngData())!)!
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 215, height: 200)
-                            .foregroundColor(.gray)
-                            .clipShape(RoundedRectangle(cornerRadius: 11))
-                            .padding(.bottom)
+                        if let imageData = product.image, let uiImage = UIImage(data: imageData) {
+                            Image(uiImage: uiImage)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 215, height: 200)
+                                .foregroundColor(.gray)
+                                .clipShape(RoundedRectangle(cornerRadius: 11))
+                                .padding(.bottom)
+                        } else {
+                            Image("productImageDefault")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 215, height: 200)
+                                .foregroundColor(.gray)
+                                .clipShape(RoundedRectangle(cornerRadius: 11))
+                                .padding(.bottom)
+                        }
                 }
             }
                 .onChange(of: photosPickerItem) { _, _ in
