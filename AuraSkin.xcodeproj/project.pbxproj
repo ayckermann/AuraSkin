@@ -55,6 +55,7 @@
 		D98F12132BFE52F700B347D6 /* ScanInstructionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98F12122BFE52F700B347D6 /* ScanInstructionComponent.swift */; };
 		D98F12342BFF457C00B347D6 /* ProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98F12332BFF457C00B347D6 /* ProductsView.swift */; };
 		D98F12362BFF7EDD00B347D6 /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98F12352BFF7EDD00B347D6 /* QuizViewModel.swift */; };
+		D98F12392C0077DB00B347D6 /* ProductCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98F12382C0077DB00B347D6 /* ProductCameraView.swift */; };
 		D9EC3FA62BE91C8500F4B9E7 /* AuraSkinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EC3FA52BE91C8500F4B9E7 /* AuraSkinApp.swift */; };
 		D9EC3FAA2BE91C8700F4B9E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9EC3FA92BE91C8700F4B9E7 /* Assets.xcassets */; };
 		D9EC3FAD2BE91C8700F4B9E7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9EC3FAC2BE91C8700F4B9E7 /* Preview Assets.xcassets */; };
@@ -68,9 +69,12 @@
 		DA08E8CA2C00AE4E00DA86FF /* ProductDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA08E8C92C00AE4E00DA86FF /* ProductDummy.swift */; };
 		DA6B7CFA2BFB53F700174C13 /* InputIngredientsManualView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6B7CF92BFB53F700174C13 /* InputIngredientsManualView.swift */; };
 		DAB3E2CC2C023CC500BE9D68 /* SegmentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3E2CB2C023CC500BE9D68 /* SegmentState.swift */; };
+		F40502422C00C14000EADF6E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40502412C00C14000EADF6E /* OnboardingView.swift */; };
+		F40502442C00EF9800EADF6E /* InfoSkinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40502432C00EF9800EADF6E /* InfoSkinView.swift */; };
 		F4DC4B502BFCF51D008EF955 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC4B4F2BFCF51D008EF955 /* Question.swift */; };
 		F4DC4B522BFCF68B008EF955 /* DataQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC4B512BFCF68B008EF955 /* DataQuiz.swift */; };
 		F4DC4B542BFCF703008EF955 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC4B532BFCF703008EF955 /* QuizView.swift */; };
+		F4FD66852C0080DD00DBF565 /* Skincare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F4FD66832C0080DD00DBF565 /* Skincare.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -121,6 +125,7 @@
 		D98F12122BFE52F700B347D6 /* ScanInstructionComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanInstructionComponent.swift; sourceTree = "<group>"; };
 		D98F12332BFF457C00B347D6 /* ProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsView.swift; sourceTree = "<group>"; };
 		D98F12352BFF7EDD00B347D6 /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
+		D98F12382C0077DB00B347D6 /* ProductCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCameraView.swift; sourceTree = "<group>"; };
 		D9EC3FA22BE91C8500F4B9E7 /* AuraSkin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuraSkin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9EC3FA52BE91C8500F4B9E7 /* AuraSkinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuraSkinApp.swift; sourceTree = "<group>"; };
 		D9EC3FA92BE91C8700F4B9E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -135,9 +140,12 @@
 		DA08E8C92C00AE4E00DA86FF /* ProductDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDummy.swift; sourceTree = "<group>"; };
 		DA6B7CF92BFB53F700174C13 /* InputIngredientsManualView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputIngredientsManualView.swift; sourceTree = "<group>"; };
 		DAB3E2CB2C023CC500BE9D68 /* SegmentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentState.swift; sourceTree = "<group>"; };
+		F40502412C00C14000EADF6E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		F40502432C00EF9800EADF6E /* InfoSkinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSkinView.swift; sourceTree = "<group>"; };
 		F4DC4B4F2BFCF51D008EF955 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		F4DC4B512BFCF68B008EF955 /* DataQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataQuiz.swift; sourceTree = "<group>"; };
 		F4DC4B532BFCF703008EF955 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
+		F4FD66842C0080DD00DBF565 /* Skincare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Skincare.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +225,7 @@
 				B28251FC2BEF5DED00ADABF2 /* TextComponents.swift */,
 				B28251FE2BEF661500ADABF2 /* ContainerComponents.swift */,
 				B28252082BEF84AB00ADABF2 /* IngredientsEffectListComponent.swift */,
+				F40502432C00EF9800EADF6E /* InfoSkinView.swift */,
 				D952B3902BEF5AF200C09E5F /* CameraView.swift */,
 				B22DA2472C0090C50024ECC1 /* AnalysisResultComponent.swift */,
 				B22DA2492C0094B00024ECC1 /* ToggleComponent.swift */,
@@ -305,6 +314,7 @@
 				D9EC3FA52BE91C8500F4B9E7 /* AuraSkinApp.swift */,
 				D9EC3FA92BE91C8700F4B9E7 /* Assets.xcassets */,
 				D9EC3FAB2BE91C8700F4B9E7 /* Preview Content */,
+				F4FD66832C0080DD00DBF565 /* Skincare.xcdatamodeld */,
 			);
 			path = AuraSkin;
 			sourceTree = "<group>";
@@ -330,6 +340,8 @@
 				D952B3A22BEFC4A800C09E5F /* LoadingView.swift */,
 				F4DC4B532BFCF703008EF955 /* QuizView.swift */,
 				B2CD11C22BFE670900C44A1C /* NetworkUnavailableView.swift */,
+				D98F12382C0077DB00B347D6 /* ProductCameraView.swift */,
+				F40502412C00C14000EADF6E /* OnboardingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -425,6 +437,7 @@
 				9434ED3C2BFC5F110074744F /* ActionChooseSkin.swift in Sources */,
 				B282520E2BEF989500ADABF2 /* Colors.swift in Sources */,
 				D9EC3FB92BE91E8D00F4B9E7 /* ScanView.swift in Sources */,
+				F40502442C00EF9800EADF6E /* InfoSkinView.swift in Sources */,
 				B282520C2BEF86F200ADABF2 /* IngredientsEffectEnum.swift in Sources */,
 				D983CF662BEF107D00588417 /* APIServices.swift in Sources */,
 				B2CD11C32BFE670900C44A1C /* NetworkUnavailableView.swift in Sources */,
@@ -468,12 +481,14 @@
 				B22DA2462C008C420024ECC1 /* ProductDetailView.swift in Sources */,
 				B28252072BEF821400ADABF2 /* AnalysisResultViewModel.swift in Sources */,
 				B28251FB2BEF569300ADABF2 /* AnalysisResultView.swift in Sources */,
+				D98F12392C0077DB00B347D6 /* ProductCameraView.swift in Sources */,
 				9434ED442BFC61CB0074744F /* DropdownComponent.swift in Sources */,
 				B283B34B2BFCBBA8000D37E0 /* DonutChartComponent.swift in Sources */,
 				D952B3962BEF66E000C09E5F /* TestFunction.swift in Sources */,
 				946AEA602BFF7FF7003ED237 /* ProductModel.swift in Sources */,
 				D98F12132BFE52F700B347D6 /* ScanInstructionComponent.swift in Sources */,
 				D98F12342BFF457C00B347D6 /* ProductsView.swift in Sources */,
+				F40502422C00C14000EADF6E /* OnboardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,7 +547,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -589,7 +604,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
