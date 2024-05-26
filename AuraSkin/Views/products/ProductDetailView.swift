@@ -41,7 +41,7 @@ struct ProductDetailView: View {
 
                 Spacer()
             }
-            .padding()
+            .padding([.horizontal, .top], 15)
         }
         .onAppear() {
             isOn = product.currentlyUsed
