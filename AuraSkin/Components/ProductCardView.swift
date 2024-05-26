@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ProductCardView: View {
+    // Add context
+    @EnvironmentObject var manager: CoreDataManager
+    @Environment(\.managedObjectContext) var viewContext
     var product: Product
     
     // send product
@@ -16,7 +19,7 @@ struct ProductCardView: View {
     
     var body: some View {
         NavigationLink(destination: {
-            ProductDetailView(product: product)
+            ProductDetailView(product: product, context: viewContext)
                 .toolbar(.visible, for: .tabBar)
         }) {
             VStack {
