@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum IngredientsEffectType {
-    case pros
-    case cons
+enum IngredientsEffectType: String, CaseIterable {
+    case pros = "Positive Effect"
+    case cons = "Hazard"
 }

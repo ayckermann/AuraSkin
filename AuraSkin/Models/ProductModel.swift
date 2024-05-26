@@ -27,4 +27,4 @@ struct ProductModel {
     }
 }
 
-
+extension ProductModel: Identifiable {}

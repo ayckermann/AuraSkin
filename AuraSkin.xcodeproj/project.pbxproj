@@ -19,9 +19,14 @@
 		946AEA672BFF8AA2003ED237 /* Product+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946AEA652BFF8AA2003ED237 /* Product+CoreDataClass.swift */; };
 		946AEA682BFF8AA2003ED237 /* Product+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946AEA662BFF8AA2003ED237 /* Product+CoreDataProperties.swift */; };
 		946AEA6A2BFFA144003ED237 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946AEA692BFFA144003ED237 /* CoreDataManager.swift */; };
+		B20196142C01BE6900C6A768 /* Skincare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B20196122C01BE6900C6A768 /* Skincare.xcdatamodeld */; };
 		B22DA2462C008C420024ECC1 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DA2452C008C420024ECC1 /* ProductDetailView.swift */; };
 		B22DA2482C0090C50024ECC1 /* AnalysisResultComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DA2472C0090C50024ECC1 /* AnalysisResultComponent.swift */; };
 		B22DA24A2C0094B00024ECC1 /* ToggleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DA2492C0094B00024ECC1 /* ToggleComponent.swift */; };
+		B235F84A2C024063009DEE80 /* ConfirmationDialogComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235F8492C024063009DEE80 /* ConfirmationDialogComponent.swift */; };
+		B235F84C2C024B5E009DEE80 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235F84B2C024B5E009DEE80 /* GlobalVariables.swift */; };
+		B235F84F2C0264C9009DEE80 /* Skincare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B235F84D2C0264C9009DEE80 /* Skincare.xcdatamodeld */; };
+		B25508F42C027C5E00BF2EB7 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25508F32C027C5E00BF2EB7 /* CustomSegmentedControl.swift */; };
 		B28251FB2BEF569300ADABF2 /* AnalysisResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28251FA2BEF569300ADABF2 /* AnalysisResultView.swift */; };
 		B28251FD2BEF5DED00ADABF2 /* TextComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28251FC2BEF5DED00ADABF2 /* TextComponents.swift */; };
 		B28251FF2BEF661500ADABF2 /* ContainerComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28251FE2BEF661500ADABF2 /* ContainerComponents.swift */; };
@@ -66,6 +71,7 @@
 		DA08E8C32C008C9B00DA86FF /* ProductCardMiniView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA08E8C22C008C9B00DA86FF /* ProductCardMiniView.swift */; };
 		DA08E8CA2C00AE4E00DA86FF /* ProductDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA08E8C92C00AE4E00DA86FF /* ProductDummy.swift */; };
 		DA6B7CFA2BFB53F700174C13 /* InputIngredientsManualView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6B7CF92BFB53F700174C13 /* InputIngredientsManualView.swift */; };
+		DAB3E2CC2C023CC500BE9D68 /* SegmentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3E2CB2C023CC500BE9D68 /* SegmentState.swift */; };
 		F40502422C00C14000EADF6E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40502412C00C14000EADF6E /* OnboardingView.swift */; };
 		F40502442C00EF9800EADF6E /* InfoSkinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40502432C00EF9800EADF6E /* InfoSkinView.swift */; };
 		F45750F72C032DE30079AB04 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45750F62C032DE30079AB04 /* SplashScreenView.swift */; };
@@ -88,9 +94,14 @@
 		946AEA652BFF8AA2003ED237 /* Product+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataClass.swift"; sourceTree = "<group>"; };
 		946AEA662BFF8AA2003ED237 /* Product+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		946AEA692BFFA144003ED237 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		B20196132C01BE6900C6A768 /* Skincare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Skincare.xcdatamodel; sourceTree = "<group>"; };
 		B22DA2452C008C420024ECC1 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		B22DA2472C0090C50024ECC1 /* AnalysisResultComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisResultComponent.swift; sourceTree = "<group>"; };
 		B22DA2492C0094B00024ECC1 /* ToggleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleComponent.swift; sourceTree = "<group>"; };
+		B235F8492C024063009DEE80 /* ConfirmationDialogComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationDialogComponent.swift; sourceTree = "<group>"; };
+		B235F84B2C024B5E009DEE80 /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
+		B235F84E2C0264C9009DEE80 /* Skincare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Skincare.xcdatamodel; sourceTree = "<group>"; };
+		B25508F32C027C5E00BF2EB7 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		B28251FA2BEF569300ADABF2 /* AnalysisResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisResultView.swift; sourceTree = "<group>"; };
 		B28251FC2BEF5DED00ADABF2 /* TextComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextComponents.swift; sourceTree = "<group>"; };
 		B28251FE2BEF661500ADABF2 /* ContainerComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerComponents.swift; sourceTree = "<group>"; };
@@ -135,6 +146,7 @@
 		DA08E8C22C008C9B00DA86FF /* ProductCardMiniView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardMiniView.swift; sourceTree = "<group>"; };
 		DA08E8C92C00AE4E00DA86FF /* ProductDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDummy.swift; sourceTree = "<group>"; };
 		DA6B7CF92BFB53F700174C13 /* InputIngredientsManualView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputIngredientsManualView.swift; sourceTree = "<group>"; };
+		DAB3E2CB2C023CC500BE9D68 /* SegmentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentState.swift; sourceTree = "<group>"; };
 		F40502412C00C14000EADF6E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		F40502432C00EF9800EADF6E /* InfoSkinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSkinView.swift; sourceTree = "<group>"; };
 		F45750F62C032DE30079AB04 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
@@ -175,6 +187,8 @@
 				B283B34C2BFCEBB7000D37E0 /* SkinTypeEnum.swift */,
 				F4DC4B512BFCF68B008EF955 /* DataQuiz.swift */,
 				B2CD11C02BFE663200C44A1C /* NetworkMonitor.swift */,
+				B235F84B2C024B5E009DEE80 /* GlobalVariables.swift */,
+				DAB3E2CB2C023CC500BE9D68 /* SegmentState.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -203,6 +217,7 @@
 				946AEA5D2BFF7DFE003ED237 /* SaveProductViewModel.swift */,
 				D98F12352BFF7EDD00B347D6 /* QuizViewModel.swift */,
 				DA08E8BE2BFF9B4D00DA86FF /* ProductListViewModel.swift */,
+				B25508F32C027C5E00BF2EB7 /* CustomSegmentedControl.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -225,6 +240,7 @@
 				B22DA2492C0094B00024ECC1 /* ToggleComponent.swift */,
 				DA08E8BA2BFF782B00DA86FF /* ProductCardView.swift */,
 				DA08E8C22C008C9B00DA86FF /* ProductCardMiniView.swift */,
+				B235F8492C024063009DEE80 /* ConfirmationDialogComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -297,7 +313,7 @@
 		D9EC3FA42BE91C8500F4B9E7 /* AuraSkin */ = {
 			isa = PBXGroup;
 			children = (
-				F498FBAE2C032F790012EED7 /* Skincare.xcdatamodeld */,
+				B235F84D2C0264C9009DEE80 /* Skincare.xcdatamodeld */,
 				D9E4374D2BF73AAC006B9A59 /* Routes */,
 				D952B3942BEF66A000C09E5F /* Utilities */,
 				D983CF5F2BEF06D300588417 /* Services */,
@@ -417,6 +433,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA6B7CFA2BFB53F700174C13 /* InputIngredientsManualView.swift in Sources */,
+				DAB3E2CC2C023CC500BE9D68 /* SegmentState.swift in Sources */,
 				D98F12362BFF7EDD00B347D6 /* QuizViewModel.swift in Sources */,
 				9434ED3E2BFC5F110074744F /* TermsConditionView.swift in Sources */,
 				B28252052BEF7B7E00ADABF2 /* SwiftUIView.swift in Sources */,
@@ -443,8 +460,11 @@
 				B28251FF2BEF661500ADABF2 /* ContainerComponents.swift in Sources */,
 				946AEA6A2BFFA144003ED237 /* CoreDataManager.swift in Sources */,
 				DA08E8CA2C00AE4E00DA86FF /* ProductDummy.swift in Sources */,
+				B235F84C2C024B5E009DEE80 /* GlobalVariables.swift in Sources */,
 				D9EC3FBE2BE91EBF00F4B9E7 /* ProfileView.swift in Sources */,
+				B235F84A2C024063009DEE80 /* ConfirmationDialogComponent.swift in Sources */,
 				B283B34D2BFCEBB7000D37E0 /* SkinTypeEnum.swift in Sources */,
+				B235F84F2C0264C9009DEE80 /* Skincare.xcdatamodeld in Sources */,
 				D983CF682BEF109200588417 /* CameraServices.swift in Sources */,
 				B28252102BEF994000ADABF2 /* DummyData.swift in Sources */,
 				946AEA5E2BFF7DFE003ED237 /* SaveProductViewModel.swift in Sources */,
@@ -463,6 +483,7 @@
 				B22DA2482C0090C50024ECC1 /* AnalysisResultComponent.swift in Sources */,
 				F498FBB02C032F790012EED7 /* Skincare.xcdatamodeld in Sources */,
 				9434ED462BFC61CB0074744F /* TextFieldComponents.swift in Sources */,
+				B25508F42C027C5E00BF2EB7 /* CustomSegmentedControl.swift in Sources */,
 				D952B3982BEF6C1B00C09E5F /* ScanViewRoute.swift in Sources */,
 				D98F12112BFE52C100B347D6 /* ScanInstructionView.swift in Sources */,
 				D952B39A2BEF9A7900C09E5F /* ImageCropper.swift in Sources */,
@@ -626,7 +647,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -659,7 +680,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -716,14 +737,14 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		F498FBAE2C032F790012EED7 /* Skincare.xcdatamodeld */ = {
+		B235F84D2C0264C9009DEE80 /* Skincare.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				F498FBAF2C032F790012EED7 /* Skincare.xcdatamodel */,
+				B235F84E2C0264C9009DEE80 /* Skincare.xcdatamodel */,
 			);
-			currentVersion = F498FBAF2C032F790012EED7 /* Skincare.xcdatamodel */;
+			currentVersion = B235F84E2C0264C9009DEE80 /* Skincare.xcdatamodel */;
 			name = Skincare.xcdatamodeld;
-			path = /Users/srianggraini/Documents/Biarin/AuraSkin/AuraSkin/Skincare.xcdatamodeld;
+			path = "/Users/rangerhitam142/GRINDING ZONE/Apple Developer Academy/Mini Challenge/AuraSkin/AuraSkin/AuraSkin/Skincare.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
