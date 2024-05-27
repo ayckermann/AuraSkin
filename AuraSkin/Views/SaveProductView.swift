@@ -63,6 +63,33 @@ struct SaveProductView: View {
                         .foregroundColor(.gray)
                         .clipShape(RoundedRectangle(cornerRadius: 11))
                         .padding(.bottom)
+                    case .noImage:
+                        Image(systemName: "plus")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 55, height: 55)
+                            .foregroundStyle(.gray)
+                            .frame(width: 215, height: 200)
+                            .overlay(RoundedRectangle(cornerRadius: 11).stroke(.gray))
+                            .padding(.bottom)
+                    case .image:
+                        if let imageData = product.image, let uiImage = UIImage(data: imageData) {
+                            Image(uiImage: uiImage)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 215, height: 200)
+                                .foregroundColor(.gray)
+                                .clipShape(RoundedRectangle(cornerRadius: 11))
+                                .padding(.bottom)
+                        } else {
+                            Image("productImageDefault")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 215, height: 200)
+                                .foregroundColor(.gray)
+                                .clipShape(RoundedRectangle(cornerRadius: 11))
+                                .padding(.bottom)
+                        }
                 }
             }
 
@@ -176,3 +203,6 @@ struct SaveProductView_Previews: PreviewProvider {
 ////#Preview {
 //    SaveProductView_Previews.previews
 //}
+#Preview {
+    SaveProductView_Previews.previews
+}

@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ProductCardMiniView: View {
     // Add context
+    @State var context: NSManagedObjectContext
+    @Environment(\.dismiss) var dismiss
     @EnvironmentObject var manager: CoreDataManager
     @Environment(\.managedObjectContext) var viewContext
     var product: Product
@@ -34,9 +37,9 @@ struct ProductCardMiniView: View {
                                 .cornerRadius(10)
                                 .padding(.top, 10)
                         } else {
-                            Image(uiImage: UIImage(data: product.image ?? Data())!)
+                            Image("productImageDefault")
                                 .resizable()
-                                .aspectRatio(contentMode: .fill)
+                                .aspectRatio(contentMode: .fit)
                                 .frame(width: 100, height: 86)
                                 .cornerRadius(10)
                                 .padding(.top, 10)

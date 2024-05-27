@@ -6,9 +6,13 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ProductCardView: View {
     // Add context
+    @State var context: NSManagedObjectContext
+    @Environment(\.dismiss) var dismiss
+    
     @EnvironmentObject var manager: CoreDataManager
     @Environment(\.managedObjectContext) var viewContext
     var product: Product
@@ -40,9 +44,9 @@ struct ProductCardView: View {
                                 .cornerRadius(10)
                                 .offset(y: -20)
                         } else {
-                            Image(systemName: "photo")
+                            Image("productImageDefault")
                                 .resizable()
-                                .aspectRatio(contentMode: .fill)
+                                .aspectRatio(contentMode: .fit)
                                 .frame(width: 154, height: 120)
                                 .cornerRadius(10)
                                 .offset(y: -20)
@@ -57,8 +61,10 @@ struct ProductCardView: View {
                             
                             Text(product.name ?? "")
                                 .font(.system(size: 15, weight: .semibold))
-                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .frame(maxWidth: 150, alignment: .leading)
                                 .padding(.leading, 20)
+                                .lineLimit(1)
+                                .truncationMode(.tail)
                         }
                         .padding(.top, -30)
                         .padding(.bottom, 10)
