@@ -46,87 +46,52 @@ struct SaveProductView: View {
                 isAddPhoto = true
             } label: {
                 switch photoState {
+                    //                case .noImage:
+                    //                    Image(systemName: "plus")
+                    //                        .resizable()
+                    //                        .aspectRatio(contentMode: .fill)
+                    //                        .frame(width: 55, height: 55)
+                    //                        .foregroundStyle(.gray)
+                    //                        .frame(width: 250, height: 235)
+                    //                        .overlay(RoundedRectangle(cornerRadius: 11).stroke(.gray))
+                    //                        .padding(.bottom)
+                    //                case .image:
+                    //                    Image(data: (product.image ?? UIImage(named: "productImageDefault")?.pngData())!)!
+                    //                        .resizable()
+                    //                        .aspectRatio(contentMode: .fill)
+                    //                        .frame(width: 250, height: 235)
+                    //                        .foregroundColor(.gray)
+                    //                        .clipShape(RoundedRectangle(cornerRadius: 11))
+                    //                        .padding(.bottom)
                 case .noImage:
                     Image(systemName: "plus")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 55, height: 55)
                         .foregroundStyle(.gray)
-                        .frame(width: 250, height: 235)
+                        .frame(width: 215, height: 200)
                         .overlay(RoundedRectangle(cornerRadius: 11).stroke(.gray))
                         .padding(.bottom)
                 case .image:
-                    Image(data: (product.image ?? UIImage(named: "productImageDefault")?.pngData())!)!
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 250, height: 235)
-                        .foregroundColor(.gray)
-                        .clipShape(RoundedRectangle(cornerRadius: 11))
-                        .padding(.bottom)
-                    case .noImage:
-                        Image(systemName: "plus")
+                    if let imageData = product.image, let uiImage = UIImage(data: imageData) {
+                        Image(uiImage: uiImage)
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 55, height: 55)
-                            .foregroundStyle(.gray)
                             .frame(width: 215, height: 200)
-                            .overlay(RoundedRectangle(cornerRadius: 11).stroke(.gray))
+                            .foregroundColor(.gray)
+                            .clipShape(RoundedRectangle(cornerRadius: 11))
                             .padding(.bottom)
-                    case .image:
-                        if let imageData = product.image, let uiImage = UIImage(data: imageData) {
-                            Image(uiImage: uiImage)
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 215, height: 200)
-                                .foregroundColor(.gray)
-                                .clipShape(RoundedRectangle(cornerRadius: 11))
-                                .padding(.bottom)
-                        } else {
-                            Image("productImageDefault")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 215, height: 200)
-                                .foregroundColor(.gray)
-                                .clipShape(RoundedRectangle(cornerRadius: 11))
-                                .padding(.bottom)
-                        }
+                    } else {
+                        Image("productImageDefault")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 215, height: 200)
+                            .foregroundColor(.gray)
+                            .clipShape(RoundedRectangle(cornerRadius: 11))
+                            .padding(.bottom)
+                    }
                 }
             }
-
-            
-//            PhotosPicker(selection: $photosPickerItem, matching: .images) {
-//                switch photoState {
-//                case .noImage:
-//                    Image(systemName: "plus")
-//                        .resizable()
-//                        .aspectRatio(contentMode: .fill)
-//                        .frame(width: 55, height: 55)
-//                        .foregroundStyle(.gray)
-//                        .frame(width: 250, height: 235)
-//                        .overlay(RoundedRectangle(cornerRadius: 11).stroke(.gray))
-//                        .padding(.bottom)
-//                case .image:
-//                    Image(data: (product.image ?? UIImage(named: "productImageDefault")?.pngData())!)!
-//                        .resizable()
-//                        .aspectRatio(contentMode: .fill)
-//                        .frame(width: 250, height: 235)
-//                        .foregroundColor(.gray)
-//                        .clipShape(RoundedRectangle(cornerRadius: 11))
-//                        .padding(.bottom)
-//                }
-//            }
-//            .onChange(of: photosPickerItem) { _, _ in
-//                Task {
-//                    if let photosPickerItem,
-//                       let data = try? await photosPickerItem.loadTransferable(type: Data.self) {
-//                        if UIImage(data: data) != nil {
-//                            product.image = data
-//                            self.photoState = .image
-//                        }
-//                    }
-//                    photosPickerItem = nil
-//                }
-//            }
             
             
             SectionTextLeading("Product's Name")
@@ -174,7 +139,7 @@ struct SaveProductView: View {
                 .onDisappear(perform: {
                     if(product.image != nil){
                         photoState = .image
-
+                        
                     }else{
                         photoState = .noImage
                     }
