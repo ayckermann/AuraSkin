@@ -11,6 +11,7 @@ struct ProfileView: View {
     @State private var showingOptions = false
 //    @State private var selection = "None"
     @AppStorage("skinTypePersistance") var skinTypePersistance: SkinType = .none
+    @AppStorage("isFirstTimeUser") var isFirstTimeUser: Bool = true
 
     
     var body: some View {
@@ -48,6 +49,7 @@ struct ProfileView: View {
                     
                     Button(action: {
                         skinTypePersistance = .none
+                        isFirstTimeUser =  true
                     }, label: {
                         Text("Reset skin tyoe")
                     })

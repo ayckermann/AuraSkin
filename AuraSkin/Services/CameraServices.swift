@@ -7,8 +7,9 @@
 
 import Foundation
 import AVFoundation
+import UIKit
 
-class CameraServices {
+class CameraServices: NSObject {
     
     var session: AVCaptureSession?
     var delegate: AVCapturePhotoCaptureDelegate?
@@ -16,11 +17,46 @@ class CameraServices {
     var output = AVCapturePhotoOutput()
     let previewLayer = AVCaptureVideoPreviewLayer()
     
+    override init() {
+        super.init()
+        NotificationCenter.default.addObserver(self, selector: #selector(handleInterruption(notification:)), name: .AVCaptureSessionWasInterrupted, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleInterruptionEnded(notification:)), name: .AVCaptureSessionInterruptionEnded, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleDidEnterBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleWillEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc private func handleInterruption(notification: Notification) {
+        print("Capture session was interrupted")
+    }
+    
+    @objc private func handleInterruptionEnded(notification: Notification) {
+        print("Capture session interruption ended")
+        startSession()
+    }
+    
+    @objc private func handleDidEnterBackground() {
+        print("App entered background")
+        stopSession()
+        resetCamera()
+    }
+    
+    @objc private func handleWillEnterForeground() {
+        print("App will enter foreground")
+        startSession()
+    }
+    
     private func checkPermission(completion: @escaping (Error?) -> ()) {
         switch AVCaptureDevice.authorizationStatus(for: .video) {
         case .notDetermined:
             AVCaptureDevice.requestAccess(for: .video) { [weak self] granted in
-                guard granted else { return }
+                guard granted else {
+                    completion(NSError(domain: "CameraAccess", code: 1, userInfo: [NSLocalizedDescriptionKey: "Camera access was not granted."]))
+                    return
+                }
                 DispatchQueue.main.async {
                     self?.setupCamera(completion: completion)
                 }
@@ -55,11 +91,8 @@ class CameraServices {
                 previewLayer.videoGravity = .resizeAspectFill
                 previewLayer.session = session
                 
-                DispatchQueue.global(qos: .userInitiated).async {
-                    session.startRunning()
-                }
-                
                 self.session = session
+                startSession()
                 completion(nil)
             } catch {
                 completion(error)
@@ -85,10 +118,21 @@ class CameraServices {
         output.capturePhoto(with: settings, delegate: delegate)
     }
     
-    func stopCamera() {
+    func stopSession() {
         DispatchQueue.global(qos: .userInitiated).async {
             self.session?.stopRunning()
         }
+    }
+    
+    func startSession() {
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.session?.startRunning()
+        }
+    }
+    
+    func resetCamera() {
+        stopSession()
+        session = nil
     }
     
     func toggleFlash() -> Bool {
@@ -109,4 +153,3 @@ class CameraServices {
         }
     }
 }
-

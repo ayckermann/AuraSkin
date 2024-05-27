@@ -11,8 +11,7 @@ import AVFoundation
 struct CameraView: UIViewControllerRepresentable {
     var ratioX: Double
     var ratioY: Double
-
-    typealias UIViewControllerType = UIViewController
+    var yOffset: CGFloat
     
     let cameraServices: CameraServices
     let didFinishProcessingPhoto: (Result<AVCapturePhoto, Error>) -> ()
@@ -32,13 +31,12 @@ struct CameraView: UIViewControllerRepresentable {
         let previewHeight = screenWidth * (ratioY / ratioX)
         
         let xOffset = CGFloat(0.0)
-        let yOffset = CGFloat(65.0)
         
         cameraServices.previewLayer.frame = CGRect(x: xOffset, y: yOffset, width: previewWidth, height: previewHeight)
         
         viewController.view.backgroundColor = .black
         viewController.view.layer.addSublayer(cameraServices.previewLayer)
-                
+        
         return viewController
     }
     
@@ -47,6 +45,10 @@ struct CameraView: UIViewControllerRepresentable {
     }
     
     func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
+    
+    func dismantleUIViewController(_ uiViewController: UIViewController, coordinator: Coordinator) {
+        cameraServices.stopSession()
+    }
     
     class Coordinator: NSObject, AVCapturePhotoCaptureDelegate {
         let parent: CameraView
@@ -57,7 +59,7 @@ struct CameraView: UIViewControllerRepresentable {
             self.didFinishProcessingPhoto = didFinishProcessingPhoto
         }
         
-        func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: (any Error)?) {
+        func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
             if let error = error {
                 didFinishProcessingPhoto(.failure(error))
                 return

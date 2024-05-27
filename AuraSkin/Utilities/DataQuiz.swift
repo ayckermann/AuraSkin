@@ -33,23 +33,27 @@ struct Datas {
             QuestionAnswer(forSkinType: .sensitive, answerText: "Kering dan gatal")
         ], point: 12, progres: 0.2),
         Questions(query: "Bagaimana tampilan pori-pori?", questionAnswer: [
-            QuestionAnswer(forSkinType: .normal, answerText: "Tidak terlalu terlihat"),
-            QuestionAnswer(forSkinType: .oily, answerText: "Terlihat jelas ke seluruh wajah"),
-            QuestionAnswer(forSkinType: .dry, answerText: "Tidak terlalu terlihat"),
-            QuestionAnswer(forSkinType: .combination, answerText: "Terlihat jelas di zona T saja"),
+            QuestionAnswer(forSkinType: .normal, answerText: "Tidak terlalu besar atau terlalu kecil dan umumnya tidak terlihat mencolok"),
+            QuestionAnswer(forSkinType: .oily, answerText: "Terlihat jelas, besar, dan terkadang tersumbat"),
+            QuestionAnswer(forSkinType: .dry, answerText: "Cenderung lebih kecil dan kurang terlihat"),
+            QuestionAnswer(forSkinType: .combination, answerText: "Pori pori lebih besar di zona T(dahi, hidung, dan dagu) dan kecil di area pipi"),
+            QuestionAnswer(forSkinType: .sensitive, answerText: "Tampak meradang atau kemerahan ketika terjadi reaksi iritasi")
+
         ], point: 12, progres: 0.3),
-        Questions(query: "Apakah terlihat bersinar?", questionAnswer: [
-            QuestionAnswer(forSkinType: .normal, answerText: "Tidak"),
-            QuestionAnswer(forSkinType: .oily, answerText: "Di seluruh wajah"),
-            QuestionAnswer(forSkinType: .dry, answerText: "Tidak"),
-            QuestionAnswer(forSkinType: .combination, answerText: "Hanya di zona T"),
+        Questions(query: "Masalah utama uang terjadi pada kulit kamu?", questionAnswer: [
+            QuestionAnswer(forSkinType: .normal, answerText: "Tidak ada masalah yang signifikan"),
+            QuestionAnswer(forSkinType: .oily, answerText: "Komedo dan jerawat"),
+            QuestionAnswer(forSkinType: .dry, answerText: "Kekeringan atau iritasi"),
+            QuestionAnswer(forSkinType: .combination, answerText: "Zona T(dahi, hidung, dan dagu) cenderung lebih rentan terhadap jerawat dan komedo"),
+            QuestionAnswer(forSkinType: .sensitive, answerText: "Sering tampak kemerahan dan bisa meradang")
+
         ], point: 12, progres: 0.4),
-        Questions(query: "Merasakan sesak atau tidak nyaman?", questionAnswer: [
-            QuestionAnswer(forSkinType: .normal, answerText: "Tidak"),
-            QuestionAnswer(forSkinType: .oily, answerText: "Tidak"),
-            QuestionAnswer(forSkinType: .dry, answerText: "Ya, di semua wajah"),
-            QuestionAnswer(forSkinType: .combination, answerText: "Hanya di pipi dan pelipis"),
-            QuestionAnswer(forSkinType: .sensitive, answerText: "Ya, di semua wajah")
+        Questions(query: "Bagaimana keadaan kulit kamu setelah 30 menit mencuci muka dan tidak menggunakan product apapun?", questionAnswer: [
+            QuestionAnswer(forSkinType: .normal, answerText: "Halus dan lembut"),
+            QuestionAnswer(forSkinType: .oily, answerText: "Terlihat mengkilap"),
+            QuestionAnswer(forSkinType: .dry, answerText: "Butuh pelembab"),
+            QuestionAnswer(forSkinType: .combination, answerText: "Berminyak, kering, dan umumnya tidak rata"),
+            QuestionAnswer(forSkinType: .sensitive, answerText: "Area tertentu tampak kering, dan mungkin tampak merah")
         ], point: 12, progres: 0.5),
         Questions(query: "Apa yang anda rasakan akhir-akhir ini dengan kulit muka anda?", questionAnswer: [
             QuestionAnswer(forSkinType: .normal, answerText: "Kulit terasa halus, tidak ada kulit mengelupas ataupun terlalu berminyak."),

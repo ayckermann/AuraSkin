@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Mantis
+import AVFoundation
 
 struct ScanViewRoute: View {
     
@@ -19,10 +20,25 @@ struct ScanViewRoute: View {
     @State var isHideInstruction = true
     
     @AppStorage("skinTypePersistance") var skinTypePersistance: SkinType = .none
+    @AppStorage("isFirstTimeUser") var isFirstTimeUser: Bool = true
     
     func toggleFlash() {
         
         isFlash = self.cameraService.toggleFlash()
+    }
+    
+    func handlePhotoCaptureResult(_ result: Result<AVCapturePhoto, Error>) {
+        switch result {
+        case .success(let photo):
+            if let data = photo.fileDataRepresentation() {
+                capturedImage = UIImage(data: data)
+                isCaptured = true
+            } else {
+                print("Error: no image data found")
+            }
+        case .failure(let error):
+            print(error.localizedDescription)
+        }
     }
     
     var body: some View {
@@ -31,25 +47,9 @@ struct ScanViewRoute: View {
                 Color(.black)
                     .ignoresSafeArea(.all)
                 
-                CameraView(ratioX: 9.0, ratioY: 16.0, cameraServices: cameraService){ result in
-                    switch result {
-                        
-                    case .success(let photo):
-                        if let data = photo.fileDataRepresentation(){
-                            capturedImage = UIImage(data: data)
-                            isCaptured = true
-                            
-                        }
-                        else{
-                            print("Error: no image data found")
-                        }
-                    case .failure(let error):
-                        print(error.localizedDescription)
-                        
-                    }
-                }
-                .padding(EdgeInsets( top: 0, leading: 0, bottom:    400, trailing: 0))
-                .ignoresSafeArea(.all)
+                CameraView(ratioX: 9.0, ratioY: 16.0, yOffset: CGFloat(65.0), cameraServices: cameraService, didFinishProcessingPhoto: handlePhotoCaptureResult)
+                    .padding(EdgeInsets( top: 0, leading: 0, bottom: 400, trailing: 0))
+                    .ignoresSafeArea(.all)
                 
                 ZStack{
                     Rectangle()
@@ -79,7 +79,18 @@ struct ScanViewRoute: View {
                 
             }
             .onAppear {
-                if(skinTypePersistance == .none){
+                cameraService.resetCamera()
+                cameraService.start(delegate: CameraView.Coordinator(parent: CameraView(ratioX: 9.0, ratioY: 16.0, yOffset: CGFloat(65.0), cameraServices: cameraService, didFinishProcessingPhoto: handlePhotoCaptureResult), didFinishProcessingPhoto: handlePhotoCaptureResult)) { error in
+                    if let error = error {
+                        print("Camera start error: \(error.localizedDescription)")
+                    }
+                }
+            }
+            .onDisappear(){
+                cameraService.stopSession()
+            }
+            .onAppear {
+                if(isFirstTimeUser){
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                         self.isHideInstruction = false
                     }
@@ -125,20 +136,13 @@ struct ScanViewRoute: View {
             }
             
         }
-//        .ignoresSafeArea(.all)
         
-//        .environment(\.colorScheme, .dark)
-//        .preferredColorScheme(.dark)
-//        .toolbarColorScheme(.dark, for: .bottomBar)
-//        .toolbarColorScheme(.dark, for: .navigationBar)
         .toolbarColorScheme(.dark, for: .tabBar)
-
-
         
         
     }
 }
 
-//#Preview {
-//    ScanViewModel()
-//}
+#Preview {
+    ScanViewRoute()
+}

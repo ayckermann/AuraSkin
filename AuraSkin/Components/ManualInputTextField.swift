@@ -1,42 +1,41 @@
 //
-//  InputIngredientsManualView.swift
+//  ManualInputTextField.swift
 //  AuraSkin
 //
-//  Created by Risma Harby on 17/05/24.
+//  Created by sri anggraini on 25/05/24.
 //
 
 import SwiftUI
 
-struct InputIngredientsManualView: View {
+struct ManualInputTextField: View {
+    var model = AnalysisResultViewModel()
     
     @State private var tags: [Tag] = []
-    @State private var newTagName: String = ""
+    @State private var newTagName: String
     @State private var availableWidth: CGFloat = 0
     @State private var elementsSize: [String: CGSize] = [:]
-    @State private var ingredientsName: String = {
-        let dummyNames = ["Alice", "Bob", "Charlie", "Diana", "Eve"]
-        return dummyNames.randomElement() ?? ""
-    }()
     
-    private let dummyNames: [String] = ["Alice", "Bob", "Charlie", "Diana", "Eve"]
+    //    @State private var allIngredients = "Coconut Oil, ,"
     
-    var model = AnalysisResultViewModel()
-    @State private var navigate  = false
+    //    tags.map { $0.name }.joined(separator: ", ")
+    
+    init(ingredients: String){
+        newTagName = ingredients.appending(", ")
+        processInput()
+        
+    }
     
     let columns = [
         GridItem(.flexible(), spacing: 6),
-        GridItem(.flexible(), spacing: 6)
+        GridItem(.flexible(), spacing: 6),
+
+
     ]
     
     var body: some View {
-        
-        VStack(alignment: .leading) {
-            HStack {
-                SectionTextLeading("Ingredients")
-                    .foregroundColor(Color.auraSkinPrimaryColor)
-            }
-            
+        VStack {
             ScrollView {
+                
                 VStack(alignment: .center, spacing: 1) {
                     LazyVGrid(columns: [GridItem(.adaptive(minimum: 100), spacing: 1)], alignment: .leading, spacing: 10){
                         ForEach(tags) { tag in
@@ -61,41 +60,39 @@ struct InputIngredientsManualView: View {
                     }
                     TextEditor(text: $newTagName)
                         .padding(1)
+                        .background(Color.white)
                         .disableAutocorrection(true)
                     //                        .foregroundColor(Color(.systemBackground))
                         .foregroundColor(.black)
+
                         .onChange(of: newTagName) {
                             processInput()
                         }
-                }.padding()
-                    .frame(minHeight: 250, maxHeight: .infinity)
-                    .background(Color(.systemBackground))
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.gray, lineWidth: 1)
-                    )
+                        .onAppear(){
+                            processInput()
+                        }
+
+                }
+                .padding()
+                .frame(minHeight: 250, maxHeight: .infinity)
+                .background(Color(.white))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.gray, lineWidth: 1)                /*.background(.white)*/
+
+                )
+                .foregroundStyle(.black)
+                .background(.white)
+                
+                
+                
             }
+//            .frame(height: 250)
             .padding(.bottom)
+
             
-            
-            Text("*Please note, each ingredient will be separated by a comma.")
-                .font(.footnote)
-                .foregroundColor(.gray)
-            Spacer()
-            
-            // here is the view load the data ingredients based on recomendation
-            
-            //            if !dummyNames.isEmpty {
-            //                ScrollView(.horizontal) {
-            //                    HStack {
-            //                        ForEach(dummyNames, id: \.self) { name in
-            //                            IngredientTag(name)
-            //                        }
-            //                    }
-            //                }
-            //            }
         }
-        .padding()
+        Spacer()
         
         NavigationLink {
             let allIngredients = tags.map { $0.name }.joined(separator: ", ")
@@ -103,17 +100,7 @@ struct InputIngredientsManualView: View {
                 .toolbar(.visible, for: .tabBar)
         } label: {
             TestButton(text: "Analyze")
-                .padding()
-                .disabled(tags == [])
-                .opacity(tags == [] ? 0.45 : 1)
-            
         }
-    }
-    
-    // example function for print
-    private func printAllIngredients() {
-        let allIngredients = tags.map { $0.name }.joined(separator: ", ")
-        print("Ingredients: \(allIngredients)")
     }
     
     private func processInput() {
@@ -126,12 +113,13 @@ struct InputIngredientsManualView: View {
                 }
             }
             newTagName = components.last ?? ""
+            
         }
+        
+        
     }
-    
-    
 }
 
 #Preview {
-    InputIngredientsManualView()
+    ManualInputTextField(ingredients: "Water, Glycerin, Dicaprylyl Ether, Butylene Glycol, Hydrogenated Ethylhexyl Olivate, Pentylene Glycol, 2-HexanedioL, Hydrogenated Polydecene, saccharide isomerate, Hydroxyethyl Acrylate/Sodium Acryloyldimethyl Taurate Copolymer, Acrylates/C10-30 Alkyl Acrylate Crosspolymer, Polymethylsilsesquioxane, Hydrogenated Olive Oil Unsaponifiables, Boron Nitride, Madecassoside, Aloe Barbadensis Leaf Extract, Allantoin, Artemisia Vulgaris Extract, Astrocaryum Murumuru Seed Butter, Glyceryl Acrylate/Acrylic Acid Copolymer, Tromethamine, Ethylhexylglycerin, Xanthan Gum, Dipotassium Glycyrrhizate, Sodium Phytate, Ceramide NP, Sodium Citrate, Citric Acid, Sea Water, Propanediol, Tocopherol, Emiliania Huxleyi Extract, Shea Butter")
 }

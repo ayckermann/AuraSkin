@@ -36,7 +36,7 @@ struct ScanView: View {
                         Image(systemName: isFlash ? "bolt.fill" : "bolt.slash.fill")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 26)
+                            .frame(width: 26, height: 26)
                         
                     })
                     Spacer()
@@ -124,7 +124,7 @@ struct ScanView: View {
                 
                 
             }
-            .padding(.vertical, 28)
+            .padding(.vertical, 30)
         }
         .foregroundStyle(.white)
         
